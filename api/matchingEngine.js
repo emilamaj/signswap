@@ -1,20 +1,27 @@
 const { parentPort } = require('worker_threads');
 
 const orderBook = [];
+let blockNumber = 0;
 
 parentPort.on('message', (message) => {
     if (message.type === 'ADD_ORDER') {
+        console.log("Order added:", message.order);
         orderBook.push(message.order);
         matchOrders();
     } else if (message.type === 'REMOVE_ORDER') {
+        console.log("Order removed:", message.order);
         const index = orderBook.findIndex((order) => order.id === message.order.id);
         if (index !== -1) {
             orderBook.splice(index, 1);
         }
+    } else if (message.type === 'UPDATE_BLOCK_NUMBER') {
+        console.log("Block number updated:", message.blockNumber);
+        blockNumber = message.blockNumber;
     }
 });
 
 function matchOrders() {
+    // Loop through all orders in the order book and check if any two orders can be matched
     for (let i = 0; i < orderBook.length; i++) {
         for (let j = i + 1; j < orderBook.length; j++) {
             const orderA = orderBook[i];
@@ -25,12 +32,8 @@ function matchOrders() {
                 orderA.tokenB === orderB.tokenA &&
                 isPriceMatch(orderA, orderB)
             ) {
-                parentPort.postMessage({
-                    type: 'MATCH_FOUND',
-                    orderA,
-                    orderB,
-                });
-
+                console.log("Match found:", orderA, orderB);
+                parentPort.postMessage({ type: 'MATCH_FOUND', orderA, orderB, });
                 return;
             }
         }
@@ -38,15 +41,21 @@ function matchOrders() {
 }
 
 function isPriceMatch(orderA, orderB) {
-    const priceA = orderA.price; // Price of tokenA in terms of tokenB, calculated by dividing tokenB by tokenA
-    const priceB = orderB.price; // Price of tokenB in terms of tokenA
+    // This function checks if the two orders can be matched based on their specified prices and slippage
+    // Slippage in the favorable direction is always allowed for either party.
+    const priceA = orderA.price >> 96; // Apply bitwise right-shift by 96
+    const priceB = orderB.price >> 96; // Apply bitwise right-shift by 96
 
-    const invPriceA = 1 / priceA; // Inverse price of tokenA in terms of tokenB, calculated by dividing 1 by the price
-    const invPriceB = 1 / priceB;
+    // Check if orderB's most generous price is acceptable to orderA
+    // Most generous price is highest price seen by userA (he gets most "out" tokens for a given "in" tokens)
+    // Highest price for userA is lowest price for userB, because userA sees 1/orderB.price as the price
+    // const invPriceB = 2 ** 92 / priceB;
+    const minInvPriceB = 2 ** 96 * 10000 / ((10000 - orderB.maxSlippage) * priceB);
+    const validA = minInvPriceB >= priceA * (10000 - orderA.maxSlippage / 10000);
 
-    // Check if the prices match within the allowed slippage.
-    const validA = invPriceB >= priceA * (1 - orderA.maxSlippage / 100) && invPriceB <= priceA * (1 + orderA.maxSlippage / 100);
-    const validB = invPriceA >= priceB * (1 - orderB.maxSlippage / 100) && invPriceA <= priceB * (1 + orderB.maxSlippage / 100);
+    // Check if orderA's most generous price is acceptable to orderB
+    const minInvPriceA = 2 ** 96 * 10000 / ((10000 - orderA.maxSlippage) * priceA);
+    const validB = minInvPriceA >= priceB * (10000 - orderB.maxSlippage / 10000);
 
     return validA && validB;
 }
