@@ -39,16 +39,17 @@ contract OrderBookExchange {
     function executeTrade(
         Order memory orderA,
         Order memory orderB,
-        uint amountA,
-        uint amountB
+        uint256 amountA,
+        uint256 amountB
     ) external {
+        // Verify the orders match
+        require(orderA.user != orderB.user, "Same user");
+        require(orderA.tokenA == orderB.tokenB, "Token mismatch");
+        require(orderA.tokenB == orderB.tokenA, "Token mismatch");
+
         // Validate the orders and signatures
         checkSignature(orderA);
         checkSignature(orderB);
-
-        // Verify the orders match
-        require(orderA.tokenA == orderB.tokenB, "Token mismatch");
-        require(orderA.tokenB == orderB.tokenA, "Token mismatch");
 
         // Check price slippage and bounds
         checkTrade(orderA, amountA, amountB);
@@ -85,7 +86,7 @@ contract OrderBookExchange {
         nonces[msg.sender]++;
     }
 
-    function checkSignature(Order memory order) internal view {
+    function checkSignature(Order memory order) public view {
         // Check the order expiration
         require(block.timestamp <= order.expiration, "Order expired");
 
@@ -104,7 +105,8 @@ contract OrderBookExchange {
                 order.priceX96,
                 order.maxSlippage,
                 order.nonce,
-                order.expiration
+                order.expiration,
+                order.code
             )
         );
 
@@ -161,8 +163,8 @@ contract OrderBookExchange {
         require(block.number <= order.expiration, "Order expired");
 
         // Bounds check
-        require(amountA > order.minAmountA, "Amount too low");
-        require(amountA < order.maxAmountA, "Amount too high");
+        require(amountA >= order.minAmountA, "Amount too low");
+        require(amountA <= order.maxAmountA, "Amount too high");
 
         // Price slippage check (positive slippage is allowed).
         // (amountB_asked * discount) must be lower than (amountB_received)
@@ -174,8 +176,4 @@ contract OrderBookExchange {
 
         return true;
     }
-
-
-
-
 }
