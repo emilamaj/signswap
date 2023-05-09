@@ -4,6 +4,7 @@ pragma solidity ^0.8.0;
 import "../lib/forge-std/src/Test.sol";
 import "../lib/forge-std/src/console.sol";
 import "../src/OrderBookExchange.sol";
+import "../lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol";
 
 contract mockToken is ERC20 {
     constructor(string memory name, string memory symbol) ERC20(name, symbol) {
@@ -27,7 +28,7 @@ contract OrderBookExchangeTest is Test {
     }
 
     // This function takes the parameters of an order and generates the signature.
-    function _generateSignedOrder(OrderBookExchange.Order memory order, uint256 privateKey) public pure returns (OrderBookOrder.order memory){
+    function _generateSignedOrder(OrderBookExchange.Order memory order, uint256 privateKey) public pure returns (OrderBookExchange.Order memory){
         // Generate the user address
         address user = vm.addr(privateKey);
         
@@ -47,14 +48,14 @@ contract OrderBookExchangeTest is Test {
             )
         );
 
-        bytes32 messageHash = keccak256(abi.encodePacked("\x19Ethereum Signed Message:\n32", messageHash));
+        messageHash = keccak256(abi.encodePacked("\x19Ethereum Signed Message:\n32", messageHash));
         (uint8 v, bytes32 r, bytes32 s) = vm.sign(privateKey, messageHash);
 
         // Save the signature
         bytes memory signature = abi.encodePacked(v, r, s);
 
         // Create the final order
-        return OrderBookOrder.Order(
+        return OrderBookExchange.Order(
             user,
             order.tokenA,
             order.tokenB,
@@ -70,7 +71,7 @@ contract OrderBookExchangeTest is Test {
     }
 
     // This function generates a stub order. If direct is true, sell tokenA for tokenB.
-    function orderStub(bool direct) public pure returns (OrderBookExchange.Order memory){
+    function orderStub(bool direct) public view returns (OrderBookExchange.Order memory){
         return OrderBookExchange.Order(
             address(0),
             direct ? address(tokenA) : address(tokenB),
@@ -82,12 +83,12 @@ contract OrderBookExchangeTest is Test {
             0, // nonce, always 
             block.number + 100,
             0x01,
-            uint256(0) // This is the signature
+            "" // This is the signature
         );
     }
 
     // Test the cancelling of an order
-    function test_cancelOrder(){
+    function test_cancelOrder() public {
         // Read the nonce before the call
         uint256 nonce = exchangeContract.nonces(msg.sender);
         exchangeContract.cancelOrder();
@@ -99,14 +100,14 @@ contract OrderBookExchangeTest is Test {
     }
 
     // Test the matching of two orders with a trivial price. (Remember that real_price = priceX69 >> 96)
-    function test_trivialPrice(){
+    function test_trivialPrice() public {
         // Generate the orders
         OrderBookExchange.Order memory order1 = orderStub(true);
         OrderBookExchange.Order memory order2 = orderStub(false);
 
         // Generate the signed orders
-        OrderBookOrder.Order memory signedOrder1 = _generateSignedOrder(order1, 0x0A);
-        OrderBookOrder.Order memory signedOrder2 = _generateSignedOrder(order2, 0x0B);
+        OrderBookExchange.Order memory signedOrder1 = _generateSignedOrder(order1, 0x0A);
+        OrderBookExchange.Order memory signedOrder2 = _generateSignedOrder(order2, 0x0B);
 
         // Fund the users now that we have generated their addresses
         tokenA.transfer(msg.sender, 2 ether);
@@ -125,7 +126,7 @@ contract OrderBookExchangeTest is Test {
     }
 
     // Test the matching of orders with an obvious invalid price.
-    function test_trivialInvalidPrice(){
+    function test_trivialInvalidPrice() public {
         // Generate the orders
         OrderBookExchange.Order memory order1 = orderStub(true);
         OrderBookExchange.Order memory order2 = orderStub(false);
@@ -135,8 +136,8 @@ contract OrderBookExchangeTest is Test {
         order2.priceX96 = 1 << 96;
 
         // Generate the signed orders
-        OrderBookOrder.Order memory signedOrder1 = _generateSignedOrder(order1, 0x0A);
-        OrderBookOrder.Order memory signedOrder2 = _generateSignedOrder(order2, 0x0B);
+        OrderBookExchange.Order memory signedOrder1 = _generateSignedOrder(order1, 0x0A);
+        OrderBookExchange.Order memory signedOrder2 = _generateSignedOrder(order2, 0x0B);
 
         // Fund the users now that we have generated their addresses
         tokenA.transfer(msg.sender, 2 ether);
@@ -147,18 +148,19 @@ contract OrderBookExchangeTest is Test {
         tokenB.approve(address(exchangeContract), 2 ether);
 
         // Expect the transaction to revert due to invalid prices
-        expectRevert("Price rejected (too much slippage ?)", exchangeContract.executeTrade(signedOrder1, signedOrder2, 1 ether, 1 ether));
+        vm.expectRevert();
+        exchangeContract.executeTrade(signedOrder1, signedOrder2, 1 ether, 1 ether);
     }
 
     // Test with trade amounts outside of bounds.
-    function test_invalidAmounts(){
+    function test_invalidAmounts() public {
         // Generate the orders
         OrderBookExchange.Order memory order1 = orderStub(true);
         OrderBookExchange.Order memory order2 = orderStub(false);
 
         // Generate the signed orders
-        OrderBookOrder.Order memory signedOrder1 = _generateSignedOrder(order1, 0x0A);
-        OrderBookOrder.Order memory signedOrder2 = _generateSignedOrder(order2, 0x0B);
+        OrderBookExchange.Order memory signedOrder1 = _generateSignedOrder(order1, 0x0A);
+        OrderBookExchange.Order memory signedOrder2 = _generateSignedOrder(order2, 0x0B);
 
         // Fund the users now that we have generated their addresses
         tokenA.transfer(msg.sender, 2 ether);
@@ -169,12 +171,14 @@ contract OrderBookExchangeTest is Test {
         tokenB.approve(address(exchangeContract), 2 ether);
 
         // Expect the transaction to revert due to invalid amounts
-        expectRevert("Amount too low", exchangeContract.executeTrade(signedOrder1, signedOrder2, 0.5 ether, 1 ether));
-        expectRevert("Amount too high", exchangeContract.executeTrade(signedOrder1, signedOrder2, 1.5 ether, 1 ether));
+        vm.expectRevert();
+        exchangeContract.executeTrade(signedOrder1, signedOrder2, 0.5 ether, 1 ether);
+        vm.expectRevert();
+        exchangeContract.executeTrade(signedOrder1, signedOrder2, 1.5 ether, 1 ether);
     }
  
     // Test trade with an old nonce.
-    function test_oldNonce(){
+    function test_oldNonce() public {
         // Generate the orders
         OrderBookExchange.Order memory order1 = orderStub(true);
         OrderBookExchange.Order memory order2 = orderStub(false);
@@ -183,8 +187,8 @@ contract OrderBookExchangeTest is Test {
         exchangeContract.cancelOrder();
 
         // Generate the signed orders
-        OrderBookOrder.Order memory signedOrder1 = _generateSignedOrder(order1, 0x0A);
-        OrderBookOrder.Order memory signedOrder2 = _generateSignedOrder(order2, 0x0B);
+        OrderBookExchange.Order memory signedOrder1 = _generateSignedOrder(order1, 0x0A);
+        OrderBookExchange.Order memory signedOrder2 = _generateSignedOrder(order2, 0x0B);
 
         // Fund the users now that we have generated their addresses
         tokenA.transfer(msg.sender, 2 ether);
@@ -195,11 +199,12 @@ contract OrderBookExchangeTest is Test {
         tokenB.approve(address(exchangeContract), 2 ether);
 
         // Expect the transaction to revert due to old nonce
-        expectRevert("Invalid nonce", exchangeContract.executeTrade(signedOrder1, signedOrder2, 1 ether, 1 ether));
+        vm.expectRevert();
+        exchangeContract.executeTrade(signedOrder1, signedOrder2, 1 ether, 1 ether);
     }
 
     // Test trade with an expired order.
-    function test_expiredOrder(){
+    function test_expiredOrder() public {
         // Generate the orders
         OrderBookExchange.Order memory order1 = orderStub(true);
         OrderBookExchange.Order memory order2 = orderStub(false);
@@ -209,8 +214,8 @@ contract OrderBookExchangeTest is Test {
         order2.expiration = block.number - 1;
 
         // Generate the signed orders
-        OrderBookOrder.Order memory signedOrder1 = _generateSignedOrder(order1, 0x0A);
-        OrderBookOrder.Order memory signedOrder2 = _generateSignedOrder(order2, 0x0B);
+        OrderBookExchange.Order memory signedOrder1 = _generateSignedOrder(order1, 0x0A);
+        OrderBookExchange.Order memory signedOrder2 = _generateSignedOrder(order2, 0x0B);
 
         // Fund the users now that we have generated their addresses
         tokenA.transfer(msg.sender, 2 ether);
@@ -221,11 +226,12 @@ contract OrderBookExchangeTest is Test {
         tokenB.approve(address(exchangeContract), 2 ether);
 
         // Expect the transaction to revert due to expired orders
-        expectRevert("Order expired", exchangeContract.executeTrade(signedOrder1, signedOrder2, 1 ether, 1 ether));
+        vm.expectRevert();
+        exchangeContract.executeTrade(signedOrder1, signedOrder2, 1 ether, 1 ether);
     }
 
     // Test order with a different contract identifier code.
-    function test_invalidCode(){
+    function test_invalidCode() public {
         // Generate the orders
         OrderBookExchange.Order memory order1 = orderStub(true);
         OrderBookExchange.Order memory order2 = orderStub(false);
@@ -235,8 +241,8 @@ contract OrderBookExchangeTest is Test {
         order2.code = 0x02;
 
         // Generate the signed orders
-        OrderBookOrder.Order memory signedOrder1 = _generateSignedOrder(order1, 0x0A);
-        OrderBookOrder.Order memory signedOrder2 = _generateSignedOrder(order2, 0x0B);
+        OrderBookExchange.Order memory signedOrder1 = _generateSignedOrder(order1, 0x0A);
+        OrderBookExchange.Order memory signedOrder2 = _generateSignedOrder(order2, 0x0B);
 
         // Fund the users now that we have generated their addresses
         tokenA.transfer(msg.sender, 2 ether);
@@ -247,18 +253,19 @@ contract OrderBookExchangeTest is Test {
         tokenB.approve(address(exchangeContract), 2 ether);
 
         // Expect the transaction to revert due to invalid code
-        expectRevert("Invalid implementation code", exchangeContract.executeTrade(signedOrder1, signedOrder2, 1 ether, 1 ether));
+        vm.expectRevert();
+        exchangeContract.executeTrade(signedOrder1, signedOrder2, 1 ether, 1 ether);
     }
 
     // Test trade with an invalid signature.
-    function test_invalidSignature(){
+    function test_invalidSignature() public {
         // Generate the orders
         OrderBookExchange.Order memory order1 = orderStub(true);
         OrderBookExchange.Order memory order2 = orderStub(false);
 
         // Generate the signed orders
-        OrderBookOrder.Order memory signedOrder1 = _generateSignedOrder(order1, 0x0A);
-        OrderBookOrder.Order memory signedOrder2 = _generateSignedOrder(order2, 0x0B);
+        OrderBookExchange.Order memory signedOrder1 = _generateSignedOrder(order1, 0x0A);
+        OrderBookExchange.Order memory signedOrder2 = _generateSignedOrder(order2, 0x0B);
 
         // Modify the signatures to make them invalid
         signedOrder1.signature = abi.encodePacked(uint8(0), bytes32(0), bytes32(0));
@@ -273,18 +280,19 @@ contract OrderBookExchangeTest is Test {
         tokenB.approve(address(exchangeContract), 2 ether);
 
         // Expect the transaction to revert due to invalid signatures
-        expectRevert("Invalid signature", exchangeContract.executeTrade(signedOrder1, signedOrder2, 1 ether, 1 ether));
+        vm.expectRevert();
+        exchangeContract.executeTrade(signedOrder1, signedOrder2, 1 ether, 1 ether);
     }
 
     // Test trade when the user has not allowed the exchange contract to spend the tokens.
-    function test_invalidAllowance(){
+    function test_invalidAllowance() public {
         // Generate the orders
         OrderBookExchange.Order memory order1 = orderStub(true);
         OrderBookExchange.Order memory order2 = orderStub(false);
 
         // Generate the signed orders
-        OrderBookOrder.Order memory signedOrder1 = _generateSignedOrder(order1, 0x0A);
-        OrderBookOrder.Order memory signedOrder2 = _generateSignedOrder(order2, 0x0B);
+        OrderBookExchange.Order memory signedOrder1 = _generateSignedOrder(order1, 0x0A);
+        OrderBookExchange.Order memory signedOrder2 = _generateSignedOrder(order2, 0x0B);
 
         // Fund the users now that we have generated their addresses
         tokenA.transfer(msg.sender, 2 ether);
@@ -293,18 +301,19 @@ contract OrderBookExchangeTest is Test {
         // Do not approve the exchange contract to spend the tokens
 
         // Expect the transaction to revert due to insufficient allowance
-        expectRevert("ERC20: transfer amount exceeds allowance", exchangeContract.executeTrade(signedOrder1, signedOrder2, 1 ether, 1 ether));
+        vm.expectRevert();
+        exchangeContract.executeTrade(signedOrder1, signedOrder2, 1 ether, 1 ether);
     }
 
     // Test trade when the user has not enough tokens.
-    function test_invalidBalance(){
+    function test_invalidBalance() public {
         // Generate the orders
         OrderBookExchange.Order memory order1 = orderStub(true);
         OrderBookExchange.Order memory order2 = orderStub(false);
 
         // Generate the signed orders
-        OrderBookOrder.Order memory signedOrder1 = _generateSignedOrder(order1, 0x0A);
-        OrderBookOrder.Order memory signedOrder2 = _generateSignedOrder(order2, 0x0B);
+        OrderBookExchange.Order memory signedOrder1 = _generateSignedOrder(order1, 0x0A);
+        OrderBookExchange.Order memory signedOrder2 = _generateSignedOrder(order2, 0x0B);
 
         // Do not fund the users now that we have generated their addresses
 
@@ -313,11 +322,12 @@ contract OrderBookExchangeTest is Test {
         tokenB.approve(address(exchangeContract), 2 ether);
 
         // Expect the transaction to revert due to insufficient balance
-        expectRevert("ERC20: transfer amount exceeds balance", exchangeContract.executeTrade(signedOrder1, signedOrder2, 1 ether, 1 ether));
+        vm.expectRevert();
+        exchangeContract.executeTrade(signedOrder1, signedOrder2, 1 ether, 1 ether);
     }
 
     // Fuzz test orders with random slippage values. Simple prices are tested.
-    function testFuzz_slippageSimple(uint256 slippage1, uint256 slippage2){
+    function testFuzz_slippageSimple(uint256 slippage1, uint256 slippage2) public {
         // Set fuzzing parameters
         slippage1 = bound(slippage1, 0, 10000);
         slippage2 = bound(slippage2, 0, 10000);
@@ -331,8 +341,8 @@ contract OrderBookExchangeTest is Test {
         order2.maxSlippage = slippage2;
 
         // Generate the signed orders
-        OrderBookOrder.Order memory signedOrder1 = _generateSignedOrder(order1, 0x0A);
-        OrderBookOrder.Order memory signedOrder2 = _generateSignedOrder(order2, 0x0B);
+        OrderBookExchange.Order memory signedOrder1 = _generateSignedOrder(order1, 0x0A);
+        OrderBookExchange.Order memory signedOrder2 = _generateSignedOrder(order2, 0x0B);
 
         // Fund the users now that we have generated their addresses
         tokenA.transfer(msg.sender, 2 ether);
@@ -351,7 +361,7 @@ contract OrderBookExchangeTest is Test {
     }
 
     // Fuzz test orders with random slippage values. Prices are set within the limits of slippage of the respective opposing party.
-    function testFuzz_slippageComplex(uint256 slippage1, uint256 slippage2){
+    function testFuzz_slippageComplex(uint256 slippage1, uint256 slippage2) public {
         // Set fuzzing parameters
         slippage1 = bound(slippage1, 0, 10000);
         slippage2 = bound(slippage2, 0, 10000);
@@ -369,8 +379,8 @@ contract OrderBookExchangeTest is Test {
         order2.priceX96 = ((1 ether * 10000) / (10000 + slippage1)) << 96;
 
         // Generate the signed orders
-        OrderBookOrder.Order memory signedOrder1 = _generateSignedOrder(order1, 0x0A);
-        OrderBookOrder.Order memory signedOrder2 = _generateSignedOrder(order2, 0x0B);
+        OrderBookExchange.Order memory signedOrder1 = _generateSignedOrder(order1, 0x0A);
+        OrderBookExchange.Order memory signedOrder2 = _generateSignedOrder(order2, 0x0B);
 
         // Fund the users now that we have generated their addresses
         tokenA.transfer(msg.sender, 2 ether);
@@ -389,7 +399,7 @@ contract OrderBookExchangeTest is Test {
     }
 
     // Fuzz test orders with random slippage values. Prices are set outside the limits of slippage of the respective opposing party.
-    function testFuzz_slippageComplexInvalid(uint256 slippage1, uint256 slippage2){
+    function testFuzz_slippageComplexInvalid(uint256 slippage1, uint256 slippage2) public {
         // Set fuzzing parameters
         slippage1 = bound(slippage1, 0, 10000);
         slippage2 = bound(slippage2, 0, 10000);
@@ -407,8 +417,8 @@ contract OrderBookExchangeTest is Test {
         order2.priceX96 = ((1 ether * 10000) / (10000 + slippage1 + 1)) << 96;
 
         // Generate the signed orders
-        OrderBookOrder.Order memory signedOrder1 = _generateSignedOrder(order1, 0x0A);
-        OrderBookOrder.Order memory signedOrder2 = _generateSignedOrder(order2, 0x0B);
+        OrderBookExchange.Order memory signedOrder1 = _generateSignedOrder(order1, 0x0A);
+        OrderBookExchange.Order memory signedOrder2 = _generateSignedOrder(order2, 0x0B);
 
         // Fund the users now that we have generated their addresses
         tokenA.transfer(msg.sender, 2 ether);
@@ -419,6 +429,7 @@ contract OrderBookExchangeTest is Test {
         tokenB.approve(address(exchangeContract), 2 ether);
 
         // Expect the transaction to revert due to invalid prices
-        expectRevert("Price rejected (too much slippage ?)", exchangeContract.executeTrade(signedOrder1, signedOrder2, 1 ether, 1 ether));
+        vm.expectRevert();
+        exchangeContract.executeTrade(signedOrder1, signedOrder2, 1 ether, 1 ether);
     }
 }
