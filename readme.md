@@ -1,9 +1,10 @@
-# Ethereum L1 order book exchange
+# Gasless DEX - L1 signature-based decentralized exchange on Ethereum
 
-This repo contains the code for a decentralized exchange (DEX) built on Ethereum L1. It provides drastically reduced fees compared to other DEXs, at the cost of synchronous execution.
+This project aims to build a decentralized exchange (DEX) built on Ethereum L1. It provides drastically reduced fees compared to other DEXs, at the cost of delayed execution of trades.
 Swaps are not guaranteed to execute, but if they do, they are guaranteed to execute at the price and conditions specified by the user.
-The user never pays the fees for execution, they are paid by the protocol. Currently, fees must be paid for token spending approval.
-Once a given amount is approved, it can be used for any number of swaps until the approval is revoked or the allowance is depleted.
+The user never pays the fees for execution, they are paid by the protocol.
+Currently, fees must be paid for token spending approval.
+Gasless approval will be implemented in the future (EIP-2612 permit).
 
 The core of the protocol is the **matching trades execution smart contract** OrderBookExchange.sol
 The contract swaps two users tokens atomically **if and only if** the swaps are realized under the conditions specified by the users. To guarantee this, the contract checks the cryptographic signatures associated with the orders.
