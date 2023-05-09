@@ -1,6 +1,6 @@
 # Gasless DEX - L1 signature-based decentralized exchange on Ethereum
 
-This project aims to build a decentralized exchange (DEX) built on Ethereum L1. It provides drastically reduced fees compared to other DEXs, at the cost of delayed execution of trades.
+This project aims to build a decentralized exchange (DEX) built on Ethereum L1. It either completely removes gas fees or drastically reduces them compared to any other DEXs, at the cost of delayed execution of trades.
 Swaps are not guaranteed to execute, but if they do, they are guaranteed to execute at the price and conditions specified by the user.
 The user never pays the fees for execution, they are paid by the protocol.
 Currently, fees must be paid for token spending approval.
