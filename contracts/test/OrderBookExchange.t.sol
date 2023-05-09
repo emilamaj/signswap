@@ -1,0 +1,1 @@
+/* No testing in solidity at the moment, as there is no ECDSA library available that signs messages (only signer recovery). */
