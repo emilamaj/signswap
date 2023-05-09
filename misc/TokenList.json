@@ -1,0 +1,6500 @@
+[
+    {
+        "address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+        "name": "Tether",
+        "symbol": "USDT",
+        "market_cap": 82374583907.88474
+    },
+    {
+        "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "name": "USD Coin",
+        "symbol": "USDC",
+        "market_cap": 30108033695.65504
+    },
+    {
+        "address": "0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce",
+        "name": "Shiba Inu",
+        "symbol": "SHIB",
+        "market_cap": 5298614923.776588
+    },
+    {
+        "address": "0x6b175474e89094c44da98b954eedeac495271d0f",
+        "name": "Dai",
+        "symbol": "DAI",
+        "market_cap": 4879511842.41982
+    },
+    {
+        "address": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+        "name": "Wrapped Bitcoin",
+        "symbol": "WBTC",
+        "market_cap": 4273744730.550936
+    },
+    {
+        "address": "0x514910771af9ca656af840dff83e8264ecf986ca",
+        "name": "Chainlink",
+        "symbol": "LINK",
+        "market_cap": 3361686753.4339104
+    },
+    {
+        "address": "0x2af5d2ad76741191d15dfe7bf6ac92d4bd912ca3",
+        "name": "UNUS SED LEO",
+        "symbol": "LEO",
+        "market_cap": 3276188641.3999915
+    },
+    {
+        "address": "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984",
+        "name": "Uniswap",
+        "symbol": "UNI",
+        "market_cap": 2866381735.6543612
+    },
+    {
+        "address": "0x75231f58b43240c9718dd58b4967c5114342a86c",
+        "name": "OKB",
+        "symbol": "OKB",
+        "market_cap": 2685855882.573866
+    },
+    {
+        "address": "0x0000000000085d4780B73119b644AE5ecd22b376",
+        "name": "TrueUSD",
+        "symbol": "TUSD",
+        "market_cap": 2134336106.5296545
+    },
+    {
+        "address": "0xa0b73e1ff0b80914ab6fe0444e65848c4c34450b",
+        "name": "Cronos",
+        "symbol": "CRO",
+        "market_cap": 1653155236.9833863
+    },
+    {
+        "address": "0x5a98fcbea516cf06857215779fd812ca3bef1b32",
+        "name": "Lido DAO",
+        "symbol": "LDO",
+        "market_cap": 1641950224.4939678
+    },
+    {
+        "address": "0x4a220e6096b25eadb88358cb44068a3248254675",
+        "name": "Quant",
+        "symbol": "QNT",
+        "market_cap": 1265030347.114743
+    },
+    {
+        "address": "0x4d224452801aced8b2f0aebe155379bb5d594381",
+        "name": "ApeCoin",
+        "symbol": "APE",
+        "market_cap": 1228529038.6289535
+    },
+    {
+        "address": "0xc944e90c64b2c07662a292be6244bdf05cda44a7",
+        "name": "The Graph",
+        "symbol": "GRT",
+        "market_cap": 1022798880.2820575
+    },
+    {
+        "address": "0xd33526068d116ce69f19a9ee46f0bd304f21a51f",
+        "name": "Rocket Pool",
+        "symbol": "RPL",
+        "market_cap": 930254070.019279
+    },
+    {
+        "address": "0x3845badAde8e6dFF049820680d1F14bD3903a5d0",
+        "name": "The Sandbox",
+        "symbol": "SAND",
+        "market_cap": 927335396.325815
+    },
+    {
+        "address": "0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9",
+        "name": "Aave",
+        "symbol": "AAVE",
+        "market_cap": 923625654.7886417
+    },
+    {
+        "address": "0x1A4b46696b2bB4794Eb3D4c26f1c55F9170fa4C5",
+        "name": "BitDAO",
+        "symbol": "BIT",
+        "market_cap": 897141235.323713
+    },
+    {
+        "address": "0x0f5d2fb29fb7d3cfee444a200298f468908cc942",
+        "name": "Decentraland",
+        "symbol": "MANA",
+        "market_cap": 869768568.6251463
+    },
+    {
+        "address": "0xbb0e17ef65f82ab018d8edd776e8dd940327b28b",
+        "name": "Axie Infinity",
+        "symbol": "AXS",
+        "market_cap": 808659521.268177
+    },
+    {
+        "address": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
+        "name": "Pepe",
+        "symbol": "PEPE",
+        "market_cap": 786324837.084705
+    },
+    {
+        "address": "0x3506424f91fd33084466f402d5d97f05f8e3b4af",
+        "name": "Chiliz",
+        "symbol": "CHZ",
+        "market_cap": 782533572.5663285
+    },
+    {
+        "address": "0x8e870d67f660d95d5be530380d0ec0bd388289e1",
+        "name": "Pax Dollar",
+        "symbol": "USDP",
+        "market_cap": 753748279.9173893
+    },
+    {
+        "address": "0x0c10bf8fcb7bf5412187a595ab97a3609160b5c6",
+        "name": "USDD",
+        "symbol": "USDD",
+        "market_cap": 734127483.9445001
+    },
+    {
+        "address": "0xf34960d9d60be18cc1d5afc1a6f012a723a28811",
+        "name": "KuCoin Token",
+        "symbol": "KCS",
+        "market_cap": 721512980.3808773
+    },
+    {
+        "address": "0xf57e7e7c23978c3caec3c3548e3d615c346e79ff",
+        "name": "Immutable",
+        "symbol": "IMX",
+        "market_cap": 694733522.7811146
+    },
+    {
+        "address": "0xD533a949740bb3306d119CC777fa900bA034cd52",
+        "name": "Curve DAO Token",
+        "symbol": "CRV",
+        "market_cap": 677998411.0616425
+    },
+    {
+        "address": "0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2",
+        "name": "Maker",
+        "symbol": "MKR",
+        "market_cap": 659285530.0532309
+    },
+    {
+        "address": "0x6de037ef9ad2725eb40118bb1702ebb27e4aeb24",
+        "name": "Render Token",
+        "symbol": "RNDR",
+        "market_cap": 634894073.5720577
+    },
+    {
+        "address": "0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f",
+        "name": "Synthetix",
+        "symbol": "SNX",
+        "market_cap": 554441834.3557022
+    },
+    {
+        "address": "0x45804880de22913dafe09f4980848ece6ecbaf78",
+        "name": "PAX Gold",
+        "symbol": "PAXG",
+        "market_cap": 553177307.5592284
+    },
+    {
+        "address": "0x056Fd409E1d7A124BD7017459dFEa2F387b6d5Cd",
+        "name": "Gemini Dollar",
+        "symbol": "GUSD",
+        "market_cap": 533057892.3476787
+    },
+    {
+        "address": "0xe28b3b32b6c345a34ff64674606124dd5aceca30",
+        "name": "Injective",
+        "symbol": "INJ",
+        "market_cap": 502166491.16692454
+    },
+    {
+        "address": "0xe66747a101bff2dba3697199dcce5b743b454759",
+        "name": "GateToken",
+        "symbol": "GT",
+        "market_cap": 501378464.51671386
+    },
+    {
+        "address": "0x3432b6a60d23ca0dfca7761b7ab56459d9c964d0",
+        "name": "Frax Share",
+        "symbol": "FXS",
+        "market_cap": 484372729.17601883
+    },
+    {
+        "address": "0x6f259637dcd74c767781e37bc6133cd6a68aa161",
+        "name": "Huobi Token",
+        "symbol": "HT",
+        "market_cap": 479878764.6886598
+    },
+    {
+        "address": "0x0C356B7fD36a5357E5A017EF11887ba100C9AB76",
+        "name": "Kava",
+        "symbol": "KAVA",
+        "market_cap": 410650386.78632295
+    },
+    {
+        "address": "0xbbbbca6a901c926f240b89eacb641d8aec7aeafd",
+        "name": "Loopring",
+        "symbol": "LRC",
+        "market_cap": 392261088.3779198
+    },
+    {
+        "address": "0xb62132e35a6c13ee1ee0f84dc5d40bad8d815206",
+        "name": "Nexo",
+        "symbol": "NEXO",
+        "market_cap": 378936449.27386767
+    },
+    {
+        "address": "0x4691937a7508860f876c9c0a2a617e7d9e945d4b",
+        "name": "WOO Network",
+        "symbol": "WOO",
+        "market_cap": 372273369.78604966
+    },
+    {
+        "address": "0x4e3fbd56cd56c3e72c1403e103b45db9da5b9d2b",
+        "name": "Convex Finance",
+        "symbol": "CVX",
+        "market_cap": 356715843.68569034
+    },
+    {
+        "address": "0xcf0c122c6b73ff809c693db761e7baebe62b6a2e",
+        "name": "FLOKI",
+        "symbol": "FLOKI",
+        "market_cap": 345221188.97251236
+    },
+    {
+        "address": "0xf629cbd94d3791c9250152bd8dfbdf380e2a3b9c",
+        "name": "Enjin Coin",
+        "symbol": "ENJ",
+        "market_cap": 342132068.09283733
+    },
+    {
+        "address": "0x111111111117dc0aa78b770fa6a738034120c302",
+        "name": "1inch Network",
+        "symbol": "1INCH",
+        "market_cap": 339252699.6997428
+    },
+    {
+        "address": "0x7420B4b9a0110cdC71fB720908340C03F9Bc03EC",
+        "name": "JasmyCoin",
+        "symbol": "JASMY",
+        "market_cap": 335105395.27604574
+    },
+    {
+        "address": "0x92d6c1e31e14520e676a687f0a93788b716beff5",
+        "name": "dYdX",
+        "symbol": "DYDX",
+        "market_cap": 330423125.4779895
+    },
+    {
+        "address": "0x0d8775f648430679a709e98d2b0cb6250d2887ef",
+        "name": "Basic Attention Token",
+        "symbol": "BAT",
+        "market_cap": 323546959.50302124
+    },
+    {
+        "address": "0x69af81e73a73b40adf4f3d4223cd9b1ece623074",
+        "name": "Mask Network",
+        "symbol": "MASK",
+        "market_cap": 307264234.6467134
+    },
+    {
+        "address": "0x26B80FBfC01b71495f477d5237071242e0d959d7",
+        "name": "Oasis Network",
+        "symbol": "ROSE",
+        "market_cap": 296017123.2162857
+    },
+    {
+        "address": "0x6810e776880c02933d47db1b9fc05908e5386b96",
+        "name": "Gnosis",
+        "symbol": "GNO",
+        "market_cap": 294171699.6015014
+    },
+    {
+        "address": "0xC18360217D8F7Ab5e7c516566761Ea12Ce7F9D72",
+        "name": "Ethereum Name Service",
+        "symbol": "ENS",
+        "market_cap": 293756632.1248466
+    },
+    {
+        "address": "0x5B7533812759B45C2B44C19e320ba2cD2681b542",
+        "name": "SingularityNET",
+        "symbol": "AGIX",
+        "market_cap": 292032933.5603044
+    },
+    {
+        "address": "0x6c6ee5e31d828de241282b9606c8e98ea48526e2",
+        "name": "Holo",
+        "symbol": "HOT",
+        "market_cap": 284303318.34978867
+    },
+    {
+        "address": "0xba100000625a3754423978a60c9317c58a424e3D",
+        "name": "Balancer",
+        "symbol": "BAL",
+        "market_cap": 283199214.06768686
+    },
+    {
+        "address": "0x11eef04c884e24d9b7b4760e7476d06ddf797f36",
+        "name": "MX TOKEN",
+        "symbol": "MX",
+        "market_cap": 281514297.67499924
+    },
+    {
+        "address": "0xc00e94cb662c3520282e6f5717214004a7f26888",
+        "name": "Compound",
+        "symbol": "COMP",
+        "market_cap": 270063672.1695166
+    },
+    {
+        "address": "0x8290333cef9e6d528dd5618fb97a76f268f3edd4",
+        "name": "Ankr",
+        "symbol": "ANKR",
+        "market_cap": 262038287.36964616
+    },
+    {
+        "address": "0xCdF7028ceAB81fA0C6971208e83fa7872994beE5",
+        "name": "Threshold",
+        "symbol": "T",
+        "market_cap": 256389718.57144687
+    },
+    {
+        "address": "0x18aaa7115705e8be94bffebde57af9bfc265b998",
+        "name": "Audius",
+        "symbol": "AUDIO",
+        "market_cap": 249579399.2310782
+    },
+    {
+        "address": "0x0bc529c00c6401aef6d220be8c6ea1667f6ad93e",
+        "name": "yearn.finance",
+        "symbol": "YFI",
+        "market_cap": 240571545.36579895
+    },
+    {
+        "address": "0x0f51bb10119727a7e5ea3538074fb341f56b09ad",
+        "name": "DAO Maker",
+        "symbol": "DAO",
+        "market_cap": 226408362.48323968
+    },
+    {
+        "address": "0x5283d291dbcf85356a21ba090e6db59121208b44",
+        "name": "Blur",
+        "symbol": "BLUR",
+        "market_cap": 220041902.93894562
+    },
+    {
+        "address": "0x7DD9c5Cba05E151C895FDe1CF355C9A1D5DA6429",
+        "name": "Golem",
+        "symbol": "GLM",
+        "market_cap": 217518910.49340266
+    },
+    {
+        "address": "0x967da4048cd07ab37855c090aaf366e4ce1b9f48",
+        "name": "Ocean Protocol",
+        "symbol": "OCEAN",
+        "market_cap": 207697230.08027124
+    },
+    {
+        "address": "0x6b3595068778dd592e39a122f4f5a5cf09c90fe2",
+        "name": "SushiSwap",
+        "symbol": "SUSHI",
+        "market_cap": 204858382.93593323
+    },
+    {
+        "address": "0x15D4c048F83bd7e37d49eA4C83a07267Ec4203dA",
+        "name": "Gala",
+        "symbol": "GALA",
+        "market_cap": 195716610.34378725
+    },
+    {
+        "address": "0x04Fa0d235C4abf4BcF4787aF4CF447DE572eF828",
+        "name": "UMA",
+        "symbol": "UMA",
+        "market_cap": 194919995.12997073
+    },
+    {
+        "address": "0x9D65fF81a3c488d585bBfb0Bfe3c7707c7917f54",
+        "name": "ssv.network",
+        "symbol": "SSV",
+        "market_cap": 189723917.0315839
+    },
+    {
+        "address": "0xe41d2489571d322189246dafa5ebde1f4699f498",
+        "name": "0x Protocol",
+        "symbol": "ZRX",
+        "market_cap": 185433582.59583217
+    },
+    {
+        "address": "0x9813037ee2218799597d83D4a5B6F3b6778218d9",
+        "name": "Bone ShibaSwap",
+        "symbol": "BONE",
+        "market_cap": 184960116.19887564
+    },
+    {
+        "address": "0xba11d00c5f74255f56a5e366f4f77f5a186d7f55",
+        "name": "Band Protocol",
+        "symbol": "BAND",
+        "market_cap": 181940081.46996155
+    },
+    {
+        "address": "0xbf2179859fc6D5BEE9Bf9158632Dc51678a4100e",
+        "name": "aelf",
+        "symbol": "ELF",
+        "market_cap": 170224876.71481302
+    },
+    {
+        "address": "0xf17e65822b568b3903685a7c9f496cf7656cc6c2",
+        "name": "Biconomy",
+        "symbol": "BICO",
+        "market_cap": 163157742.76738426
+    },
+    {
+        "address": "0x320623b8e4ff03373931769a31fc52a4e78b5d70",
+        "name": "Reserve Rights",
+        "symbol": "RSR",
+        "market_cap": 152323122.3484381
+    },
+    {
+        "address": "0xed04915c23f00a313a544955524eb7dbd823143d",
+        "name": "Alchemy Pay",
+        "symbol": "ACH",
+        "market_cap": 143464927.38824484
+    },
+    {
+        "address": "0x2dfF88A56767223A5529eA5960Da7A3F5f766406",
+        "name": "SPACE ID",
+        "symbol": "ID",
+        "market_cap": 143308267.5376924
+    },
+    {
+        "address": "0x00c83aecc790e8a4453e5dd3b0b4b3680501a7a7",
+        "name": "SKALE",
+        "symbol": "SKL",
+        "market_cap": 143186028.0189402
+    },
+    {
+        "address": "0x467719aD09025FcC6cF6F8311755809d45a5E5f3",
+        "name": "Axelar",
+        "symbol": "AXL",
+        "market_cap": 138729810.19964615
+    },
+    {
+        "address": "0x58b6a8a3302369daec383334672404ee733ab239",
+        "name": "Livepeer",
+        "symbol": "LPT",
+        "market_cap": 133080576.55492102
+    },
+    {
+        "address": "0x4f9254c83eb525f9fcf346490bbb3ed28a81c667",
+        "name": "Celer Network",
+        "symbol": "CELR",
+        "market_cap": 132643656.35926422
+    },
+    {
+        "address": "0xff20817765cb7f73d4bde2e66e067e58d11095c2",
+        "name": "Amp",
+        "symbol": "AMP",
+        "market_cap": 131673830.18157086
+    },
+    {
+        "address": "0xb64ef51c888972c908cfacf59b47c1afbc0ab8ac",
+        "name": "Storj",
+        "symbol": "STORJ",
+        "market_cap": 128183645.21735108
+    },
+    {
+        "address": "0x607f4c5bb672230e8672085532f7e901544a7375",
+        "name": "iExec RLC",
+        "symbol": "RLC",
+        "market_cap": 126201741.15640731
+    },
+    {
+        "address": "0x491604c0fdf08347dd1fa4ee062a822a5dd06b5d",
+        "name": "Cartesi",
+        "symbol": "CTSI",
+        "market_cap": 124774536.83877346
+    },
+    {
+        "address": "0x767fe9edc9e0df98e07454847909b5e959d7ca0e",
+        "name": "Illuvium",
+        "symbol": "ILV",
+        "market_cap": 124428591.87410088
+    },
+    {
+        "address": "0x761d38e5ddf6ccf6cf7c55759d5210750b5d60f3",
+        "name": "Dogelon Mars",
+        "symbol": "ELON",
+        "market_cap": 124259158.00241852
+    },
+    {
+        "address": "0xd26114cd6ee289accf82350c8d8487fedb8a0c07",
+        "name": "OMG Network",
+        "symbol": "OMG",
+        "market_cap": 123893219.12146266
+    },
+    {
+        "address": "0x65ef703f5594d2573eb71aaf55bc0cb548492df4",
+        "name": "Multichain",
+        "symbol": "MULTI",
+        "market_cap": 119885791.3448523
+    },
+    {
+        "address": "0xaf5191b0de278c7286d6c7cc6ab6bb8a73ba2cd6",
+        "name": "Stargate Finance",
+        "symbol": "STG",
+        "market_cap": 117473806.58360787
+    },
+    {
+        "address": "0xa117000000f279d81a1d3cc75430faa017fa5a2e",
+        "name": "Aragon",
+        "symbol": "ANT",
+        "market_cap": 115707446.54193771
+    },
+    {
+        "address": "0x9E32b13ce7f2E80A01932B42553652E053D6ed8e",
+        "name": "MetisDAO",
+        "symbol": "METIS",
+        "market_cap": 111813441.28765813
+    },
+    {
+        "address": "0x6DEA81C8171D0bA574754EF6F8b412F2Ed88c54D",
+        "name": "Liquity",
+        "symbol": "LQTY",
+        "market_cap": 111025367.9207418
+    },
+    {
+        "address": "0x799ebfabe77a6e34311eeee9825190b9ece32824",
+        "name": "Braintrust",
+        "symbol": "BTRST",
+        "market_cap": 110668357.62791601
+    },
+    {
+        "address": "0x0fd10b9899882a6f2fcb5c371e17e70fdee00c38",
+        "name": "Pundi X (New)",
+        "symbol": "PUNDIX",
+        "market_cap": 107291768.68116418
+    },
+    {
+        "address": "0x949d48eca67b17269629c7194f4b727d4ef9e5d6",
+        "name": "Merit Circle",
+        "symbol": "MC",
+        "market_cap": 103489335.4158595
+    },
+    {
+        "address": "0x0b38210ea11411557c13457D4dA7dC6ea731B88a",
+        "name": "API3",
+        "symbol": "API3",
+        "market_cap": 103424905.08166604
+    },
+    {
+        "address": "0x3a4f40631a4f906c2BaD353Ed06De7A5D3fCb430",
+        "name": "PlayDapp",
+        "symbol": "PLA",
+        "market_cap": 102737048.3545659
+    },
+    {
+        "address": "0xae7ab96520de3a18e5e111b5eaab095312d7fe84",
+        "name": "Lido Staked ETH",
+        "symbol": "stETH",
+        "market_cap": 11770869330.224169
+    },
+    {
+        "address": "0x2b591e99afe9f32eaa6214f7b7629768c40eeb39",
+        "name": "HEX",
+        "symbol": "HEX",
+        "market_cap": 9981494721.671598
+    },
+    {
+        "address": "0x853d955acef822db058eb8505911ed77f175b99e",
+        "name": "Frax",
+        "symbol": "FRAX",
+        "market_cap": 1002084112.0663215
+    },
+    {
+        "address": "0x19de6b897ed14a376dda0fe53a5420d2ac828a28",
+        "name": "Bitget Token",
+        "symbol": "BGB",
+        "market_cap": 630943333.681585
+    },
+    {
+        "address": "0x68749665FF8D2d112Fa859AA293F07A622782F38",
+        "name": "Tether Gold",
+        "symbol": "XAUT",
+        "market_cap": 501325760.5126121
+    },
+    {
+        "address": "0x5f98805A4E8be255a32880FDeC7F6728C6568bA0",
+        "name": "Liquity USD",
+        "symbol": "LUSD",
+        "market_cap": 284769515.00159997
+    },
+    {
+        "address": "0xAC57De9C1A09FeC648E93EB98875B212DB0d460B",
+        "name": "Baby Doge Coin",
+        "symbol": "BabyDoge",
+        "market_cap": 256446294.25306734
+    },
+    {
+        "address": "0x0316EB71485b0Ab14103307bf65a021042c6d380",
+        "name": "Huobi BTC",
+        "symbol": "HBTC",
+        "market_cap": 248307451.36171246
+    },
+    {
+        "address": "0xAE788F80F2756A86aa2F410C651F2aF83639B95b",
+        "name": "GensoKishi Metaverse",
+        "symbol": "MV",
+        "market_cap": 205941772.6769869
+    },
+    {
+        "address": "0xA8b919680258d369114910511cc87595aec0be6D",
+        "name": "LUKSO",
+        "symbol": "LYXe",
+        "market_cap": 200109266.45589513
+    },
+    {
+        "address": "0x9992ec3cf6a55b00978cddf2b27bc6882d88d1ec",
+        "name": "Polymath",
+        "symbol": "POLY",
+        "market_cap": 173640293.73525676
+    },
+    {
+        "address": "0x4385328cc4d643ca98dfea734360c0f596c83449",
+        "name": "tomiNet",
+        "symbol": "TOMI",
+        "market_cap": 172054944.7688931
+    },
+    {
+        "address": "0x97Bbbc5d96875fB78D2F14b7FF8d7a3a74106F17",
+        "name": "Astrafer",
+        "symbol": "ASTRAFER",
+        "market_cap": 168092675.86835414
+    },
+    {
+        "address": "0xba9d4199fab4f26efe3551d490e3821486f135ba",
+        "name": "SwissBorg",
+        "symbol": "CHSB",
+        "market_cap": 157951287.0964655
+    },
+    {
+        "address": "0xc7283b66Eb1EB5FB86327f08e1B5816b0720212B",
+        "name": "Tribe",
+        "symbol": "TRIBE",
+        "market_cap": 149786902.3356127
+    },
+    {
+        "address": "0xdb25f211ab05b1c97d595516f45794528a807ad8",
+        "name": "STASIS EURO",
+        "symbol": "EURS",
+        "market_cap": 135843671.3452203
+    },
+    {
+        "address": "0xcb86c6a22cb56b6cf40cafedb06ba0df188a416e",
+        "name": "inSure DeFi",
+        "symbol": "SURE",
+        "market_cap": 129712318.14744319
+    },
+    {
+        "address": "0x85eee30c52b0b379b046fb0f85f4f3dc3009afec",
+        "name": "Keep Network",
+        "symbol": "KEEP",
+        "market_cap": 128315132.6229859
+    },
+    {
+        "address": "0xaa7a9ca87d3694b5755f213b5d04094b8d0f0a6f",
+        "name": "OriginTrail",
+        "symbol": "TRAC",
+        "market_cap": 117474803.51680464
+    },
+    {
+        "address": "0x467bccd9d29f223bce8043b84e8c8b282827790f",
+        "name": "Telcoin",
+        "symbol": "TEL",
+        "market_cap": 116430962.51689056
+    },
+    {
+        "address": "0xf1ca9cb74685755965c7458528a36934df52a3ef",
+        "name": "AVINOC",
+        "symbol": "AVINOC",
+        "market_cap": 116137815.24025077
+    },
+    {
+        "address": "0x839e71613f9aA06E5701CF6de63E303616B0DDE3",
+        "name": "VVS Finance",
+        "symbol": "VVS",
+        "market_cap": 115363152.49239485
+    },
+    {
+        "address": "0x5fAa989Af96Af85384b8a938c2EdE4A7378D9875",
+        "name": "Galxe",
+        "symbol": "GAL",
+        "market_cap": 102734361.30784208
+    },
+    {
+        "address": "0xdeFA4e8a7bcBA345F687a2f1456F5Edd9CE97202",
+        "name": "Kyber Network Crystal v2",
+        "symbol": "KNC",
+        "market_cap": 101050128.9993521
+    },
+    {
+        "address": "0x198d14f2ad9ce69e76ea330b374de4957c3f850a",
+        "name": "APENFT",
+        "symbol": "NFT",
+        "market_cap": 100209423.38469483
+    },
+    {
+        "address": "0xc4c7ea4fab34bd9fb9a5e1b1a98df76e26e6407c",
+        "name": "Cocos-BCX",
+        "symbol": "COCOS",
+        "market_cap": 99727955.28186487
+    },
+    {
+        "address": "0x07327a00ba28D413f745C931bbe6bE053B0AD2a6",
+        "name": "Humanscape",
+        "symbol": "HUM",
+        "market_cap": 98304836.78092155
+    },
+    {
+        "address": "0xde4EE8057785A7e8e800Db58F9784845A5C2Cbd6",
+        "name": "DeXe",
+        "symbol": "DEXE",
+        "market_cap": 96315455.05068545
+    },
+    {
+        "address": "0x0f2D719407FdBeFF09D87557AbB7232601FD9F29",
+        "name": "Synapse",
+        "symbol": "SYN",
+        "market_cap": 94976543.87246598
+    },
+    {
+        "address": "0xCC8Fa225D80b9c7D42F96e9570156c65D6cAAa25",
+        "name": "Smooth Love Potion",
+        "symbol": "SLP",
+        "market_cap": 94577767.38291077
+    },
+    {
+        "address": "0x6b0b3a982b4634ac68dd83a4dbf02311ce324181",
+        "name": "Artificial Liquid Intelligence",
+        "symbol": "ALI",
+        "market_cap": 94512144.4746977
+    },
+    {
+        "address": "0xc64500dd7b0f1794807e67802f8abbf5f8ffb054",
+        "name": "Locus Chain",
+        "symbol": "LOCUS",
+        "market_cap": 94151628.77467637
+    },
+    {
+        "address": "0x744d70fdbe2ba4cf95131626614a1763df805b9e",
+        "name": "Status",
+        "symbol": "SNT",
+        "market_cap": 94112331.17518477
+    },
+    {
+        "address": "0x41e5560054824ea6b0732e656e3ad64e20e94e45",
+        "name": "Civic",
+        "symbol": "CVC",
+        "market_cap": 94087475.37867476
+    },
+    {
+        "address": "0x8a2279d4a90b6fe1c4b30fa660cc9f926797baa2",
+        "name": "Chromia",
+        "symbol": "CHR",
+        "market_cap": 91422304.37728256
+    },
+    {
+        "address": "0x7a58c0be72be218b41c608b7fe7c5bb630736c71",
+        "name": "ConstitutionDAO",
+        "symbol": "PEOPLE",
+        "market_cap": 89552772.28285441
+    },
+    {
+        "address": "0xb3999F658C0391d94A37f7FF328F3feC942BcADC",
+        "name": "Hashflow",
+        "symbol": "HFT",
+        "market_cap": 89523330.10361616
+    },
+    {
+        "address": "0x8f8221afbb33998d8584a2b05749ba73c37a938a",
+        "name": "Request",
+        "symbol": "REQ",
+        "market_cap": 88739918.5897272
+    },
+    {
+        "address": "0x525A8F6F3Ba4752868cde25164382BfbaE3990e1",
+        "name": "NYM",
+        "symbol": "NYM",
+        "market_cap": 88060764.75185587
+    },
+    {
+        "address": "0xae12c5930881c53715b369cec7606b70d8eb229f",
+        "name": "Coin98",
+        "symbol": "C98",
+        "market_cap": 88007583.95854655
+    },
+    {
+        "address": "0x1776e1F26f98b1A5dF9cD347953a26dd3Cb46671",
+        "name": "Numeraire",
+        "symbol": "NMR",
+        "market_cap": 86809942.65557785
+    },
+    {
+        "address": "0xde7d85157d9714eadf595045cc12ca4a5f3e2adb",
+        "name": "STP",
+        "symbol": "STPT",
+        "market_cap": 85887158.26653436
+    },
+    {
+        "address": "0xff56cc6b1e6ded347aa0b7676c85ab0b3d08b0fa",
+        "name": "Orbs",
+        "symbol": "ORBS",
+        "market_cap": 85291053.88483104
+    },
+    {
+        "address": "0x430ef9263e76dae63c84292c3409d61c598e9682",
+        "name": "Vulcan Forged PYR",
+        "symbol": "PYR",
+        "market_cap": 82900288.74740712
+    },
+    {
+        "address": "0xde30da39c46104798bb5aa3fe8b9e0e1f348163f",
+        "name": "Gitcoin",
+        "symbol": "GTC",
+        "market_cap": 82688744.90813123
+    },
+    {
+        "address": "0x6123b0049f904d730db3c36a31167d9d4121fa6b",
+        "name": "Ribbon Finance",
+        "symbol": "RBN",
+        "market_cap": 81676358.53355795
+    },
+    {
+        "address": "0x3597bfd533a99c9aa083587b074434e61eb0a258",
+        "name": "Dent",
+        "symbol": "DENT",
+        "market_cap": 81428739.35959053
+    },
+    {
+        "address": "0x5dc60C4D5e75D22588FA17fFEB90A63E535efCE0",
+        "name": "dKargo",
+        "symbol": "DKA",
+        "market_cap": 80921851.10406272
+    },
+    {
+        "address": "0xfc82bb4ba86045af6f327323a46e80412b91b27d",
+        "name": "Prom",
+        "symbol": "PROM",
+        "market_cap": 80830556.552377
+    },
+    {
+        "address": "0xa849eaae994fb86afa73382e9bd88c2b6b18dc71",
+        "name": "MVL",
+        "symbol": "MVL",
+        "market_cap": 80520855.77988826
+    },
+    {
+        "address": "0xf4d2888d29d722226fafa5d9b24f9164c092421e",
+        "name": "LooksRare",
+        "symbol": "LOOKS",
+        "market_cap": 78958584.71809503
+    },
+    {
+        "address": "0x595832f8fc6bf59c85c527fec3740a1b7a361269",
+        "name": "Powerledger",
+        "symbol": "POWR",
+        "market_cap": 76766993.14811634
+    },
+    {
+        "address": "0x408e41876cccdc0f92210600ef50372656052a38",
+        "name": "Ren",
+        "symbol": "REN",
+        "market_cap": 76525548.99150209
+    },
+    {
+        "address": "0x1985365e9f78359a9B6AD760e32412f4a445E862",
+        "name": "Augur",
+        "symbol": "REP",
+        "market_cap": 76337495.68013886
+    },
+    {
+        "address": "0xfcf8eda095e37a41e002e266daad7efc1579bc0a",
+        "name": "FLEX",
+        "symbol": "FLEX",
+        "market_cap": 75730659.3604995
+    },
+    {
+        "address": "0xD417144312DbF50465b1C641d016962017Ef6240",
+        "name": "Covalent",
+        "symbol": "CQT",
+        "market_cap": 75507972.78055649
+    },
+    {
+        "address": "0x0d438f3b5175bebc262bf23753c1e53d03432bde",
+        "name": "Wrapped NXM",
+        "symbol": "WNXM",
+        "market_cap": 74874965.89605796
+    },
+    {
+        "address": "0xd13c7342e1ef687c5ad21b27c2b65d772cab5c8c",
+        "name": "Ultra",
+        "symbol": "UOS",
+        "market_cap": 73531964.99052532
+    },
+    {
+        "address": "0xbe1a001fe942f96eea22ba08783140b9dcc09d28",
+        "name": "Beta Finance",
+        "symbol": "BETA",
+        "market_cap": 69103393.24659365
+    },
+    {
+        "address": "0xF433089366899D83a9f26A773D59ec7eCF30355e",
+        "name": "Metal DAO",
+        "symbol": "MTL",
+        "market_cap": 68980159.38890003
+    },
+    {
+        "address": "0xd3E4Ba569045546D09CF021ECC5dFe42b1d7f6E4",
+        "name": "Morpheus.Network",
+        "symbol": "MNW",
+        "market_cap": 68933915.14482129
+    },
+    {
+        "address": "0x57b946008913b82e4df85f501cbaed910e58d26c",
+        "name": "Marlin",
+        "symbol": "POND",
+        "market_cap": 68889729.89387558
+    },
+    {
+        "address": "0x4575f41308EC1483f3d399aa9a2826d74Da13Deb",
+        "name": "Orchid",
+        "symbol": "OXT",
+        "market_cap": 68637637.88109209
+    },
+    {
+        "address": "0x1f573d6fb3f13d689ff844b4ce37794d79a7ff1c",
+        "name": "Bancor",
+        "symbol": "BNT",
+        "market_cap": 67802430.9374912
+    },
+    {
+        "address": "0x4fe83213d56308330ec302a8bd641f1d0113a4cc",
+        "name": "NuCypher",
+        "symbol": "NU",
+        "market_cap": 66714523.2625968
+    },
+    {
+        "address": "0x70e8de73ce538da2beed35d14187f6959a8eca96",
+        "name": "XSGD",
+        "symbol": "XSGD",
+        "market_cap": 66642085.96451826
+    },
+    {
+        "address": "0x579cea1889991f68acc35ff5c3dd0621ff29b0c9",
+        "name": "IQ",
+        "symbol": "IQ",
+        "market_cap": 66388844.04513431
+    },
+    {
+        "address": "0x8c15ef5b4b21951d50e53e4fbda8298ffad25057",
+        "name": "Function X",
+        "symbol": "FX",
+        "market_cap": 65414565.504989654
+    },
+    {
+        "address": "0xfb7b4564402e5500db5bb6d63ae671302777c75a",
+        "name": "DEXTools",
+        "symbol": "DEXT",
+        "market_cap": 64852885.22756945
+    },
+    {
+        "address": "0x2a3bff78b79a009976eea096a51a948a3dc00e34",
+        "name": "Wilder World",
+        "symbol": "WILD",
+        "market_cap": 64140209.49284394
+    },
+    {
+        "address": "0x090185f2135308bad17527004364ebcc2d37e5f6",
+        "name": "Spell Token",
+        "symbol": "SPELL",
+        "market_cap": 64007003.96319578
+    },
+    {
+        "address": "0x808507121b80c02388fad14726482e061b8da827",
+        "name": "Pendle",
+        "symbol": "PENDLE",
+        "market_cap": 63689256.967296965
+    },
+    {
+        "address": "0x12BB890508c125661E03b09EC06E404bc9289040",
+        "name": "RACA",
+        "symbol": "RACA",
+        "market_cap": 63306202.66551107
+    },
+    {
+        "address": "0xAC51066d7bEC65Dc4589368da368b212745d63E8",
+        "name": "MyNeighborAlice",
+        "symbol": "ALICE",
+        "market_cap": 63033172.63126394
+    },
+    {
+        "address": "0xea26c4ac16d4a5a106820bc8aee85fd0b7b2b664",
+        "name": "QuarkChain",
+        "symbol": "QKC",
+        "market_cap": 62298619.64513268
+    },
+    {
+        "address": "0x42476F744292107e34519F9c357927074Ea3F75D",
+        "name": "Loom Network",
+        "symbol": "LOOM",
+        "market_cap": 60131909.4437219
+    },
+    {
+        "address": "0xe95a203b1a91a908f9b9ce46459d101078c2c3cb",
+        "name": "Ankr Staked ETH",
+        "symbol": "ankrETH",
+        "market_cap": 60100816.36752443
+    },
+    {
+        "address": "0xaaaebe6fe48e54f431b0c390cfaf0b017d09d42d",
+        "name": "Celsius",
+        "symbol": "CEL",
+        "market_cap": 58961362.18121294
+    },
+    {
+        "address": "0x940a2db1b7008b6c776d4faaca729d6d4a4aa551",
+        "name": "Dusk Network",
+        "symbol": "DUSK",
+        "market_cap": 58887435.01237248
+    },
+    {
+        "address": "0x419d0d8bdd9af5e606ae2232ed285aff190e711b",
+        "name": "FUNToken",
+        "symbol": "FUN",
+        "market_cap": 58555906.432020515
+    },
+    {
+        "address": "0xc0c293ce456ff0ed870add98a0828dd4d2903dbf",
+        "name": "Aura Finance",
+        "symbol": "AURA",
+        "market_cap": 58476352.31525929
+    },
+    {
+        "address": "0xb705268213d593b8fd88d3fdeff93aff5cbdcfae",
+        "name": "IDEX",
+        "symbol": "IDEX",
+        "market_cap": 57926417.305950925
+    },
+    {
+        "address": "0xdf2c7238198ad8b389666574f2d8bc411a4b7428",
+        "name": "Hifi Finance (Old)",
+        "symbol": "MFT",
+        "market_cap": 57918364.7199567
+    },
+    {
+        "address": "0x6468e79A80C0eaB0F9A2B574c8d5bC374Af59414",
+        "name": "e-Radix",
+        "symbol": "EXRD",
+        "market_cap": 57740194.09721572
+    },
+    {
+        "address": "0x2be5e8c109e2197D077D13A82dAead6a9b3433C5",
+        "name": "Tokamak Network",
+        "symbol": "TON",
+        "market_cap": 57456521.92768738
+    },
+    {
+        "address": "0xe53ec727dbdeb9e2d5456c3be40cff031ab40a55",
+        "name": "SuperVerse",
+        "symbol": "SUPER",
+        "market_cap": 56367554.655549474
+    },
+    {
+        "address": "0xcb84d72e61e383767c4dfeb2d8ff7f4fb89abc6e",
+        "name": "Vega Protocol",
+        "symbol": "VEGA",
+        "market_cap": 55448350.47040114
+    },
+    {
+        "address": "0x888888848B652B3E3a0f34c96E00EEC0F3a23F72",
+        "name": "Alien Worlds",
+        "symbol": "TLM",
+        "market_cap": 55430917.984976456
+    },
+    {
+        "address": "0x081131434f93063751813c619ecca9c4dc7862a3",
+        "name": "Mines of Dalarnia",
+        "symbol": "DAR",
+        "market_cap": 54866696.424694754
+    },
+    {
+        "address": "0xff742d05420b6aca4481f635ad8341f81a6300c2",
+        "name": "ASD",
+        "symbol": "ASD",
+        "market_cap": 54697200.909110494
+    },
+    {
+        "address": "0x43dfc4159d86f3a37a5a4b3d4580b888ad7d4ddd",
+        "name": "DODO",
+        "symbol": "DODO",
+        "market_cap": 54358911.826694444
+    },
+    {
+        "address": "0x662b67d00a13faf93254714dd601f5ed49ef2f51",
+        "name": "Orbit Chain",
+        "symbol": "ORC",
+        "market_cap": 53739356.773496486
+    },
+    {
+        "address": "0xb056c38f6b7dc4064367403e26424cd2c60655e1",
+        "name": "CEEK VR",
+        "symbol": "CEEK",
+        "market_cap": 53417299.85771822
+    },
+    {
+        "address": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+        "name": "Euro Coin",
+        "symbol": "EUROC",
+        "market_cap": 52817745.39042193
+    },
+    {
+        "address": "0x3472a5a71965499acd81997a54bba8d852c6e53d",
+        "name": "Badger DAO",
+        "symbol": "BADGER",
+        "market_cap": 52307858.79857455
+    },
+    {
+        "address": "0x55296f69f40ea6d20e478533c15a6b08b654e758",
+        "name": "XYO",
+        "symbol": "XYO",
+        "market_cap": 52261942.96362865
+    },
+    {
+        "address": "0x71Ab77b7dbB4fa7e017BC15090b2163221420282",
+        "name": "Highstreet",
+        "symbol": "HIGH",
+        "market_cap": 51898988.34745503
+    },
+    {
+        "address": "0xA2cd3D43c775978A96BdBf12d733D5A1ED94fb18",
+        "name": "Onyxcoin",
+        "symbol": "XCN",
+        "market_cap": 51707805.108009234
+    },
+    {
+        "address": "0x3e9bc21c9b189c09df3ef1b824798658d5011937",
+        "name": "Linear Finance",
+        "symbol": "LINA",
+        "market_cap": 51378020.88803888
+    },
+    {
+        "address": "0x4e352cf164e64adcbad318c3a1e222e9eba4ce42",
+        "name": "MUX Protocol",
+        "symbol": "MCB",
+        "market_cap": 50646971.162466325
+    },
+    {
+        "address": "0x30680ac0a8a993088223925265fd7a76beb87e7f",
+        "name": "ARAW",
+        "symbol": "ARAW",
+        "market_cap": 48906530.057227835
+    },
+    {
+        "address": "0xf411903cbc70a74d22900a5de66a2dda66507255",
+        "name": "Verasity",
+        "symbol": "VRA",
+        "market_cap": 48657459.089783594
+    },
+    {
+        "address": "0xba50933c268f567bdc86e1ac131be072c6b0b71a",
+        "name": "ARPA",
+        "symbol": "ARPA",
+        "market_cap": 48551995.09655693
+    },
+    {
+        "address": "0x4c19596f5aaff459fa38b0f7ed92f11ae6543784",
+        "name": "TrueFi",
+        "symbol": "TRU",
+        "market_cap": 47792772.76109525
+    },
+    {
+        "address": "0xa62cc35625b0c8dc1faea39d33625bb4c15bd71c",
+        "name": "StormX",
+        "symbol": "STMX",
+        "market_cap": 47709241.07213712
+    },
+    {
+        "address": "0x53c8395465a84955c95159814461466053dedede",
+        "name": "DeGate",
+        "symbol": "DG",
+        "market_cap": 47568510.51037756
+    },
+    {
+        "address": "0x3C4B6E6e1eA3D4863700D7F76b36B7f3D3f13E3d",
+        "name": "Voyager Token",
+        "symbol": "VGX",
+        "market_cap": 47494932.87772569
+    },
+    {
+        "address": "0x8207c1ffc5b6804f6024322ccf34f29c3541ae26",
+        "name": "Origin Protocol",
+        "symbol": "OGN",
+        "market_cap": 47250841.635298245
+    },
+    {
+        "address": "0x0c7D5ae016f806603CB1782bEa29AC69471CAb9c",
+        "name": "Bifrost",
+        "symbol": "BFC",
+        "market_cap": 47204516.48803456
+    },
+    {
+        "address": "0xd46ba6d942050d489dbd938a2c909a5d5039a161",
+        "name": "Ampleforth",
+        "symbol": "AMPL",
+        "market_cap": 46522212.91132098
+    },
+    {
+        "address": "0x74232704659ef37c08995e386a2e26cc27a8d7b1",
+        "name": "Strike",
+        "symbol": "STRK",
+        "market_cap": 46459043.67943783
+    },
+    {
+        "address": "0xD85a6Ae55a7f33B0ee113C234d2EE308EdeAF7fD",
+        "name": "Cobak Token",
+        "symbol": "CBK",
+        "market_cap": 46226775.17683188
+    },
+    {
+        "address": "0xc5fb36dd2fb59d3b98deff88425a3f425ee469ed",
+        "name": "Dejitaru Tsuka",
+        "symbol": "TSUKA",
+        "market_cap": 46223075.47911533
+    },
+    {
+        "address": "0xdc9Ac3C20D1ed0B540dF9b1feDC10039Df13F99c",
+        "name": "Utrust",
+        "symbol": "UTK",
+        "market_cap": 46187114.18139902
+    },
+    {
+        "address": "0x6e5a43db10b04701385a34afb670e404bc7ea597",
+        "name": "Rakon",
+        "symbol": "RKN",
+        "market_cap": 46019283.94590188
+    },
+    {
+        "address": "0xa2120b9e674d3fc3875f415a7df52e382f141225",
+        "name": "Automata Network",
+        "symbol": "ATA",
+        "market_cap": 45972402.23061036
+    },
+    {
+        "address": "0x7db5af2b9624e1b3b4bb69d6debd9ad1016a58ac",
+        "name": "Volt Inu V2",
+        "symbol": "VOLT",
+        "market_cap": 45644705.9580294
+    },
+    {
+        "address": "0xce3f08e664693ca792cace4af1364d5e220827b2",
+        "name": "Saitama",
+        "symbol": "SAITAMA",
+        "market_cap": 45363194.17614221
+    },
+    {
+        "address": "0x77fba179c79de5b7653f68b5039af940ada60ce0",
+        "name": "Ampleforth Governance Token",
+        "symbol": "FORTH",
+        "market_cap": 45266419.15479772
+    },
+    {
+        "address": "0x57Ab1ec28D129707052df4dF418D58a2D46d5f51",
+        "name": "sUSD",
+        "symbol": "SUSD",
+        "market_cap": 45050027.65916638
+    },
+    {
+        "address": "0x8578530205cecbe5db83f7f29ecfeec860c297c2",
+        "name": "smARTOFGIVING",
+        "symbol": "AOG",
+        "market_cap": 44860375.56933136
+    },
+    {
+        "address": "0x5ca381bbfb58f0092df149bd3d243b08b9a8386e",
+        "name": "MXC",
+        "symbol": "MXC",
+        "market_cap": 44752774.226337664
+    },
+    {
+        "address": "0x9d71CE49ab8A0E6D2a1e7BFB89374C9392FD6804",
+        "name": "NvirWorld",
+        "symbol": "NVIR",
+        "market_cap": 44232427.25338611
+    },
+    {
+        "address": "0x505b5eda5e25a67e1c24a2bf1a527ed9eb88bf04",
+        "name": "Coinweb",
+        "symbol": "CWEB",
+        "market_cap": 44004946.244194105
+    },
+    {
+        "address": "0x1900E8B5619a3596745F715d0427Fe617c729BA9",
+        "name": "Chainbing",
+        "symbol": "CBG",
+        "market_cap": 43919000.010306954
+    },
+    {
+        "address": "0x2ef52Ed7De8c5ce03a4eF0efbe9B7450F2D7Edc9",
+        "name": "Revain",
+        "symbol": "REV",
+        "market_cap": 43316602.29711786
+    },
+    {
+        "address": "0x8f3470A7388c05eE4e7AF3d01D8C722b0FF52374",
+        "name": "Veritaseum",
+        "symbol": "VERI",
+        "market_cap": 42991080.535581805
+    },
+    {
+        "address": "0x3F382DbD960E3a9bbCeaE22651E88158d2791550",
+        "name": "Aavegotchi",
+        "symbol": "GHST",
+        "market_cap": 42949031.51726127
+    },
+    {
+        "address": "0xc98d64da73a6616c42117b582e832812e7b8d57f",
+        "name": "RSS3",
+        "symbol": "RSS3",
+        "market_cap": 42825458.74720585
+    },
+    {
+        "address": "0xf1f955016EcbCd7321c7266BccFB96c68ea5E49b",
+        "name": "Rally",
+        "symbol": "RLY",
+        "market_cap": 42730222.66182849
+    },
+    {
+        "address": "0x580c8520deda0a441522aeae0f9f7a5f29629afa",
+        "name": "Dawn Protocol",
+        "symbol": "DAWN",
+        "market_cap": 42722401.51672912
+    },
+    {
+        "address": "0x25f8087ead173b73d6e8b84329989a8eea16cf73",
+        "name": "Yield Guild Games",
+        "symbol": "YGG",
+        "market_cap": 42479871.51968732
+    },
+    {
+        "address": "0x0258F474786DdFd37ABCE6df6BBb1Dd5dfC4434a",
+        "name": "Orion Protocol",
+        "symbol": "ORN",
+        "market_cap": 42173544.12567785
+    },
+    {
+        "address": "0x037a54aab062628c9bbae1fdb1583c195585fe41",
+        "name": "LCX",
+        "symbol": "LCX",
+        "market_cap": 41151814.23617342
+    },
+    {
+        "address": "0x04abeda201850ac0124161f037efd70c74ddc74c",
+        "name": "NEST Protocol",
+        "symbol": "NEST",
+        "market_cap": 40732253.48941793
+    },
+    {
+        "address": "0x644192291cc835a93d6330b24ea5f5fedd0eef9e",
+        "name": "AllianceBlock Nexera",
+        "symbol": "NXRA",
+        "market_cap": 40284179.84139226
+    },
+    {
+        "address": "0x5245c0249e5eeb2a0838266800471fd32adb1089",
+        "name": "Raydium",
+        "symbol": "RAY",
+        "market_cap": 40279851.40945803
+    },
+    {
+        "address": "0xf33893de6eb6ae9a67442e066ae9abd228f5290c",
+        "name": "Grove Coin",
+        "symbol": "GRV",
+        "market_cap": 40207880.537554055
+    },
+    {
+        "address": "0xec67005c4e498ec7f55e092bd1d35cbc47c91892",
+        "name": "Enzyme",
+        "symbol": "MLN",
+        "market_cap": 40189820.028974
+    },
+    {
+        "address": "0xe5b826ca2ca02f09c1725e9bd98d9a8874c30532",
+        "name": "ZEON",
+        "symbol": "ZEON",
+        "market_cap": 39620078.55884273
+    },
+    {
+        "address": "0xbc396689893d065f41bc2c6ecbee5e0085233447",
+        "name": "Perpetual Protocol",
+        "symbol": "PERP",
+        "market_cap": 38957285.24616426
+    },
+    {
+        "address": "0x2A8e1E676Ec238d8A992307B495b45B3fEAa5e86",
+        "name": "Origin Dollar",
+        "symbol": "OUSD",
+        "market_cap": 38668236.11988674
+    },
+    {
+        "address": "0xba5BDe662c17e2aDFF1075610382B9B691296350",
+        "name": "SuperRare",
+        "symbol": "RARE",
+        "market_cap": 38446721.39949488
+    },
+    {
+        "address": "0xa91ac63d040deb1b7a5e4d4134ad23eb0ba07e14",
+        "name": "Bella Protocol",
+        "symbol": "BEL",
+        "market_cap": 38339354.135163605
+    },
+    {
+        "address": "0x1494ca1f11d487c2bbe4543e90080aeba4ba3c2b",
+        "name": "DeFi Pulse Index",
+        "symbol": "DPI",
+        "market_cap": 38154438.51504863
+    },
+    {
+        "address": "0xccc8cb5229b0ac8069c51fd58367fd1e622afd97",
+        "name": "Gods Unchained",
+        "symbol": "GODS",
+        "market_cap": 37955888.127340555
+    },
+    {
+        "address": "0x9aab071b4129b083b01cb5a0cb513ce7eca26fa5",
+        "name": "HUNT",
+        "symbol": "HUNT",
+        "market_cap": 37465232.57384053
+    },
+    {
+        "address": "0xe1bad922f84b198a08292fb600319300ae32471b",
+        "name": "FirmaChain",
+        "symbol": "FCT,FCT2",
+        "market_cap": 37136405.04648727
+    },
+    {
+        "address": "0xa1d0E215a23d7030842FC67cE582a6aFa3CCaB83",
+        "name": "DFI.Money",
+        "symbol": "YFII",
+        "market_cap": 36880897.48943688
+    },
+    {
+        "address": "0x83e6f1e41cdd28eaceb20cb649155049fac3d5aa",
+        "name": "Polkastarter",
+        "symbol": "POLS",
+        "market_cap": 36797061.37111037
+    },
+    {
+        "address": "0xfa5047c9c78b8877af97bdcb85db743fd7313d4a",
+        "name": "Rook",
+        "symbol": "ROOK",
+        "market_cap": 36046446.53699382
+    },
+    {
+        "address": "0x8806926ab68eb5a7b909dcaf6fdbe5d93271d6e2",
+        "name": "Uquid Coin",
+        "symbol": "UQC",
+        "market_cap": 35776398.997976266
+    },
+    {
+        "address": "0x115eC79F1de567eC68B7AE7eDA501b406626478e",
+        "name": "Carry",
+        "symbol": "CRE",
+        "market_cap": 35627826.142970964
+    },
+    {
+        "address": "0xd084b83c305dafd76ae3e1b4e1f1fe2ecccb3988",
+        "name": "Virtua",
+        "symbol": "TVK",
+        "market_cap": 35578868.41103471
+    },
+    {
+        "address": "0x656C00e1BcD96f256F224AD9112FF426Ef053733",
+        "name": "Efinity Token",
+        "symbol": "EFI",
+        "market_cap": 35387848.89023774
+    },
+    {
+        "address": "0xa1d65e8fb6e87b60feccbc582f7f97804b725521",
+        "name": "DXdao",
+        "symbol": "DXD",
+        "market_cap": 34993762.733203195
+    },
+    {
+        "address": "0x4b9278b94a1112cAD404048903b8d343a810B07e",
+        "name": "Hifi Finance",
+        "symbol": "HIFI",
+        "market_cap": 34783767.72945065
+    },
+    {
+        "address": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+        "name": "Fei USD",
+        "symbol": "FEI",
+        "market_cap": 34607095.63437372
+    },
+    {
+        "address": "0x80d55c03180349fff4a229102f62328220a96444",
+        "name": "Opulous",
+        "symbol": "OPUL",
+        "market_cap": 33931151.46567149
+    },
+    {
+        "address": "0x865ec58b06bf6305b886793aa20a2da31d034e68",
+        "name": "Moss Coin",
+        "symbol": "MOC",
+        "market_cap": 32929268.090758447
+    },
+    {
+        "address": "0xb59490ab09a0f526cc7305822ac65f2ab12f9723",
+        "name": "Litentry",
+        "symbol": "LIT",
+        "market_cap": 32689791.768422224
+    },
+    {
+        "address": "0xb4b9dc1c77bdbb135ea907fd5a08094d98883a35",
+        "name": "Sweat Economy",
+        "symbol": "SWEAT",
+        "market_cap": 32617368.01035834
+    },
+    {
+        "address": "0xa9b1eb5908cfc3cdf91f9b8b3a74108598009096",
+        "name": "Bounce Token",
+        "symbol": "AUCTION",
+        "market_cap": 32341243.39927785
+    },
+    {
+        "address": "0xdbdb4d16eda451d0503b854cf79d55697f90c8df",
+        "name": "Alchemix",
+        "symbol": "ALCX",
+        "market_cap": 32116344.180702396
+    },
+    {
+        "address": "0xbbc2ae13b23d715c30720f079fcd9b4a74093505",
+        "name": "Ethernity",
+        "symbol": "ERN",
+        "market_cap": 32051598.472260255
+    },
+    {
+        "address": "0x6c28aef8977c9b773996d0e8376d2ee379446f2f",
+        "name": "QuickSwap",
+        "symbol": "QUICK",
+        "market_cap": 31794692.799155984
+    },
+    {
+        "address": "0x2559813bbb508c4c79e9ccce4703bcb1f149edd7",
+        "name": "Hourglass",
+        "symbol": "WAIT",
+        "market_cap": 31606875.77453555
+    },
+    {
+        "address": "0x4123a133ae3c521fd134d7b13a2dec35b56c2463",
+        "name": "Qredo",
+        "symbol": "QRDO",
+        "market_cap": 31354504.767461628
+    },
+    {
+        "address": "0x15b7c0c907e4C6b9AdaAaabC300C08991D6CEA05",
+        "name": "Gelato",
+        "symbol": "GEL",
+        "market_cap": 31183098.624049902
+    },
+    {
+        "address": "0x0391D2021f89DC339F60Fff84546EA23E337750f",
+        "name": "BarnBridge",
+        "symbol": "BOND",
+        "market_cap": 30881993.651156437
+    },
+    {
+        "address": "0x01ba67aac7f75f647d94220cc98fb30fcc5105bf",
+        "name": "Lyra",
+        "symbol": "LYRA",
+        "market_cap": 30830801.585086897
+    },
+    {
+        "address": "0x2ba592f78db6436527729929aaf6c908497cb200",
+        "name": "Cream Finance",
+        "symbol": "CREAM",
+        "market_cap": 30742389.67236205
+    },
+    {
+        "address": "0x249e38ea4102d0cf8264d3701f1a0e39c4f2dc3b",
+        "name": "UFO Gaming",
+        "symbol": "UFO",
+        "market_cap": 30545536.543223206
+    },
+    {
+        "address": "0x9E976F211daea0D652912AB99b0Dc21a7fD728e4",
+        "name": "MAP Protocol",
+        "symbol": "MAP",
+        "market_cap": 29875631.89418312
+    },
+    {
+        "address": "0x226bb599a12c826476e3a771454697ea52e9e220",
+        "name": "Propy",
+        "symbol": "PRO",
+        "market_cap": 29732138.593899522
+    },
+    {
+        "address": "0x442b153f6f61c0c99a33aa4170dcb31e1abda1d0",
+        "name": "Travala.com",
+        "symbol": "AVA",
+        "market_cap": 29527413.226278014
+    },
+    {
+        "address": "0x33D0568941C0C64ff7e0FB4fbA0B11BD37deEd9f",
+        "name": "RAMP",
+        "symbol": "RAMP",
+        "market_cap": 29323044.63416203
+    },
+    {
+        "address": "0xc86d054809623432210c107af2e3f619dcfbf652",
+        "name": "Sentinel Protocol",
+        "symbol": "UPP",
+        "market_cap": 29261602.3646895
+    },
+    {
+        "address": "0x80C62FE4487E1351b47Ba49809EBD60ED085bf52",
+        "name": "CLV",
+        "symbol": "CLV",
+        "market_cap": 28994518.332820583
+    },
+    {
+        "address": "0x993864e43caa7f7f12953ad6feb1d1ca635b875f",
+        "name": "SingularityDAO",
+        "symbol": "SDAO",
+        "market_cap": 28210167.12583119
+    },
+    {
+        "address": "0xd0929d411954c47438dc1d871dd6081f5c5e149c",
+        "name": "Refereum",
+        "symbol": "RFR",
+        "market_cap": 28207437.758256227
+    },
+    {
+        "address": "0x306ee01a6bA3b4a8e993fA2C1ADC7ea24462000c",
+        "name": "NEOPIN",
+        "symbol": "NPT",
+        "market_cap": 28196705.52941378
+    },
+    {
+        "address": "0xaaaaaa20d9e0e2461697782ef11675f668207961",
+        "name": "Aurora",
+        "symbol": "AURORA",
+        "market_cap": 27874795.725028172
+    },
+    {
+        "address": "0x1F7e5118521B550bB1A9B435727c003eB033FC51",
+        "name": "Angola",
+        "symbol": "AGLA",
+        "market_cap": 27847814.698533807
+    },
+    {
+        "address": "0x2a9bDCFF37aB68B95A53435ADFd8892e86084F93",
+        "name": "Alpha Quark Token",
+        "symbol": "AQT",
+        "market_cap": 27490484.35976386
+    },
+    {
+        "address": "0x61e90a50137e1f645c9ef4a0d3a4f01477738406",
+        "name": "League of Kingdoms Arena",
+        "symbol": "LOKA",
+        "market_cap": 27488771.4273162
+    },
+    {
+        "address": "0x1ceb5cb57c4d4e2b2433641b95dd330a33185a44",
+        "name": "Keep3rV1",
+        "symbol": "KP3R",
+        "market_cap": 27423291.570407573
+    },
+    {
+        "address": "0x84ca8bc7997272c7cfb4d0cd3d55cd942b3c9419",
+        "name": "DIA",
+        "symbol": "DIA",
+        "market_cap": 27005214.58772956
+    },
+    {
+        "address": "0xcc4304a31d09258b0029ea7fe63d032f52e44efe",
+        "name": "TrustSwap",
+        "symbol": "SWAP",
+        "market_cap": 26404454.19102602
+    },
+    {
+        "address": "0x4cc19356f2d37338b9802aa8e8fc58b0373296e7",
+        "name": "SelfKey",
+        "symbol": "KEY",
+        "market_cap": 26199748.370861605
+    },
+    {
+        "address": "0x3da932456d082cba208feb0b096d49b202bf89c8",
+        "name": "Dego Finance",
+        "symbol": "DEGO",
+        "market_cap": 26185526.696041
+    },
+    {
+        "address": "0x0000000000095413afc295d19edeb1ad7b71c952",
+        "name": "Tokenlon Network Token",
+        "symbol": "LON",
+        "market_cap": 25953984.95849776
+    },
+    {
+        "address": "0xa8c8CfB141A3bB59FEA1E2ea6B79b5ECBCD7b6ca",
+        "name": "Syntropy",
+        "symbol": "NOIA",
+        "market_cap": 25747252.67155693
+    },
+    {
+        "address": "0xaaef88cea01475125522e117bfe45cf32044e238",
+        "name": "GuildFi",
+        "symbol": "GF",
+        "market_cap": 25610705.24029757
+    },
+    {
+        "address": "0x7Ddc52c4De30e94Be3A6A0A2b259b2850f421989",
+        "name": "Gomining",
+        "symbol": "GMT",
+        "market_cap": 25578653.16504236
+    },
+    {
+        "address": "0x89b69f2d1adffa9a253d40840b6baa7fc903d697",
+        "name": "Dione Protocol",
+        "symbol": "DIONE",
+        "market_cap": 25518426.96056761
+    },
+    {
+        "address": "0x410e731c2970Dce3AdD351064AcF5cE9E33FDBf0",
+        "name": "ONBUFF",
+        "symbol": "ONIT",
+        "market_cap": 25504363.108026832
+    },
+    {
+        "address": "0xB49fa25978abf9a248b8212Ab4b87277682301c0",
+        "name": "RAI Finance",
+        "symbol": "SOFI",
+        "market_cap": 25416391.237388767
+    },
+    {
+        "address": "0x32353a6c91143bfd6c7d363b546e62a9a2489a20",
+        "name": "Adventure Gold",
+        "symbol": "AGLD",
+        "market_cap": 25172784.222741395
+    },
+    {
+        "address": "0x814e0908b12a99fecf5bc101bb5d0b8b5cdf7d26",
+        "name": "Measurable Data Token",
+        "symbol": "MDT",
+        "market_cap": 24867659.002928287
+    },
+    {
+        "address": "0xd5d86fc8d5c0ea1ac1ac5dfab6e529c9967a45e9",
+        "name": "NFT Worlds",
+        "symbol": "WRLD",
+        "market_cap": 24065077.293481577
+    },
+    {
+        "address": "0xF94b5C5651c888d928439aB6514B93944eEE6F48",
+        "name": "Yield App",
+        "symbol": "YLD",
+        "market_cap": 23818744.56391326
+    },
+    {
+        "address": "0x16eccfdbb4ee1a85a33f3a9b21175cd7ae753db4",
+        "name": "Router Protocol",
+        "symbol": "ROUTE",
+        "market_cap": 23672641.06092564
+    },
+    {
+        "address": "0x3be7bf1a5f23bd8336787d0289b70602f1940875",
+        "name": "VIDT DAO",
+        "symbol": "VIDT",
+        "market_cap": 23572770.875803694
+    },
+    {
+        "address": "0xeef9f339514298c6a857efcfc1a762af84438dee",
+        "name": "Hermez Network",
+        "symbol": "HEZ",
+        "market_cap": 23238402.981921744
+    },
+    {
+        "address": "0xa71d0588EAf47f12B13cF8eC750430d21DF04974",
+        "name": "Shiba Predator",
+        "symbol": "QOM",
+        "market_cap": 23183402.23201108
+    },
+    {
+        "address": "0x33349b282065b0284d756f0577fb39c158f935e6",
+        "name": "Maple",
+        "symbol": "MPL",
+        "market_cap": 23178550.870405942
+    },
+    {
+        "address": "0xade00c28244d5ce17d72e40330b1c318cd12b7c3",
+        "name": "Ambire AdEx",
+        "symbol": "ADX",
+        "market_cap": 22782217.085667174
+    },
+    {
+        "address": "0x49614661737efbfc6a102efaeefdc8e197f7cc0e",
+        "name": "Escroco Emerald",
+        "symbol": "ESCE",
+        "market_cap": 22516035.228822444
+    },
+    {
+        "address": "0xb9F747162AB1E95d07361f9048BcDF6eDdA9eEA7",
+        "name": "Star Atlas",
+        "symbol": "ATLAS",
+        "market_cap": 22392560.25744954
+    },
+    {
+        "address": "0x20e7125677311Fca903A8897042b9983f22Ea295",
+        "name": "Freeway Token",
+        "symbol": "FWT",
+        "market_cap": 22335995.534496896
+    },
+    {
+        "address": "0x8f693ca8d21b157107184d29d398a8d082b38b76",
+        "name": "Streamr",
+        "symbol": "DATA",
+        "market_cap": 21979103.08208957
+    },
+    {
+        "address": "0x4B5f49487ea7B3609b1aD05459BE420548789f1f",
+        "name": "LeverFi",
+        "symbol": "LEVER",
+        "market_cap": 21838035.968672633
+    },
+    {
+        "address": "0x19062190b1925b5b6689d7073fdfc8c2976ef8cb",
+        "name": "Swarm",
+        "symbol": "BZZ",
+        "market_cap": 21674918.909621734
+    },
+    {
+        "address": "0x2Ebd53d035150f328bd754D6DC66B99B0eDB89aa",
+        "name": "Metronome",
+        "symbol": "MET",
+        "market_cap": 21541981.8111152
+    },
+    {
+        "address": "0x431ad2ff6a9c365805ebad47ee021148d6f7dbe0",
+        "name": "dForce",
+        "symbol": "DF",
+        "market_cap": 21481471.10586117
+    },
+    {
+        "address": "0x701c244b988a513c945973defa05de933b23fe1d",
+        "name": "OAX",
+        "symbol": "OAX",
+        "market_cap": 21446834.761592768
+    },
+    {
+        "address": "0xcafe001067cdef266afb7eb5a286dcfd277f3de5",
+        "name": "ParaSwap",
+        "symbol": "PSP",
+        "market_cap": 21296653.85469128
+    },
+    {
+        "address": "0x2f32b39023dA7d6A6486A85d12B346EB9C2A0D19",
+        "name": "Ferro",
+        "symbol": "FER",
+        "market_cap": 21108487.81290213
+    },
+    {
+        "address": "0xf0d33beda4d734c72684b5f9abbebf715d0a7935",
+        "name": "NuNet",
+        "symbol": "NTX",
+        "market_cap": 21011974.515406642
+    },
+    {
+        "address": "0xf203Ca1769ca8e9e8FE1DA9D147DB68B6c919817",
+        "name": "Nine Chronicles",
+        "symbol": "WNCG",
+        "market_cap": 20982646.14108162
+    },
+    {
+        "address": "0x27702a26126e0b3702af63ee09ac4d1a084ef628",
+        "name": "Aleph.im",
+        "symbol": "ALEPH",
+        "market_cap": 20761259.32577204
+    },
+    {
+        "address": "0xef3a930e1ffffacd2fc13434ac81bd278b0ecc8d",
+        "name": "StaFi",
+        "symbol": "FIS",
+        "market_cap": 20663188.27188341
+    },
+    {
+        "address": "0xfca59cd816ab1ead66534d82bc21e7515ce441cf",
+        "name": "Rarible",
+        "symbol": "RARI",
+        "market_cap": 20568572.309722506
+    },
+    {
+        "address": "0x9AB7bb7FdC60f4357ECFef43986818A2A3569c62",
+        "name": "Guild of Guardians",
+        "symbol": "GOG",
+        "market_cap": 20274514.77546243
+    },
+    {
+        "address": "0xC08512927D12348F6620a698105e1BAac6EcD911",
+        "name": "GYEN",
+        "symbol": "GYEN",
+        "market_cap": 20160341.894867957
+    },
+    {
+        "address": "0x4Dd672e77c795844fe3A464eF8eF0FAAe617C8fB",
+        "name": "CONUN",
+        "symbol": "CON",
+        "market_cap": 20038930.510729723
+    },
+    {
+        "address": "0xEC213F83defB583af3A000B1c0ada660b1902A0F",
+        "name": "Presearch",
+        "symbol": "PRE",
+        "market_cap": 20031755.34835498
+    },
+    {
+        "address": "0xe884cc2795b9c45beeac0607da9539fd571ccf85",
+        "name": "Ultiledger",
+        "symbol": "ULT",
+        "market_cap": 19968801.193608716
+    },
+    {
+        "address": "0x485d17A6f1B8780392d53D64751824253011A260",
+        "name": "Chrono.tech",
+        "symbol": "TIME",
+        "market_cap": 19951064.60628988
+    },
+    {
+        "address": "0xC477D038d5420C6A9e0b031712f61c5120090de9",
+        "name": "Boson Protocol",
+        "symbol": "BOSON",
+        "market_cap": 19946592.794269286
+    },
+    {
+        "address": "0xb6adb74efb5801160ff749b1985fd3bd5000e938",
+        "name": "GameZone",
+        "symbol": "GZONE",
+        "market_cap": 19922255.71691656
+    },
+    {
+        "address": "0x138c2f1123cf3f82e4596d097c118eac6684940b",
+        "name": "Alpha Coin",
+        "symbol": "ALPHA",
+        "market_cap": 19836647.327335835
+    },
+    {
+        "address": "0x5732046a883704404f284ce41ffadd5b007fd668",
+        "name": "Bluzelle",
+        "symbol": "BLZ",
+        "market_cap": 19808715.196732145
+    },
+    {
+        "address": "0x1C700F95Df53fc31e83D89AC89e5DD778D4cD310",
+        "name": "Kava Lend",
+        "symbol": "HARD",
+        "market_cap": 19566137.77449031
+    },
+    {
+        "address": "0x88dF592F8eb5D7Bd38bFeF7dEb0fBc02cf3778a0",
+        "name": "Tellor",
+        "symbol": "TRB",
+        "market_cap": 19050123.873154376
+    },
+    {
+        "address": "0xf5581dfefd8fb0e4aec526be659cfab1f8c781da",
+        "name": "HOPR",
+        "symbol": "HOPR",
+        "market_cap": 19018005.82155352
+    },
+    {
+        "address": "0x8b39b70e39aa811b69365398e0aace9bee238aeb",
+        "name": "Red Kite",
+        "symbol": "PKF",
+        "market_cap": 18949949.27286616
+    },
+    {
+        "address": "0xDb0f18081b505A7DE20B18ac41856BCB4Ba86A1a",
+        "name": "Wing Finance",
+        "symbol": "WING",
+        "market_cap": 18929237.111066706
+    },
+    {
+        "address": "0x3593d125a4f7849a1b059e64f4517a86dd60c95d",
+        "name": "MANTRA",
+        "symbol": "OM",
+        "market_cap": 18784743.839671694
+    },
+    {
+        "address": "0x9506d37f70eB4C3d79C398d326C871aBBf10521d",
+        "name": "MILC Platform",
+        "symbol": "MLT",
+        "market_cap": 18748091.41778813
+    },
+    {
+        "address": "0xa0246c9032bC3A600820415aE600c6388619A14D",
+        "name": "Harvest Finance",
+        "symbol": "FARM",
+        "market_cap": 18690907.758276694
+    },
+    {
+        "address": "0x111111517e4929d3dcbdfa7cce55d30d4b6bc4d6",
+        "name": "ICHI",
+        "symbol": "ICHI",
+        "market_cap": 18560109.103549276
+    },
+    {
+        "address": "0x8400d94a5cb0fa0d041a3788e395285d61c9ee5e",
+        "name": "Unibright",
+        "symbol": "UBT",
+        "market_cap": 18482593.254514277
+    },
+    {
+        "address": "0xdddddd4301a082e62e84e43f474f044423921918",
+        "name": "rhino.fi",
+        "symbol": "DVF",
+        "market_cap": 18467374.383296162
+    },
+    {
+        "address": "0xefab7248d36585e2340e5d25f8a8d243e6e3193f",
+        "name": "Dacxi",
+        "symbol": "DACXI",
+        "market_cap": 18091268.48536025
+    },
+    {
+        "address": "0xf920e4f3fbef5b3ad0a25017514b769bdc4ac135",
+        "name": "BABB",
+        "symbol": "BAX",
+        "market_cap": 18041828.33552862
+    },
+    {
+        "address": "0x93ed3fbe21207ec2e8f2d3c3de6e058cb73bc04d",
+        "name": "Kleros",
+        "symbol": "PNK",
+        "market_cap": 18031874.145652596
+    },
+    {
+        "address": "0x75858677e27C930FB622759FeafFeE2b754Af07F",
+        "name": "Phantasma",
+        "symbol": "SOUL",
+        "market_cap": 17953894.791572064
+    },
+    {
+        "address": "0x6aB4A7d75B0A42B6Bc83E852daB9E121F9C610Aa",
+        "name": "Elitium",
+        "symbol": "EUM",
+        "market_cap": 17856662.351319086
+    },
+    {
+        "address": "0x4B19C70Da4c6fA4bAa0660825e889d2F7eaBc279",
+        "name": "Gamium",
+        "symbol": "GMM",
+        "market_cap": 17850023.74479411
+    },
+    {
+        "address": "0x471ea49dd8e60e697f4cac262b5fafcc307506e4",
+        "name": "RMRK",
+        "symbol": "RMRK",
+        "market_cap": 17783805.951588757
+    },
+    {
+        "address": "0x27054b13b1b798b345b591a4d22e6562d47ea75a",
+        "name": "AirSwap",
+        "symbol": "AST",
+        "market_cap": 17520575.547272477
+    },
+    {
+        "address": "0x7B4328c127B85369D9f82ca0503B000D09CF9180",
+        "name": "Dogechain",
+        "symbol": "DC",
+        "market_cap": 17454038.414730813
+    },
+    {
+        "address": "0x94a7f270cd12545a277e656266aef5e27df3eb28",
+        "name": "StreamCoin",
+        "symbol": "STRM",
+        "market_cap": 17359408.310875352
+    },
+    {
+        "address": "0x7D29A64504629172a429e64183D6673b9dAcbFCe",
+        "name": "Vectorspace AI",
+        "symbol": "VXV",
+        "market_cap": 17274764.520873614
+    },
+    {
+        "address": "0x362bc847A3a9637d3af6624EeC853618a43ed7D2",
+        "name": "PARSIQ",
+        "symbol": "PRQ",
+        "market_cap": 17163634.483947255
+    },
+    {
+        "address": "0x12b6893cE26Ea6341919FE289212ef77e51688c8",
+        "name": "Tamadoge",
+        "symbol": "TAMA",
+        "market_cap": 17036793.517788425
+    },
+    {
+        "address": "0xf0f9d895aca5c8678f706fb8216fa22957685a13",
+        "name": "Cult DAO",
+        "symbol": "CULT",
+        "market_cap": 16821606.363882896
+    },
+    {
+        "address": "0xd8912c10681d8b21fd3742244f44658dba12264e",
+        "name": "Pluton",
+        "symbol": "PLU",
+        "market_cap": 16814876.411651924
+    },
+    {
+        "address": "0x3ab6ed69ef663bd986ee59205ccad8a20f98b4c2",
+        "name": "Drep [new]",
+        "symbol": "DREP",
+        "market_cap": 16808292.8559074
+    },
+    {
+        "address": "0x0abdace70d3790235af448c88547603b945604ea",
+        "name": "district0x",
+        "symbol": "DNT",
+        "market_cap": 16456157.873862758
+    },
+    {
+        "address": "0x4b520c812e8430659fc9f12f6d0c39026c83588d",
+        "name": "Decentral Games",
+        "symbol": "DG",
+        "market_cap": 16376646.386242986
+    },
+    {
+        "address": "0x05Fb86775Fd5c16290f1E838F5caaa7342bD9a63",
+        "name": "Hacken Token",
+        "symbol": "HAI",
+        "market_cap": 16250598.276113104
+    },
+    {
+        "address": "0x3d658390460295fb963f54dc0899cfb1c30776df",
+        "name": "Circuits of Value",
+        "symbol": "COVAL",
+        "market_cap": 16226225.446662232
+    },
+    {
+        "address": "0x1a3496c18d558bd9c6c8f609e1b129f67ab08163",
+        "name": "DEAPcoin",
+        "symbol": "DEP",
+        "market_cap": 16024672.766721612
+    },
+    {
+        "address": "0xba6b0dbb2ba8daa8f5d6817946393aef8d3a4487",
+        "name": "Hillstone Finance",
+        "symbol": "HSF",
+        "market_cap": 15994373.892323641
+    },
+    {
+        "address": "0x8ab7404063ec4dbcfd4598215992dc3f8ec853d7",
+        "name": "Akropolis",
+        "symbol": "AKRO",
+        "market_cap": 15824918.846781721
+    },
+    {
+        "address": "0x970b9bb2c0444f5e81e9d0efb84c8ccdcdcaf84d",
+        "name": "Fuse",
+        "symbol": "FUSE",
+        "market_cap": 15775499.001333602
+    },
+    {
+        "address": "0xd076c4ba62c57b3fa10800bcfd8da66742110e0e",
+        "name": "HAVAH",
+        "symbol": "HVH",
+        "market_cap": 15647871.087642055
+    },
+    {
+        "address": "0xf8C3527CC04340b208C854E985240c02F7B7793f",
+        "name": "Frontier",
+        "symbol": "FRONT",
+        "market_cap": 15601973.500278069
+    },
+    {
+        "address": "0x9fa69536d1cda4a04cfb50688294de75b505a9ae",
+        "name": "DeRace",
+        "symbol": "DERC",
+        "market_cap": 15564737.47813484
+    },
+    {
+        "address": "0xe50365f5d679cb98a1dd62d6f6e58e59321bcddf",
+        "name": "LATOKEN",
+        "symbol": "LA",
+        "market_cap": 15529410.486270115
+    },
+    {
+        "address": "0x15b543e986b8c34074dfc9901136d9355a537e7e",
+        "name": "Student Coin",
+        "symbol": "STC",
+        "market_cap": 15331963.158541145
+    },
+    {
+        "address": "0xD13cfD3133239a3c73a9E535A5c4DadEE36b395c",
+        "name": "VAIOT",
+        "symbol": "VAI",
+        "market_cap": 15143992.599129634
+    },
+    {
+        "address": "0x446c9033e7516d820cc9a2ce2d0b7328b579406f",
+        "name": "SOLVE",
+        "symbol": "SOLVE",
+        "market_cap": 15029228.082831575
+    },
+    {
+        "address": "0xC4f6E93AEDdc11dc22268488465bAbcAF09399aC",
+        "name": "HI",
+        "symbol": "HI",
+        "market_cap": 14829532.82484779
+    },
+    {
+        "address": "0xef1344bdf80bef3ff4428d8becec3eea4a2cf574",
+        "name": "Era Swap",
+        "symbol": "ES",
+        "market_cap": 14808765.651965441
+    },
+    {
+        "address": "0x1fcdce58959f536621d76f5b7ffb955baa5a672f",
+        "name": "ForTube",
+        "symbol": "FOR",
+        "market_cap": 14805482.332447058
+    },
+    {
+        "address": "0xbc4171f45EF0EF66E76F979dF021a34B46DCc81d",
+        "name": "Dora Factory",
+        "symbol": "DORA",
+        "market_cap": 14799664.769648144
+    },
+    {
+        "address": "0x562e362876c8aee4744fc2c6aac8394c312d215d",
+        "name": "Optimus AI",
+        "symbol": "OPTI",
+        "market_cap": 14768575.565074984
+    },
+    {
+        "address": "0xdf801468a808a32656d2ed2d2d80b72a129739f4",
+        "name": "Somnium Space Cubes",
+        "symbol": "CUBE",
+        "market_cap": 14766223.02158943
+    },
+    {
+        "address": "0x3c917054e03485808137eb306eafa8da0ab695cd",
+        "name": "Orbcity",
+        "symbol": "ORB",
+        "market_cap": 14732157.833393387
+    },
+    {
+        "address": "0x9e46a38f5daabe8683e10793b06749eef7d733d1",
+        "name": "PolySwarm",
+        "symbol": "NCT",
+        "market_cap": 14641789.63444344
+    },
+    {
+        "address": "0x7dA2641000Cbb407C329310C461b2cB9c70C3046",
+        "name": "Delysium",
+        "symbol": "AGI",
+        "market_cap": 14525336.470793113
+    },
+    {
+        "address": "0x0De05F6447ab4D22c8827449EE4bA2D5C288379B",
+        "name": "Ooki Protocol",
+        "symbol": "OOKI",
+        "market_cap": 14381995.512287432
+    },
+    {
+        "address": "0x65ccd72c0813ce6f2703593b633202a0f3ca6a0c",
+        "name": "Nestree",
+        "symbol": "EGG",
+        "market_cap": 14261439.552222181
+    },
+    {
+        "address": "0x968f6f898a6df937fc1859b323ac2f14643e3fed",
+        "name": "Newscrypto",
+        "symbol": "NWC",
+        "market_cap": 13621169.19122548
+    },
+    {
+        "address": "0xb7cb1c96db6b22b0d3d9536e0108d062bd488f74",
+        "name": "Waltonchain",
+        "symbol": "WTC",
+        "market_cap": 13593793.483586876
+    },
+    {
+        "address": "0xdab396ccf3d84cf2d07c4454e10c8a6f5b008d2b",
+        "name": "Goldfinch",
+        "symbol": "GFI",
+        "market_cap": 13372303.668548834
+    },
+    {
+        "address": "0x2e95cea14dd384429eb3c4331b776c4cfbb6fcd9",
+        "name": "Throne",
+        "symbol": "THN",
+        "market_cap": 13358616.812281799
+    },
+    {
+        "address": "0xc8c424b91d8ce0137bab4b832b7f7d154156ba6c",
+        "name": "apM Coin",
+        "symbol": "APM",
+        "market_cap": 12938396.505199213
+    },
+    {
+        "address": "0xB4A3B0Faf0Ab53df58001804DdA5Bfc6a3D59008",
+        "name": "Sperax",
+        "symbol": "SPA",
+        "market_cap": 12643451.773820708
+    },
+    {
+        "address": "0x2c974b2d0ba1716e644c1fc59982a89ddd2ff724",
+        "name": "Viberate",
+        "symbol": "VIB",
+        "market_cap": 12566692.925757974
+    },
+    {
+        "address": "0xa1d6df714f91debf4e0802a542e13067f31b8262",
+        "name": "RFOX",
+        "symbol": "RFOX",
+        "market_cap": 12555959.054854823
+    },
+    {
+        "address": "0xbdab72602e9ad40fc6a6852caf43258113b8f7a5",
+        "name": "Sovryn",
+        "symbol": "SOV",
+        "market_cap": 12549755.310054446
+    },
+    {
+        "address": "0x618e75ac90b12c6049ba3b27f5d5f8651b0037f6",
+        "name": "QASH",
+        "symbol": "QASH",
+        "market_cap": 12484125.526194101
+    },
+    {
+        "address": "0xFa14Fa6958401314851A17d6C5360cA29f74B57B",
+        "name": "Saito",
+        "symbol": "SAITO",
+        "market_cap": 12439170.836965602
+    },
+    {
+        "address": "0x03be5c903c727ee2c8c4e9bc0acc860cca4715e2",
+        "name": "Ternoa",
+        "symbol": "CAPS",
+        "market_cap": 12293187.79645634
+    },
+    {
+        "address": "0x986EE2B944c42D017F52Af21c4c69B84DBeA35d8",
+        "name": "BitMart Token",
+        "symbol": "BMX",
+        "market_cap": 12207933.721584665
+    },
+    {
+        "address": "0x8e6cd950ad6ba651f6dd608dc70e5886b1aa6b24",
+        "name": "Starlink",
+        "symbol": "STARL",
+        "market_cap": 12089979.415128004
+    },
+    {
+        "address": "0x1410434b0346f5be678d0fb554e5c7ab620f8f4a",
+        "name": "BitKan",
+        "symbol": "KAN",
+        "market_cap": 12069941.063122492
+    },
+    {
+        "address": "0x34950ff2b487d9e5282c5ab342d08a2f712eb79f",
+        "name": "Efforce",
+        "symbol": "WOZX",
+        "market_cap": 12046089.124692507
+    },
+    {
+        "address": "0xdf574c24545e5ffecb9a659c229253d4111d87e1",
+        "name": "HUSD",
+        "symbol": "HUSD",
+        "market_cap": 12043102.351595074
+    },
+    {
+        "address": "0x2565ae0385659badcada1031db704442e1b69982",
+        "name": "Assemble Protocol",
+        "symbol": "ASM",
+        "market_cap": 11858561.44716312
+    },
+    {
+        "address": "0xaDB2437e6F65682B85F814fBc12FeC0508A7B1D0",
+        "name": "UniCrypt",
+        "symbol": "UNCX",
+        "market_cap": 11830060.896588892
+    },
+    {
+        "address": "0x8642A849D0dcb7a15a974794668ADcfbe4794B56",
+        "name": "Prosper",
+        "symbol": "PROS",
+        "market_cap": 11718296.899756877
+    },
+    {
+        "address": "0x08d967bb0134f2d07f7cfb6e246680c53927dd30",
+        "name": "MATH",
+        "symbol": "MATH",
+        "market_cap": 11683915.599516185
+    },
+    {
+        "address": "0xeca82185adce47f39c684352b0439f030f860318",
+        "name": "PERL.eco",
+        "symbol": "PERL",
+        "market_cap": 11634195.234417854
+    },
+    {
+        "address": "0x66761fa41377003622aee3c7675fc7b5c1c2fac5",
+        "name": "Clearpool",
+        "symbol": "CPOOL",
+        "market_cap": 11504214.250641737
+    },
+    {
+        "address": "0x89ab32156e46f46d02ade3fecbe5fc4243b9aaed",
+        "name": "pNetwork",
+        "symbol": "PNT",
+        "market_cap": 11496089.07889229
+    },
+    {
+        "address": "0x756bFb452cFE36A5Bc82e4F5f4261A89a18c242b",
+        "name": "Marinade Staked SOL",
+        "symbol": "MSOL",
+        "market_cap": 11450683.042331148
+    },
+    {
+        "address": "0xf418588522d5dd018b425E472991E52EBBeEEEEE",
+        "name": "Push Protocol",
+        "symbol": "PUSH",
+        "market_cap": 11423535.282255225
+    },
+    {
+        "address": "0xaE0585a259A3BCAB258D6EE02FB583f7B33C2a12",
+        "name": "TemDAO",
+        "symbol": "TEM",
+        "market_cap": 11419160.686493475
+    },
+    {
+        "address": "0x5b322514ff727253292637d9054301600c2c81e8",
+        "name": "DAD",
+        "symbol": "DAD",
+        "market_cap": 11260507.418074148
+    },
+    {
+        "address": "0xf3ae5d769e153ef72b4e3591ac004e89f48107a1",
+        "name": "Deeper Network",
+        "symbol": "DPR",
+        "market_cap": 11195617.270075101
+    },
+    {
+        "address": "0x55af5865807b196bd0197e0902746f31fbccfa58",
+        "name": "SpookySwap",
+        "symbol": "BOO",
+        "market_cap": 11147543.993436566
+    },
+    {
+        "address": "0x38e4adb44ef08f22f5b5b76a8f0c2d0dcbe7dca1",
+        "name": "PowerPool",
+        "symbol": "CVP",
+        "market_cap": 11128027.636186643
+    },
+    {
+        "address": "0x0202Be363B8a4820f3F4DE7FaF5224fF05943AB1",
+        "name": "UniLend",
+        "symbol": "UFT",
+        "market_cap": 11004777.911426
+    },
+    {
+        "address": "0xb98d4c97425d9908e66e53a6fdf673acca0be986",
+        "name": "Arcblock",
+        "symbol": "ABT",
+        "market_cap": 10971119.61424765
+    },
+    {
+        "address": "0x0763fdCCF1aE541A5961815C0872A8c5Bc6DE4d7",
+        "name": "Suku",
+        "symbol": "SUKU",
+        "market_cap": 10732833.946598904
+    },
+    {
+        "address": "0x8a854288a5976036a725879164ca3e91d30c6a1b",
+        "name": "GET Protocol",
+        "symbol": "GET",
+        "market_cap": 10693834.773545953
+    },
+    {
+        "address": "0x5d285f735998f36631f678ff41fb56a10a4d0429",
+        "name": "MixMarvel",
+        "symbol": "MIX",
+        "market_cap": 10648831.662045466
+    },
+    {
+        "address": "0xb8366948b4a3f07bcbf14eb1739daa42a26b07c4",
+        "name": "Valobit",
+        "symbol": "VBIT",
+        "market_cap": 10628650.087269047
+    },
+    {
+        "address": "0xF59ae934f6fe444afC309586cC60a84a0F89Aaea",
+        "name": "Polkadex",
+        "symbol": "PDEX",
+        "market_cap": 10625730.14264307
+    },
+    {
+        "address": "0x51cb253744189f11241becb29bedd3f1b5384fdb",
+        "name": "Dimitra",
+        "symbol": "DMTR",
+        "market_cap": 10479086.615756162
+    },
+    {
+        "address": "0xb4371da53140417cbb3362055374b10d97e420bb",
+        "name": "Carbon Protocol",
+        "symbol": "SWTH",
+        "market_cap": 10436017.399531128
+    },
+    {
+        "address": "0x08c32b0726C5684024ea6e141C50aDe9690bBdcc",
+        "name": "Stratos",
+        "symbol": "STOS",
+        "market_cap": 10422262.898561876
+    },
+    {
+        "address": "0x0f7b3f5a8fed821c5eb60049538a548db2d479ce",
+        "name": "ATOR Protocol",
+        "symbol": "ATOR",
+        "market_cap": 10421651.379447563
+    },
+    {
+        "address": "0x7d5121505149065b562c789a0145ed750e6e8cdd",
+        "name": "Victoria VR",
+        "symbol": "VR",
+        "market_cap": 10112976.452167662
+    },
+    {
+        "address": "0x3496b523e5c00a4b4150d6721320cddb234c3079",
+        "name": "Numbers Protocol",
+        "symbol": "NUM",
+        "market_cap": 10099356.99336975
+    },
+    {
+        "address": "0x3affcca64c2a6f4e3b6bd9c64cd2c969efd1ecbe",
+        "name": "DSLA Protocol",
+        "symbol": "DSLA",
+        "market_cap": 10034542.475535931
+    },
+    {
+        "address": "0x464eBE77c293E473B48cFe96dDCf88fcF7bFDAC0",
+        "name": "Kryll",
+        "symbol": "KRL",
+        "market_cap": 9964472.936644673
+    },
+    {
+        "address": "0x3301ee63fb29f863f2333bd4466acb46cd8323e6",
+        "name": "Akita Inu",
+        "symbol": "AKITA",
+        "market_cap": 9810973.292412182
+    },
+    {
+        "address": "0xcf3c8be2e2c42331da80ef210e9b1b307c03d36a",
+        "name": "BEPRO Network",
+        "symbol": "BEPRO",
+        "market_cap": 9674823.2872866
+    },
+    {
+        "address": "0xc770eefad204b5180df6a14ee197d99d808ee52d",
+        "name": "Shapeshift FOX Token",
+        "symbol": "FOX",
+        "market_cap": 9654192.961617727
+    },
+    {
+        "address": "0x87d73E916D7057945c9BcD8cdd94e42A6F47f776",
+        "name": "NFTX",
+        "symbol": "NFTX",
+        "market_cap": 9633815.491650471
+    },
+    {
+        "address": "0x30D20208d987713f46DFD34EF128Bb16C404D10f",
+        "name": "Stader",
+        "symbol": "SD",
+        "market_cap": 9563358.80024884
+    },
+    {
+        "address": "0x7778360f035c589fce2f4ea5786cbd8b36e5396b",
+        "name": "OpenOcean",
+        "symbol": "OOE",
+        "market_cap": 9528635.089864248
+    },
+    {
+        "address": "0xe4815ae53b124e7263f08dcdbbb757d41ed658c6",
+        "name": "ZKSpace",
+        "symbol": "ZKS",
+        "market_cap": 9383359.5155708
+    },
+    {
+        "address": "0x99ea4db9ee77acd40b119bd1dc4e33e1c070b80d",
+        "name": "Quantstamp",
+        "symbol": "QSP",
+        "market_cap": 9352512.98185069
+    },
+    {
+        "address": "0xb9d99c33ea2d86ec5ec6b8a4dd816ebba64404af",
+        "name": "K21",
+        "symbol": "K21",
+        "market_cap": 9278930.93697875
+    },
+    {
+        "address": "0xa00a4d5786a6e955e9539d01d78bf68f3271c050",
+        "name": "Quiztok",
+        "symbol": "QTCON",
+        "market_cap": 9267560.02637707
+    },
+    {
+        "address": "0x95e40e065afb3059dcabe4aaf404c1f92756603a",
+        "name": "King DAG",
+        "symbol": "KDAG",
+        "market_cap": 9023068.76769177
+    },
+    {
+        "address": "0x738865301a9b7dd80dc3666dd48cf034ec42bdda",
+        "name": "Agoras: Currency of Tau",
+        "symbol": "AGRS",
+        "market_cap": 9015334.068105638
+    },
+    {
+        "address": "0xA735A3AF76CC30791C61c10d585833829d36CBe0",
+        "name": "Image Generation AI",
+        "symbol": "IMGNAI",
+        "market_cap": 8895524.629812488
+    },
+    {
+        "address": "0xeb4c2781e4eba804ce9a9803c67d0893436bb27d",
+        "name": "renBTC",
+        "symbol": "RENBTC",
+        "market_cap": 8869138.960232088
+    },
+    {
+        "address": "0x340d2bde5eb28c1eed91b2f790723e3b160613b7",
+        "name": "BLOCKv",
+        "symbol": "VEE",
+        "market_cap": 8793426.349880077
+    },
+    {
+        "address": "0x549020a9Cb845220D66d3E9c6D9F9eF61C981102",
+        "name": "SIDUS",
+        "symbol": "SIDUS",
+        "market_cap": 8708246.154627798
+    },
+    {
+        "address": "0xc6dddb5bc6e61e0841c54f3e723ae1f3a807260b",
+        "name": "Aurox",
+        "symbol": "URUS",
+        "market_cap": 8524482.91409511
+    },
+    {
+        "address": "0xd291e7a03283640fdc51b121ac401383a46cc623",
+        "name": "Rari Governance Token",
+        "symbol": "RGT",
+        "market_cap": 8510197.310493644
+    },
+    {
+        "address": "0x584bC13c7D411c00c01A62e8019472dE68768430",
+        "name": "Hegic",
+        "symbol": "HEGIC",
+        "market_cap": 8501049.410699708
+    },
+    {
+        "address": "0x37fe0f067fa808ffbdd12891c0858532cfe7361d",
+        "name": "Civilization",
+        "symbol": "CIV",
+        "market_cap": 8487363.664428202
+    },
+    {
+        "address": "0xfad45e47083e4607302aa43c65fb3106f1cd7607",
+        "name": "Hoge Finance",
+        "symbol": "HOGE",
+        "market_cap": 8460371.884778589
+    },
+    {
+        "address": "0xAFCdd4f666c84Fed1d8BD825aA762e3714F652c9",
+        "name": "Vita Inu",
+        "symbol": "VINU",
+        "market_cap": 8453395.589479107
+    },
+    {
+        "address": "0x3a880652f47bfaa771908c07dd8673a787daed3a",
+        "name": "DerivaDAO",
+        "symbol": "DDX",
+        "market_cap": 8398407.45346205
+    },
+    {
+        "address": "0xe0c05ec44775e4ad62cdc2eecdf337aa7a143363",
+        "name": "Mancium",
+        "symbol": "MANC",
+        "market_cap": 8296013.36373519
+    },
+    {
+        "address": "0xC17c30e98541188614dF99239cABD40280810cA3",
+        "name": "EverRise",
+        "symbol": "RISE",
+        "market_cap": 8291678.762128602
+    },
+    {
+        "address": "0x678e840c640f619e17848045d23072844224dd37",
+        "name": "Cratos",
+        "symbol": "CRTS",
+        "market_cap": 8266613.387702381
+    },
+    {
+        "address": "0x998FFE1E43fAcffb941dc337dD0468d52bA5b48A",
+        "name": "Rupiah Token",
+        "symbol": "IDRT",
+        "market_cap": 8192923.940956223
+    },
+    {
+        "address": "0x2e85ae1C47602f7927bCabc2Ff99C40aA222aE15",
+        "name": "Katana Inu",
+        "symbol": "KATA",
+        "market_cap": 8182656.6122500505
+    },
+    {
+        "address": "0x3b9be07d622accaed78f479bc0edabfd6397e320",
+        "name": "Lossless",
+        "symbol": "LSS",
+        "market_cap": 8177439.005716909
+    },
+    {
+        "address": "0x249cA82617eC3DfB2589c4c17ab7EC9765350a18",
+        "name": "Verse",
+        "symbol": "VERSE",
+        "market_cap": 8174958.087151717
+    },
+    {
+        "address": "0x3Dd98C8A089dBCFF7e8FC8d4f532BD493501Ab7F",
+        "name": "Town Star",
+        "symbol": "TOWN",
+        "market_cap": 8173660.83893619
+    },
+    {
+        "address": "0xC229c69eB3BB51828D0cAA3509A05a51083898dd",
+        "name": "Pintu Token",
+        "symbol": "PTU",
+        "market_cap": 8125458.938122063
+    },
+    {
+        "address": "0xd9c2d319cd7e6177336b0a9c93c21cb48d84fb54",
+        "name": "HAPI Protocol",
+        "symbol": "HAPI",
+        "market_cap": 8073743.030087527
+    },
+    {
+        "address": "0x10633216e7e8281e33c86f02bf8e565a635d9770",
+        "name": "Dvision Network",
+        "symbol": "DVI",
+        "market_cap": 8039250.42407774
+    },
+    {
+        "address": "0xfc979087305a826c2b2a0056cfaba50aad3e6439",
+        "name": "DAFI Protocol",
+        "symbol": "DAFI",
+        "market_cap": 8011871.22686109
+    },
+    {
+        "address": "0xa130e3a33a4d84b04c3918c4e5762223ae252f80",
+        "name": "Swash",
+        "symbol": "SWASH",
+        "market_cap": 7851399.987114783
+    },
+    {
+        "address": "0x72b886d09c117654ab7da13a14d603001de0b777",
+        "name": "XDEFI Wallet",
+        "symbol": "XDEFI",
+        "market_cap": 7815784.7205349095
+    },
+    {
+        "address": "0xE5a3229CCb22b6484594973A03a3851dCd948756",
+        "name": "Receive Access Ecosystem",
+        "symbol": "RAE",
+        "market_cap": 7774121.409375929
+    },
+    {
+        "address": "0x32a7C02e79c4ea1008dD6564b35F131428673c41",
+        "name": "Crust Network",
+        "symbol": "CRU",
+        "market_cap": 7748106.0920187915
+    },
+    {
+        "address": "0xeb953eda0dc65e3246f43dc8fa13f35623bdd5ed",
+        "name": "Rainicorn",
+        "symbol": "RAINI",
+        "market_cap": 7622776.739213126
+    },
+    {
+        "address": "0x03ab458634910aad20ef5f1c8ee96f1d6ac54919",
+        "name": "Rai Reflex Index",
+        "symbol": "RAI",
+        "market_cap": 7541399.409454458
+    },
+    {
+        "address": "0x3b484b82567a09e2588a13d54d032153f0c0aee0",
+        "name": "OpenDAO",
+        "symbol": "SOS",
+        "market_cap": 7503138.762170787
+    },
+    {
+        "address": "0x62959c699a52ec647622c91e79ce73344e4099f5",
+        "name": "DeFine",
+        "symbol": "DFA",
+        "market_cap": 7425898.838383548
+    },
+    {
+        "address": "0x2781246fe707bb15cee3e5ea354e2154a2877b16",
+        "name": "ELYSIA",
+        "symbol": "EL",
+        "market_cap": 7379148.49659072
+    },
+    {
+        "address": "0x396ec402b42066864c406d1ac3bc86b575003ed8",
+        "name": "Buying.com",
+        "symbol": "BUY",
+        "market_cap": 7321013.848697587
+    },
+    {
+        "address": "0xfc0d6cf33e38bce7ca7d89c0e292274031b7157a",
+        "name": "Netvrk",
+        "symbol": "NTVRK",
+        "market_cap": 7224411.240858586
+    },
+    {
+        "address": "0xe3818504c1b32bf1557b16c238b2e01fd3149c17",
+        "name": "Pillar",
+        "symbol": "PLR",
+        "market_cap": 7207453.129219976
+    },
+    {
+        "address": "0x14da230d6726C50F759Bc1838717F8CE6373509C",
+        "name": "Kambria",
+        "symbol": "KAT",
+        "market_cap": 7165855.264011109
+    },
+    {
+        "address": "0xeeaa40b28a2d1b0b08f6f97bb1dd4b75316c6107",
+        "name": "Govi",
+        "symbol": "GOVI",
+        "market_cap": 7106987.7630523965
+    },
+    {
+        "address": "0x9695e0114e12c0d3a3636fab5a18e6b737529023",
+        "name": "Dfyn Network",
+        "symbol": "DFYN",
+        "market_cap": 7059591.949122079
+    },
+    {
+        "address": "0xdc8af07a7861bedd104b8093ae3e9376fc8596d2",
+        "name": "RocketX exchange",
+        "symbol": "RVF",
+        "market_cap": 7031719.545568652
+    },
+    {
+        "address": "0xac3211a5025414af2866ff09c23fc18bc97e79b1",
+        "name": "Dovu",
+        "symbol": "DOV",
+        "market_cap": 6997665.808834475
+    },
+    {
+        "address": "0x581911b360B6eB3a14eF295a83a91DC2bCE2D6f7",
+        "name": "MileVerse",
+        "symbol": "MVC",
+        "market_cap": 6973182.478509477
+    },
+    {
+        "address": "0x44108f0223A3C3028F5Fe7AEC7f9bb2E66beF82F",
+        "name": "Across Protocol",
+        "symbol": "ACX",
+        "market_cap": 6880509.466992066
+    },
+    {
+        "address": "0x08389495D7456E1951ddF7c3a1314A4bfb646d8B",
+        "name": "Crypterium",
+        "symbol": "CRPT",
+        "market_cap": 6870996.741094043
+    },
+    {
+        "address": "0x9c354503c38481a7a7a51629142963f98ecc12d0",
+        "name": "Origin Dollar Governance",
+        "symbol": "OGV",
+        "market_cap": 6849983.219578505
+    },
+    {
+        "address": "0xf2ddae89449b7d26309a5d54614b1fc99c608af5",
+        "name": "ASTA",
+        "symbol": "ASTA",
+        "market_cap": 6810216.977535836
+    },
+    {
+        "address": "0x7c84e62859d0715eb77d1b1c4154ecd6abb21bec",
+        "name": "SHPING",
+        "symbol": "SHPING",
+        "market_cap": 6809247.97838345
+    },
+    {
+        "address": "0x038a68ff68c393373ec894015816e33ad41bd564",
+        "name": "Glitch",
+        "symbol": "GLCH",
+        "market_cap": 6772950.880707616
+    },
+    {
+        "address": "0x06f3c323f0238c72bf35011071f2b5b7f43a054c",
+        "name": "MASQ",
+        "symbol": "MASQ",
+        "market_cap": 6731683.434784623
+    },
+    {
+        "address": "0x77777feddddffc19ff86db637967013e6c6a116c",
+        "name": "Tornado Cash",
+        "symbol": "TORN",
+        "market_cap": 6691897.052699194
+    },
+    {
+        "address": "0xb9ef770b6a5e12e45983c5d80545258aa38f3b78",
+        "name": "Zus",
+        "symbol": "ZCN",
+        "market_cap": 6584724.486346804
+    },
+    {
+        "address": "0xa0ef786bf476fe0810408caba05e536ac800ff86",
+        "name": "Myria",
+        "symbol": "MYRIA",
+        "market_cap": 6489156.733008378
+    },
+    {
+        "address": "0xBBa39Fd2935d5769116ce38d46a71bde9cf03099",
+        "name": "Choise.com",
+        "symbol": "CHO",
+        "market_cap": 6482815.570257922
+    },
+    {
+        "address": "0x817bbDbC3e8A1204f3691d14bB44992841e3dB35",
+        "name": "CUDOS",
+        "symbol": "CUDOS",
+        "market_cap": 6452602.306748165
+    },
+    {
+        "address": "0x2da719db753dfa10a62e140f436e1d67f2ddb0d6",
+        "name": "Cere Network",
+        "symbol": "CERE",
+        "market_cap": 6450350.19838834
+    },
+    {
+        "address": "0xbdbC2a5B32F3a5141ACd18C39883066E4daB9774",
+        "name": "Emirex Token",
+        "symbol": "EMRX",
+        "market_cap": 6407039.828689072
+    },
+    {
+        "address": "0x0d88ed6e74bbfd96b831231638b66c05571e824f",
+        "name": "Aventus",
+        "symbol": "AVT",
+        "market_cap": 6338538.19939604
+    },
+    {
+        "address": "0xca1207647ff814039530d7d35df0e1dd2e91fa84",
+        "name": "dHedge DAO",
+        "symbol": "DHT",
+        "market_cap": 6240167.225100238
+    },
+    {
+        "address": "0x6BEB418Fc6E1958204aC8baddCf109B8E9694966",
+        "name": "Linker Coin",
+        "symbol": "LNC",
+        "market_cap": 6238816.232681584
+    },
+    {
+        "address": "0xc9c4fd7579133701fa2769b6955e7e56bb386db1",
+        "name": "Bridge Oracle",
+        "symbol": "BRG",
+        "market_cap": 6227730.247844242
+    },
+    {
+        "address": "0x746dda2ea243400d5a63e0700f190ab79f06489e",
+        "name": "BOSagora",
+        "symbol": "BOA",
+        "market_cap": 6222667.921968387
+    },
+    {
+        "address": "0xc28e931814725bbeb9e670676fabbcb694fe7df2",
+        "name": "QuadrantProtocol",
+        "symbol": "EQUAD",
+        "market_cap": 6208576.7246835
+    },
+    {
+        "address": "0x1864ce27e9f7517047933caae530674e8c70b8a7",
+        "name": "PIBBLE",
+        "symbol": "PIB",
+        "market_cap": 6188355.945868573
+    },
+    {
+        "address": "0x26c8afbbfe1ebaca03c2bb082e69d0476bffe099",
+        "name": "Cellframe",
+        "symbol": "CELL",
+        "market_cap": 6176651.247296836
+    },
+    {
+        "address": "0xde16ce60804a881e9f8c4ebb3824646edecd478d",
+        "name": "MagicCraft",
+        "symbol": "MCRT",
+        "market_cap": 6172419.427395167
+    },
+    {
+        "address": "0xb7e77aebbe0687d2eff24cc90c41a3b6ea74bdab",
+        "name": "Project WITH",
+        "symbol": "WIKEN",
+        "market_cap": 6116378.397245165
+    },
+    {
+        "address": "0x04c17b9d3b29a78f7bd062a57cf44fc633e71f85",
+        "name": "IMPT",
+        "symbol": "IMPT",
+        "market_cap": 6089040.43910215
+    },
+    {
+        "address": "0x40FD72257597aA14C7231A7B1aaa29Fce868F677",
+        "name": "SORA",
+        "symbol": "XOR",
+        "market_cap": 6003589.757094113
+    },
+    {
+        "address": "0x1E2F15302B90EddE696593607b6bD444B64e8F02",
+        "name": "Shiryo",
+        "symbol": "SHIRYO",
+        "market_cap": 5983348.396543858
+    },
+    {
+        "address": "0x321c2fe4446c7c963dc41dd58879af648838f98d",
+        "name": "Cryptex Finance",
+        "symbol": "CTX",
+        "market_cap": 5933823.86630791
+    },
+    {
+        "address": "0x9355372396e3F6daF13359B7b607a3374cc638e0",
+        "name": "WHALE",
+        "symbol": "WHALE",
+        "market_cap": 5848141.86325346
+    },
+    {
+        "address": "0x21bfbda47a0b4b5b1248c767ee49f7caa9b23697",
+        "name": "OVR",
+        "symbol": "OVR",
+        "market_cap": 5827662.290867097
+    },
+    {
+        "address": "0xee573a945b01b788b9287ce062a0cfc15be9fd86",
+        "name": "Exeedme",
+        "symbol": "XED",
+        "market_cap": 5792839.111630938
+    },
+    {
+        "address": "0xc314b0e758d5ff74f63e307a86ebfe183c95767b",
+        "name": "Adappter Token",
+        "symbol": "ADP",
+        "market_cap": 5695374.163881064
+    },
+    {
+        "address": "0x2ab6bb8408ca3199b8fa6c92d5b455f820af03c4",
+        "name": "TE-FOOD",
+        "symbol": "TONE",
+        "market_cap": 5692178.270239015
+    },
+    {
+        "address": "0x973e52691176d36453868D9d86572788d27041A9",
+        "name": "DxChain Token",
+        "symbol": "DX",
+        "market_cap": 5653747.587844515
+    },
+    {
+        "address": "0x4c6ec08cf3fc987c6c4beb03184d335a2dfc4042",
+        "name": "MurAll",
+        "symbol": "PAINT",
+        "market_cap": 5615003.399870467
+    },
+    {
+        "address": "0x9469d013805bffb7d3debe5e7839237e535ec483",
+        "name": "Darwinia Network",
+        "symbol": "RING",
+        "market_cap": 5411029.588806423
+    },
+    {
+        "address": "0x905E337c6c8645263D3521205Aa37bf4d034e745",
+        "name": "DOC.COM",
+        "symbol": "MTC",
+        "market_cap": 5407446.645772614
+    },
+    {
+        "address": "0xb1f871Ae9462F1b2C6826E88A7827e76f86751d4",
+        "name": "GNY",
+        "symbol": "GNY",
+        "market_cap": 5350878.353156342
+    },
+    {
+        "address": "0x4Cf89ca06ad997bC732Dc876ed2A7F26a9E7f361",
+        "name": "Mysterium",
+        "symbol": "MYST",
+        "market_cap": 5343859.325891279
+    },
+    {
+        "address": "0x2C5BC2Ba3614fD27FCc7022eA71d9172E2632c16",
+        "name": "Shib Original Vision",
+        "symbol": "SOV",
+        "market_cap": 5261921.297858125
+    },
+    {
+        "address": "0xd38BB40815d2B0c2d2c866e0c72c5728ffC76dd9",
+        "name": "Symbiosis",
+        "symbol": "SIS",
+        "market_cap": 5250641.233709564
+    },
+    {
+        "address": "0xe9B076B476D8865cDF79D1Cf7DF420EE397a7f75",
+        "name": "Unification",
+        "symbol": "FUND",
+        "market_cap": 5226072.030900593
+    },
+    {
+        "address": "0x9b9647431632af44be02ddd22477ed94d14aacaa",
+        "name": "KOK",
+        "symbol": "KOK",
+        "market_cap": 5225595.024171102
+    },
+    {
+        "address": "0xc07A150ECAdF2cc352f5586396e344A6b17625EB",
+        "name": "BioPassport Token",
+        "symbol": "BIOT",
+        "market_cap": 5210630.240441125
+    },
+    {
+        "address": "0x6368e1E18c4C419DDFC608A0BEd1ccb87b9250fc",
+        "name": "Tap",
+        "symbol": "XTP",
+        "market_cap": 5113439.971036007
+    },
+    {
+        "address": "0x92DF60c51C710a1b1C20E42D85e221f3A1bFc7f2",
+        "name": "ApeSwap",
+        "symbol": "BANANA",
+        "market_cap": 5103808.226562817
+    },
+    {
+        "address": "0xa393473d64d2F9F026B60b6Df7859A689715d092",
+        "name": "Lattice Token",
+        "symbol": "LTX",
+        "market_cap": 5095064.212267897
+    },
+    {
+        "address": "0xbe9ab37a414c517b2be2bfa5945665bb07379054",
+        "name": "TomTomCoin",
+        "symbol": "TOMS",
+        "market_cap": 5083328.384063352
+    },
+    {
+        "address": "0x5b71bee9d961b1b848f8485eec8d8787f80217f5",
+        "name": "BitForex Token",
+        "symbol": "BF",
+        "market_cap": 5036477.236435814
+    },
+    {
+        "address": "0xc719d010b63e5bbf2c0551872cd5316ed26acd83",
+        "name": "Etherisc DIP Token",
+        "symbol": "DIP",
+        "market_cap": 4931820.696151362
+    },
+    {
+        "address": "0xB1f1F47061A7Be15C69f378CB3f69423bD58F2F8",
+        "name": "Flashstake",
+        "symbol": "FLASH",
+        "market_cap": 4874625.9017048795
+    },
+    {
+        "address": "0xaac41ec512808d64625576eddd580e7ea40ef8b2",
+        "name": "Gameswap",
+        "symbol": "GSWAP",
+        "market_cap": 4872783.63164624
+    },
+    {
+        "address": "0x4a527d8fc13c5203ab24ba0944f4cb14658d1db6",
+        "name": "Morpheus Labs",
+        "symbol": "MITX",
+        "market_cap": 4805622.459663033
+    },
+    {
+        "address": "0x37fc4b48ce93469dbea9918468993c735049642a",
+        "name": "CropBytes",
+        "symbol": "CBX",
+        "market_cap": 4768233.708923046
+    },
+    {
+        "address": "0x86ed939b500e121c0c5f493f399084db596dad20",
+        "name": "SpaceChain",
+        "symbol": "SPC",
+        "market_cap": 4759845.070532896
+    },
+    {
+        "address": "0x837d904a3799c0769079be9ecbaddf1abd4ccd6e",
+        "name": "Tarot",
+        "symbol": "TAROT",
+        "market_cap": 4681388.830942826
+    },
+    {
+        "address": "0xd47bdf574b4f76210ed503e0efe81b58aa061f3d",
+        "name": "TRVL",
+        "symbol": "TRVL",
+        "market_cap": 4609221.150713294
+    },
+    {
+        "address": "0x961C8c0B1aaD0c0b10a51FeF6a867E3091BCef17",
+        "name": "Dypius",
+        "symbol": "DYP",
+        "market_cap": 4503395.375764145
+    },
+    {
+        "address": "0xd9016a907dc0ecfa3ca425ab20b6b785b42f2373",
+        "name": "GAMEE",
+        "symbol": "GMEE",
+        "market_cap": 4433063.229528918
+    },
+    {
+        "address": "0xc691bc298a304d591Ad9b352c7A8D216dE9f2CED",
+        "name": "Polaris Share",
+        "symbol": "POLA",
+        "market_cap": 4347424.181487167
+    },
+    {
+        "address": "0xd31695a1d35e489252ce57b129fd4b1b05e6acac",
+        "name": "TOKPIE",
+        "symbol": "TKP",
+        "market_cap": 4319101.563694377
+    },
+    {
+        "address": "0xdacD69347dE42baBfAEcD09dC88958378780FB62",
+        "name": "Atari Token",
+        "symbol": "ATRI",
+        "market_cap": 4317211.774906516
+    },
+    {
+        "address": "0x1fe24f25b1cf609b9c4e7e12d802e3640dfa5e43",
+        "name": "ChainGuardians",
+        "symbol": "CGG",
+        "market_cap": 4309849.256994812
+    },
+    {
+        "address": "0x09a3EcAFa817268f77BE1283176B946C4ff2E608",
+        "name": "Mirror Protocol",
+        "symbol": "MIR",
+        "market_cap": 4289850.402760742
+    },
+    {
+        "address": "0xd433138d12beB9929FF6fd583DC83663eea6Aaa5",
+        "name": "Bitrue Coin",
+        "symbol": "BTR",
+        "market_cap": 4195756.852972761
+    },
+    {
+        "address": "0xf293d23bf2cdc05411ca0eddd588eb1977e8dcd4",
+        "name": "Sylo",
+        "symbol": "SYLO",
+        "market_cap": 4183946.0046673575
+    },
+    {
+        "address": "0x9dfad1b7102d46b1b197b90095b5c4e9f5845bba",
+        "name": "Botto",
+        "symbol": "BOTTO",
+        "market_cap": 4181774.3192016315
+    },
+    {
+        "address": "0x91dfbee3965baaee32784c2d546b7a0c62f268c9",
+        "name": "Forj(Bondly)",
+        "symbol": "BONDLY",
+        "market_cap": 4159490.7873740313
+    },
+    {
+        "address": "0x5d929AA919E489505CcAAd8A199619c6DCA0c2de",
+        "name": "BaaSid",
+        "symbol": "BAAS",
+        "market_cap": 4147399.897126246
+    },
+    {
+        "address": "0xea1ea0972fa092dd463f2968f9bb51cc4c981d71",
+        "name": "Modefi",
+        "symbol": "MOD",
+        "market_cap": 4094761.6708461735
+    },
+    {
+        "address": "0xc19b6a4ac7c7cc24459f08984bbd09664af17bd1",
+        "name": "SENSO",
+        "symbol": "SENSO",
+        "market_cap": 4037372.834241759
+    },
+    {
+        "address": "0x4da0c48376c277cdbd7fc6fdc6936dee3e4adf75",
+        "name": "EPIK Prime",
+        "symbol": "EPIK",
+        "market_cap": 4033877.03371523
+    },
+    {
+        "address": "0x9d79d5b61de59d882ce90125b18f74af650acb93",
+        "name": "Neutrino Token",
+        "symbol": "NSBT",
+        "market_cap": 3993322.0050563454
+    },
+    {
+        "address": "0x2162f572B25f7358db9376AB58a947a4e45CeDE1",
+        "name": "LABEL Foundation",
+        "symbol": "LBL",
+        "market_cap": 3976882.417027468
+    },
+    {
+        "address": "0x6e5970DBd6fc7eb1f29C6D2eDF2bC4c36124C0C1",
+        "name": "Polytrade",
+        "symbol": "TRADE",
+        "market_cap": 3962336.6576716146
+    },
+    {
+        "address": "0x728f30fa2f100742c7949d1961804fa8e0b1387d",
+        "name": "GamerCoin",
+        "symbol": "GHX",
+        "market_cap": 3928227.779877197
+    },
+    {
+        "address": "0xf3dcbc6D72a4E1892f7917b7C43b74131Df8480e",
+        "name": "Big Data Protocol",
+        "symbol": "BDP",
+        "market_cap": 3912335.5327047976
+    },
+    {
+        "address": "0x7de91b204c1c737bcee6f000aaa6569cf7061cb7",
+        "name": "Robonomics.network",
+        "symbol": "XRT",
+        "market_cap": 3877752.344948114
+    },
+    {
+        "address": "0x954b890704693af242613edef1b603825afcd708",
+        "name": "Cardstack",
+        "symbol": "CARD",
+        "market_cap": 3783343.32915795
+    },
+    {
+        "address": "0x275f5Ad03be0Fa221B4C6649B8AeE09a42D9412A",
+        "name": "Monavale",
+        "symbol": "MONA",
+        "market_cap": 3780219.0483153956
+    },
+    {
+        "address": "0x95aa5d2dbd3c16ee3fdea82d5c6ec3e38ce3314f",
+        "name": "PointPay",
+        "symbol": "PXP",
+        "market_cap": 3727245.05289383
+    },
+    {
+        "address": "0xF4134146AF2d511Dd5EA8cDB1C4AC88C57D60404",
+        "name": "SunContract",
+        "symbol": "SNC",
+        "market_cap": 3716935.3541771583
+    },
+    {
+        "address": "0x3aaDA3e213aBf8529606924d8D1c55CbDc70Bf74",
+        "name": "XMON",
+        "symbol": "XMON",
+        "market_cap": 3706762.5366451866
+    },
+    {
+        "address": "0xfdbc1adc26f0f8f8606a5d63b7d3a3cd21c22b23",
+        "name": "1World",
+        "symbol": "1WO",
+        "market_cap": 3652594.947546928
+    },
+    {
+        "address": "0x298d492e8c1d909d3f63bc4a36c66c64acb3d695",
+        "name": "PolkaBridge",
+        "symbol": "PBR",
+        "market_cap": 3650018.5665147766
+    },
+    {
+        "address": "0xb753428af26e81097e7fd17f40c88aaa3e04902c",
+        "name": "saffron.finance",
+        "symbol": "SFI",
+        "market_cap": 3636182.3298484576
+    },
+    {
+        "address": "0xe973e453977195422b48e1852a207b7ee9c913c7",
+        "name": "ADreward",
+        "symbol": "AD",
+        "market_cap": 3619822.844215684
+    },
+    {
+        "address": "0xfb559ce67ff522ec0b9ba7f5dc9dc7ef6c139803",
+        "name": "ProBit Token",
+        "symbol": "PROB",
+        "market_cap": 3570012.010703308
+    },
+    {
+        "address": "0x7a939bb714fd2a48ebeb1e495aa9aaa74ba9fa68",
+        "name": "Electric Vehicle Zone",
+        "symbol": "EVZ",
+        "market_cap": 3539056.822590336
+    },
+    {
+        "address": "0x9E24415d1e549EBc626a13a482Bb117a2B43e9CF",
+        "name": "Lovely Inu Finance",
+        "symbol": "LOVELY",
+        "market_cap": 3538678.246240266
+    },
+    {
+        "address": "0x0bb217E40F8a5Cb79Adf04E1aAb60E5abd0dfC1e",
+        "name": "SwftCoin",
+        "symbol": "SWFTC",
+        "market_cap": 3524308.9452835475
+    },
+    {
+        "address": "0xa31b1767e09f842ecfd4bc471fe44f830e3891aa",
+        "name": "ROOBEE",
+        "symbol": "ROOBEE",
+        "market_cap": 3505371.783879947
+    },
+    {
+        "address": "0x3d3d35bb9bec23b06ca00fe472b50e7a4c692c30",
+        "name": "Vidya",
+        "symbol": "VIDYA",
+        "market_cap": 3488882.676908714
+    },
+    {
+        "address": "0x9343e24716659A3551eB10Aff9472A2dcAD5Db2d",
+        "name": "STFX",
+        "symbol": "STFX",
+        "market_cap": 3476845.811391296
+    },
+    {
+        "address": "0xaf1250fa68d7decd34fd75de8742bc03b29bd58e",
+        "name": "Invictus Hyperion Fund",
+        "symbol": "IHF",
+        "market_cap": 3465354.393963547
+    },
+    {
+        "address": "0x79C7EF95aD32DcD5ECadB231568Bb03dF7824815",
+        "name": "Ariva",
+        "symbol": "ARV",
+        "market_cap": 3461363.5372793055
+    },
+    {
+        "address": "0xb4272071ecadd69d933adcd19ca99fe80664fc08",
+        "name": "CryptoFranc",
+        "symbol": "XCHF",
+        "market_cap": 3442626.8608825933
+    },
+    {
+        "address": "0xd478161c952357f05f0292b56012cd8457f1cfbf",
+        "name": "Polkamarkets",
+        "symbol": "POLK",
+        "market_cap": 3435862.006538161
+    },
+    {
+        "address": "0xebd9d99a3982d547c5bb4db7e3b1f9f14b67eb83",
+        "name": "Everest",
+        "symbol": "ID",
+        "market_cap": 3433638.7219817657
+    },
+    {
+        "address": "0x3A8cCCB969a61532d1E6005e2CE12C200caeCe87",
+        "name": "TitanSwap",
+        "symbol": "TITAN",
+        "market_cap": 3432667.0847261446
+    },
+    {
+        "address": "0xd5930c307d7395ff807f2921f12c5eb82131a789",
+        "name": "BOLT",
+        "symbol": "BOLT",
+        "market_cap": 3428599.823578776
+    },
+    {
+        "address": "0x01ff50f8b7f74e4f00580d9596cd3d0d6d6e326f",
+        "name": "BnkToTheFuture",
+        "symbol": "BFT",
+        "market_cap": 3408458.800862519
+    },
+    {
+        "address": "0x630d98424efe0ea27fb1b3ab7741907dffeaad78",
+        "name": "PEAKDEFI",
+        "symbol": "PEAK",
+        "market_cap": 3394007.5223007374
+    },
+    {
+        "address": "0x1b40183efb4dd766f11bda7a7c3ad8982e998421",
+        "name": "Vesper",
+        "symbol": "VSP",
+        "market_cap": 3388649.6973140463
+    },
+    {
+        "address": "0x297e4e5e59ad72b1b0a2fd446929e76117be0e0a",
+        "name": "Valor Token",
+        "symbol": "VALOR",
+        "market_cap": 3342012.6479878053
+    },
+    {
+        "address": "0xdd16ec0f66e54d453e6756713e533355989040e4",
+        "name": "Tokenomy",
+        "symbol": "TEN",
+        "market_cap": 3336011.635368
+    },
+    {
+        "address": "0x6bEC0cb45494e7019EE6dFa94439C660b2373944",
+        "name": "AnimalGo",
+        "symbol": "GOM2",
+        "market_cap": 3315203.8990036147
+    },
+    {
+        "address": "0x7865af71cf0b288b4e7f654f4f7851eb46a2b7f8",
+        "name": "Sentivate",
+        "symbol": "SNTVT",
+        "market_cap": 3303361.147787953
+    },
+    {
+        "address": "0x544c42fbb96b39b21df61cf322b5edc285ee7429",
+        "name": "InsurAce",
+        "symbol": "INSUR",
+        "market_cap": 3292443.1528201485
+    },
+    {
+        "address": "0x2c9023bbc572ff8dc1228c7858a280046ea8c9e5",
+        "name": "Vivid Labs",
+        "symbol": "VID",
+        "market_cap": 3291709.7381272484
+    },
+    {
+        "address": "0xE4CFE9eAa8Cdb0942A80B7bC68fD8Ab0F6D44903",
+        "name": "Xend Finance",
+        "symbol": "XEND",
+        "market_cap": 3267864.8155717687
+    },
+    {
+        "address": "0x97872EAfd79940C7b24f7BCc1EADb1457347ADc9",
+        "name": "Strips Finance",
+        "symbol": "STRP",
+        "market_cap": 3261772.060610763
+    },
+    {
+        "address": "0x72955ecff76e48f2c8abcce11d54e5734d6f3657",
+        "name": "TrustVerse",
+        "symbol": "TRV",
+        "market_cap": 3235114.027537098
+    },
+    {
+        "address": "0x41d5d79431a913c4ae7d69a668ecdfe5ff9dfb68",
+        "name": "Inverse Finance",
+        "symbol": "INV",
+        "market_cap": 3189573.936722556
+    },
+    {
+        "address": "0xb6ca7399b4f9ca56fc27cbff44f4d2e4eef1fc81",
+        "name": "Muse",
+        "symbol": "MUSE",
+        "market_cap": 3181888.9388946826
+    },
+    {
+        "address": "0x256D1fCE1b1221e8398f65F9B36033CE50B2D497",
+        "name": "Alvey Chain",
+        "symbol": "WALV",
+        "market_cap": 3174673.0401614294
+    },
+    {
+        "address": "0x0d02755a5700414b26ff040e1de35d337df56218",
+        "name": "BendDAO",
+        "symbol": "BEND",
+        "market_cap": 3173031.2378673325
+    },
+    {
+        "address": "0x493CbBd4A5da462E3dbc3E5c8e2A1E37D1D03CAc",
+        "name": "XCarnival",
+        "symbol": "XCV",
+        "market_cap": 3166407.928223265
+    },
+    {
+        "address": "0x07ef9e82721ac16809d24dafbe1792ce01654db4",
+        "name": "Chimpion",
+        "symbol": "BNANA",
+        "market_cap": 3163881.9603433814
+    },
+    {
+        "address": "0x92CfbEC26C206C90aeE3b7C66A9AE673754FaB7e",
+        "name": "OpenLeverage",
+        "symbol": "OLE",
+        "market_cap": 3137053.63358
+    },
+    {
+        "address": "0x310c93dfc1c5e34cdf51678103f63c41762089cd",
+        "name": "1irstcoin",
+        "symbol": "FST",
+        "market_cap": 3135560.9752015467
+    },
+    {
+        "address": "0xa01199c61841fce3b3dafb83fefc1899715c8756",
+        "name": "Cirus Foundation",
+        "symbol": "CIRUS",
+        "market_cap": 3132383.343051939
+    },
+    {
+        "address": "0x0e8d6b471e332f140e7d9dbb99e5e3822f728da6",
+        "name": "Abyss",
+        "symbol": "ABYSS",
+        "market_cap": 3131059.5578356856
+    },
+    {
+        "address": "0x24ec2ca132abf8f6f8a6e24a1b97943e31f256a7",
+        "name": "Dotmoovs",
+        "symbol": "MOOV",
+        "market_cap": 3120001.106628668
+    },
+    {
+        "address": "0xa487bf43cf3b10dffc97a9a744cbb7036965d3b9",
+        "name": "Deri Protocol",
+        "symbol": "DERI",
+        "market_cap": 3087076.368441289
+    },
+    {
+        "address": "0x3af33bef05c2dcb3c7288b77fe1c8d2aeba4d789",
+        "name": "Kromatika",
+        "symbol": "KROM",
+        "market_cap": 3083660.560495352
+    },
+    {
+        "address": "0xc8807f0f5ba3fa45ffbdc66928d71c5289249014",
+        "name": "Ispolink",
+        "symbol": "ISP",
+        "market_cap": 3079672.3543939902
+    },
+    {
+        "address": "0xcB8fb2438A805664cD8c3e640b85AC473DA5BE87",
+        "name": "ClinTex CTi",
+        "symbol": "CTI",
+        "market_cap": 2980538.9551412016
+    },
+    {
+        "address": "0x73374ea518de7addd4c2b624c0e8b113955ee041",
+        "name": "Juggernaut",
+        "symbol": "JGN",
+        "market_cap": 2971458.5210145926
+    },
+    {
+        "address": "0x67B6D479c7bB412C54e03dCA8E1Bc6740ce6b99C",
+        "name": "Kylin",
+        "symbol": "KYL",
+        "market_cap": 2965780.0717896223
+    },
+    {
+        "address": "0x188e817b02e635d482ae4d81e25dda98a97c4a42",
+        "name": "Lithium",
+        "symbol": "LITH",
+        "market_cap": 2949742.2257172237
+    },
+    {
+        "address": "0xcd1faff6e578fa5cac469d2418c95671ba1a62fe",
+        "name": "Torum",
+        "symbol": "XTM",
+        "market_cap": 2860297.905002136
+    },
+    {
+        "address": "0x6243d8cea23066d098a15582d81a598b4e8391f4",
+        "name": "Reflexer Ungovernance Token",
+        "symbol": "FLX",
+        "market_cap": 2858584.220191294
+    },
+    {
+        "address": "0xd4c435f5b09f855c3317c8524cb1f586e42795fa",
+        "name": "Cindicator",
+        "symbol": "CND",
+        "market_cap": 2848505.976363756
+    },
+    {
+        "address": "0x69d9905b2e5f6f5433212b7f3c954433f23c1572",
+        "name": "Onooks",
+        "symbol": "OOKS",
+        "market_cap": 2817833.65401966
+    },
+    {
+        "address": "0xfd6c31bb6f05fc8db64f4b740ab758605c271fd8",
+        "name": "CONTRACOIN",
+        "symbol": "CTCN",
+        "market_cap": 2794834.9921117513
+    },
+    {
+        "address": "0x4fc15c91a9c4a9efb404174464687e8e128730c2",
+        "name": "STAT",
+        "symbol": "STAT",
+        "market_cap": 2739876.9006365063
+    },
+    {
+        "address": "0x557b933a7c2c45672b610f8954a3deb39a51a8ca",
+        "name": "REVV",
+        "symbol": "REVV",
+        "market_cap": 2726551.197219576
+    },
+    {
+        "address": "0xee7527841a932d2912224e20a405e1a1ff747084",
+        "name": "Stronghold Token",
+        "symbol": "SHX",
+        "market_cap": 2690981.067221792
+    },
+    {
+        "address": "0x4156D3342D5c385a87D264F90653733592000581",
+        "name": "SALT",
+        "symbol": "SALT",
+        "market_cap": 2682181.9080718188
+    },
+    {
+        "address": "0xaAD483F97f13C6A20B9D05d07c397CE85c42C393",
+        "name": "Woonkly Power",
+        "symbol": "WOOP",
+        "market_cap": 2678471.88884693
+    },
+    {
+        "address": "0xfb19075d77a0f111796fb259819830f4780f1429",
+        "name": "Fenerbah\u00e7e Token",
+        "symbol": "FB",
+        "market_cap": 2667328.5461087786
+    },
+    {
+        "address": "0x88303fed02b31db9c7a9eafb711da9ef4a03e5d3",
+        "name": "Ziktalk",
+        "symbol": "ZIK",
+        "market_cap": 2658587.98736737
+    },
+    {
+        "address": "0x16484d73ac08d2355f466d448d2b79d2039f6ebb",
+        "name": "FortKnoxster",
+        "symbol": "FKX",
+        "market_cap": 2615818.40440985
+    },
+    {
+        "address": "0xb8e2e2101ed11e9138803cd3e06e16dd19910647",
+        "name": "ArdCoin",
+        "symbol": "ARDX",
+        "market_cap": 2612633.7440438005
+    },
+    {
+        "address": "0x6b9f031d718dded0d681c20cb754f97b3bb81b78",
+        "name": "Geeq",
+        "symbol": "GEEQ",
+        "market_cap": 2603546.942157452
+    },
+    {
+        "address": "0xCB0D82f4DFA503C9e3b8Abc7A3Caa01175b2dA39",
+        "name": "AurusX",
+        "symbol": "AX",
+        "market_cap": 2602057.371277655
+    },
+    {
+        "address": "0x56a86d648c435dc707c8405b78e2ae8eb4e60ba4",
+        "name": "StackOs",
+        "symbol": "STACK",
+        "market_cap": 2579477.9357029516
+    },
+    {
+        "address": "0xb17548c7b510427baac4e267bea62e800b247173",
+        "name": "Swarm Markets",
+        "symbol": "SMT",
+        "market_cap": 2537865.2928178785
+    },
+    {
+        "address": "0xe5caef4af8780e59df925470b050fb23c43ca68c",
+        "name": "Ferrum Network",
+        "symbol": "FRM",
+        "market_cap": 2525676.895935427
+    },
+    {
+        "address": "0x0Ae055097C6d159879521C384F1D2123D1f195e6",
+        "name": "STAKE",
+        "symbol": "STAKE",
+        "market_cap": 2515808.036148992
+    },
+    {
+        "address": "0x57C75ECCc8557136D32619a191fBCDc88560d711",
+        "name": "VeriDocGlobal",
+        "symbol": "VDG",
+        "market_cap": 2499113.7151403474
+    },
+    {
+        "address": "0xee9801669c6138e84bd50deb500827b776777d28",
+        "name": "O3 Swap",
+        "symbol": "O3",
+        "market_cap": 2494714.882668717
+    },
+    {
+        "address": "0x745407c86df8db893011912d3ab28e68b62e49b0",
+        "name": "MahaDAO",
+        "symbol": "MAHA",
+        "market_cap": 2461569.728794575
+    },
+    {
+        "address": "0x850aAB69f0e0171A9a49dB8BE3E71351c8247Df4",
+        "name": "Konomi Network",
+        "symbol": "KONO",
+        "market_cap": 2416017.361648328
+    },
+    {
+        "address": "0x34Be5b8C30eE4fDe069DC878989686aBE9884470",
+        "name": "SENATE",
+        "symbol": "SENATE",
+        "market_cap": 2407836.3002737244
+    },
+    {
+        "address": "0xb2617246d0c6c0087f18703d576831899ca94f01",
+        "name": "Zigcoin",
+        "symbol": "ZIG",
+        "market_cap": 2405150.8237894424
+    },
+    {
+        "address": "0xd502f487e1841fdc805130e13eae80c61186bc98",
+        "name": "Integral",
+        "symbol": "ITGR",
+        "market_cap": 2399833.138008686
+    },
+    {
+        "address": "0x9ac5c63ddcb93612e316ab31dfc8192bc8961988",
+        "name": "Adora Token",
+        "symbol": "ARA",
+        "market_cap": 2399442.19624633
+    },
+    {
+        "address": "0x1b396CF90504686b7edE2760eebb053d30d1f389",
+        "name": "Reality Metaverse",
+        "symbol": "RLTM",
+        "market_cap": 2390600.267254875
+    },
+    {
+        "address": "0x50de6856358cc35f3a9a57eaaa34bd4cb707d2cd",
+        "name": "Razor Network",
+        "symbol": "RAZOR",
+        "market_cap": 2386326.3464960274
+    },
+    {
+        "address": "0xcfeb09c3c5f0f78ad72166d55f9e6e9a60e96eec",
+        "name": "VEMP",
+        "symbol": "VEMP",
+        "market_cap": 2379210.62983596
+    },
+    {
+        "address": "0x64b78325d7495d6d4be92f234fa3f3b8d8964b8b",
+        "name": "Shopping.io",
+        "symbol": "SHOP",
+        "market_cap": 2377128.691805453
+    },
+    {
+        "address": "0xf8aD7dFe656188A23e89da09506Adf7ad9290D5d",
+        "name": "Blocery",
+        "symbol": "BLY",
+        "market_cap": 2367592.3883403563
+    },
+    {
+        "address": "0xfB5c6815cA3AC72Ce9F5006869AE67f18bF77006",
+        "name": "pSTAKE Finance",
+        "symbol": "PSTAKE",
+        "market_cap": 2345047.10857538
+    },
+    {
+        "address": "0xad22f63404f7305e4713ccbd4f296f34770513f4",
+        "name": "Atomic Wallet Coin",
+        "symbol": "AWC",
+        "market_cap": 2333702.315343665
+    },
+    {
+        "address": "0x674C6Ad92Fd080e4004b2312b45f796a192D27a0",
+        "name": "Neutrino Index",
+        "symbol": "XTN",
+        "market_cap": 2332216.3554710317
+    },
+    {
+        "address": "0xaf4dce16da2877f8c9e00544c93b62ac40631f16",
+        "name": "Monetha",
+        "symbol": "MTH",
+        "market_cap": 2328086.3516858974
+    },
+    {
+        "address": "0x446F2A8A39Cc730ef378Be759A3c57f1a3fE824c",
+        "name": "NanoByte Token",
+        "symbol": "NBT",
+        "market_cap": 2311917.7200058033
+    },
+    {
+        "address": "0xfbeea1c75e4c4465cb2fccc9c6d6afe984558e20",
+        "name": "DuckDaoDime",
+        "symbol": "DDIM",
+        "market_cap": 2288083.8775688866
+    },
+    {
+        "address": "0x84342e932797FC62814189f01F0Fb05F52519708",
+        "name": "Neighbourhoods",
+        "symbol": "NHT",
+        "market_cap": 2285293.8940326064
+    },
+    {
+        "address": "0x2791bfd60d232150bff86b39b7146c0eaaa2ba81",
+        "name": "BiFi",
+        "symbol": "BIFI",
+        "market_cap": 2267580.777181612
+    },
+    {
+        "address": "0x429881672B9AE42b8EbA0E26cD9C73711b891Ca5",
+        "name": "Pickle Finance",
+        "symbol": "PICKLE",
+        "market_cap": 2235441.628416669
+    },
+    {
+        "address": "0x06a01a4d579479dd5d884ebf61a31727a3d8d442",
+        "name": "Skey Network",
+        "symbol": "SKEY",
+        "market_cap": 2216392.837192372
+    },
+    {
+        "address": "0xae697f994fc5ebc000f8e22ebffee04612f98a0d",
+        "name": "LGCY Network",
+        "symbol": "LGCY",
+        "market_cap": 2214015.146103958
+    },
+    {
+        "address": "0x0488401c3f535193fa8df029d9ffe615a06e74e6",
+        "name": "SparkPoint",
+        "symbol": "SRK",
+        "market_cap": 2206278.219131382
+    },
+    {
+        "address": "0x8971f9fd7196e5cee2c1032b50f656855af7dd26",
+        "name": "Lambda",
+        "symbol": "LAMB",
+        "market_cap": 2204076.7509923475
+    },
+    {
+        "address": "0xBd356a39BFf2cAda8E9248532DD879147221Cf76",
+        "name": "WOM Protocol",
+        "symbol": "WOM",
+        "market_cap": 2199440.2199564944
+    },
+    {
+        "address": "0xa6422e3e219ee6d4c1b18895275fe43556fd50ed",
+        "name": "Stobox Token",
+        "symbol": "STBU",
+        "market_cap": 2194037.0832799333
+    },
+    {
+        "address": "0xCdB37A4fBC2Da5b78aA4E41a432792f9533e85Cc",
+        "name": "CheckDot",
+        "symbol": "CDT",
+        "market_cap": 2192909.1682148715
+    },
+    {
+        "address": "0x3e7804c51a70ba26e904c2e0ab440c5623a8a83f",
+        "name": "GPEX",
+        "symbol": "GPX",
+        "market_cap": 2184887.6337691024
+    },
+    {
+        "address": "0x8f006d1e1d9dc6c98996f50a4c810f17a47fbf19",
+        "name": "Pleasure Coin",
+        "symbol": "NSFW",
+        "market_cap": 2173943.549479517
+    },
+    {
+        "address": "0xada86b1b313d1d5267e3fc0bb303f0a2b66d0ea7",
+        "name": "Covesting",
+        "symbol": "COV",
+        "market_cap": 2157860.876421527
+    },
+    {
+        "address": "0x1c9922314ed1415c95b9fd453c3818fd41867d0b",
+        "name": "TOWER",
+        "symbol": "TOWER",
+        "market_cap": 2149876.467701424
+    },
+    {
+        "address": "0x0fF6ffcFDa92c53F615a4A75D982f399C989366b",
+        "name": "UniLayer",
+        "symbol": "LAYER",
+        "market_cap": 2147529.616672919
+    },
+    {
+        "address": "0xed0439eacf4c4965ae4613d77a5c2efe10e5f183",
+        "name": "Niftyx Protocol",
+        "symbol": "SHROOM",
+        "market_cap": 2127729.813415443
+    },
+    {
+        "address": "0x2b915b505c017abb1547aa5ab355fbe69865cc6d",
+        "name": "MAPS",
+        "symbol": "MAPS",
+        "market_cap": 2112224.328918288
+    },
+    {
+        "address": "0xd794DD1CAda4cf79C9EebaAb8327a1B0507ef7d4",
+        "name": "Hyve",
+        "symbol": "HYVE",
+        "market_cap": 2092197.839804154
+    },
+    {
+        "address": "0xe0c8b298db4cffe05d1bea0bb1ba414522b33c1b",
+        "name": "Nuco.cloud",
+        "symbol": "NCDT",
+        "market_cap": 2074328.794378284
+    },
+    {
+        "address": "0x43a96962254855f16b925556f9e97be436a43448",
+        "name": "Hord",
+        "symbol": "HORD",
+        "market_cap": 2068336.9627671426
+    },
+    {
+        "address": "0x83031984b45553070a088273f341bff7fb4f2f46",
+        "name": "hiBAYC",
+        "symbol": "HIBAYC",
+        "market_cap": 2051518.276345449
+    },
+    {
+        "address": "0x419c4db4b9e25d6db2ad9691ccb832c8d9fda05e",
+        "name": "Dragonchain",
+        "symbol": "DRGN",
+        "market_cap": 2048693.2529216942
+    },
+    {
+        "address": "0xb97048628db6b661d4c2aa833e95dbe1a905b280",
+        "name": "TenX",
+        "symbol": "PAY",
+        "market_cap": 1986817.149053105
+    },
+    {
+        "address": "0x9ab165d795019b6d8b3e971dda91071421305e5a",
+        "name": "Aurora",
+        "symbol": "AOA",
+        "market_cap": 1976412.2843306502
+    },
+    {
+        "address": "0xb8baa0e4287890a5f79863ab62b7f175cecbd433",
+        "name": "Swerve",
+        "symbol": "SWRV",
+        "market_cap": 1971743.0836673465
+    },
+    {
+        "address": "0x4086e77c5e993fdb90a406285d00111a974f877a",
+        "name": "Blockchain Brawlers",
+        "symbol": "BRWL",
+        "market_cap": 1966252.9482399956
+    },
+    {
+        "address": "0x88a9a52f944315d5b4e917b9689e65445c401e83",
+        "name": "FEAR",
+        "symbol": "FEAR",
+        "market_cap": 1959485.782694859
+    },
+    {
+        "address": "0x9488936e4a36e3585afeb63377e2393aeac253ea",
+        "name": "GAMB",
+        "symbol": "GMB",
+        "market_cap": 1943127.4401253012
+    },
+    {
+        "address": "0x0aacfbec6a24756c20d41914f2caba817c0d8521",
+        "name": "YAM V3",
+        "symbol": "YAM",
+        "market_cap": 1932470.2473040153
+    },
+    {
+        "address": "0x0a77ef9bf662d62fbf9ba4cf861eaa83f9cc4fec",
+        "name": "X World Games",
+        "symbol": "XWG",
+        "market_cap": 1915575.801465137
+    },
+    {
+        "address": "0xda0c94c73d127ee191955fb46bacd7ff999b2bcd",
+        "name": "Construct",
+        "symbol": "STANDARD",
+        "market_cap": 1903781.0104152432
+    },
+    {
+        "address": "0xdcD85914b8aE28c1E62f1C488E1D968D5aaFfE2b",
+        "name": "TOP",
+        "symbol": "TOP",
+        "market_cap": 1898595.9292782133
+    },
+    {
+        "address": "0x8287c7b963b405b7b8d467db9d79eec40625b13a",
+        "name": "Swingby",
+        "symbol": "SWINGBY",
+        "market_cap": 1876143.459690827
+    },
+    {
+        "address": "0x63f88a2298a5c4aee3c216aa6d926b184a4b2437",
+        "name": "GameCredits",
+        "symbol": "GAME",
+        "market_cap": 1870465.5431356065
+    },
+    {
+        "address": "0x6595b8fd9c920c81500dca94e53cdc712513fb1f",
+        "name": "Olyverse",
+        "symbol": "OLY",
+        "market_cap": 1833017.5525985756
+    },
+    {
+        "address": "0x33d203fa03bb30b133de0fe2d6533c268ba286b6",
+        "name": "MandoX V2",
+        "symbol": "MANDOX",
+        "market_cap": 1799314.3696554448
+    },
+    {
+        "address": "0x42726d074BBa68Ccc15200442B72Afa2D495A783",
+        "name": "Isiklar Coin",
+        "symbol": "ISIKC",
+        "market_cap": 1740246.7013421361
+    },
+    {
+        "address": "0x798D1bE841a82a273720CE31c822C61a67a601C3",
+        "name": "DIGG",
+        "symbol": "DIGG",
+        "market_cap": 1739859.654338435
+    },
+    {
+        "address": "0x0b15ddf19d47e6a86a56148fb4afffc6929bcb89",
+        "name": "Impossible Finance Launchpad",
+        "symbol": "IDIA",
+        "market_cap": 1726522.6818712235
+    },
+    {
+        "address": "0x3907e6ff436e2b2B05D6B929fb05F14c0ee18d90",
+        "name": "KamPay",
+        "symbol": "KAMPAY",
+        "market_cap": 1716044.1386641413
+    },
+    {
+        "address": "0x9d0b65a76274645b29e4cc41b8f23081fa09f4a3",
+        "name": "iMe Lab",
+        "symbol": "LIME",
+        "market_cap": 1714747.6920050404
+    },
+    {
+        "address": "0xb8e3bB633F7276cc17735D86154E0ad5ec9928C0",
+        "name": "VelasPad",
+        "symbol": "VLXPAD",
+        "market_cap": 1712380.029757425
+    },
+    {
+        "address": "0x1fc5ef0337aea85c5f9198853a6e3a579a7a6987",
+        "name": "ReapChain",
+        "symbol": "REAP",
+        "market_cap": 1710224.1217220416
+    },
+    {
+        "address": "0x382A1667C9062F0621362F49076Ef6e4fE4C9eC7",
+        "name": "RUSH COIN",
+        "symbol": "RUSH",
+        "market_cap": 1709917.235062072
+    },
+    {
+        "address": "0x7bef710a5759d197ec0bf621c3df802c2d60d848",
+        "name": "SHOPX",
+        "symbol": "SHOPX",
+        "market_cap": 1691313.5863985727
+    },
+    {
+        "address": "0x9d5686eadea7327f5a0c4820dca90457a0e88763",
+        "name": "ALLY",
+        "symbol": "ALY",
+        "market_cap": 1676974.7443390996
+    },
+    {
+        "address": "0x93C9175E26F57d2888c7Df8B470C9eeA5C0b0A93",
+        "name": "B-cube.ai",
+        "symbol": "BCUBE",
+        "market_cap": 1648033.019683588
+    },
+    {
+        "address": "0x875773784Af8135eA0ef43b5a374AaD105c5D39e",
+        "name": "Idle",
+        "symbol": "IDLE",
+        "market_cap": 1623435.4738865977
+    },
+    {
+        "address": "0x8dB253a1943DdDf1AF9bcF8706ac9A0Ce939d922",
+        "name": "Unbound",
+        "symbol": "UNB",
+        "market_cap": 1582175.4249608098
+    },
+    {
+        "address": "0x26DB5439F651CAF491A87d48799dA81F191bDB6b",
+        "name": "CBC.network",
+        "symbol": "CBC",
+        "market_cap": 1562962.0454651415
+    },
+    {
+        "address": "0x50bc2ecc0bfdf5666640048038c1aba7b7525683",
+        "name": "carVertical",
+        "symbol": "CV",
+        "market_cap": 1556300.6281187572
+    },
+    {
+        "address": "0xaffcdd96531bcd66faed95fc61e443d08f79efef",
+        "name": "Perth Mint Gold Token",
+        "symbol": "PMGT",
+        "market_cap": 1555907.5602916386
+    },
+    {
+        "address": "0xD3c325848D7c6E29b574Cb0789998b2ff901f17E",
+        "name": "OneArt",
+        "symbol": "1ART",
+        "market_cap": 1555766.618178051
+    },
+    {
+        "address": "0x83869de76b9ad8125e22b857f519f001588c0f62",
+        "name": "EXMO Coin",
+        "symbol": "EXM",
+        "market_cap": 1530540.144494071
+    },
+    {
+        "address": "0x9B99CcA871Be05119B2012fd4474731dd653FEBe",
+        "name": "AntiMatter Token",
+        "symbol": "MATTER",
+        "market_cap": 1528634.8281158989
+    },
+    {
+        "address": "0x16CC8367055aE7e9157DBcB9d86Fd6CE82522b31",
+        "name": "Voxel X Network",
+        "symbol": "VXL",
+        "market_cap": 1526543.7491646928
+    },
+    {
+        "address": "0xd5525d397898e5502075ea5e830d8914f6f0affe",
+        "name": "Degenerator Meme",
+        "symbol": "MEME",
+        "market_cap": 1509074.6528931037
+    },
+    {
+        "address": "0xc690f7c7fcffa6a82b79fab7508c466fefdfc8c5",
+        "name": "Lympo",
+        "symbol": "LYM",
+        "market_cap": 1501313.1073870808
+    },
+    {
+        "address": "0xdaf88906ac1de12ba2b1d2f7bfc94e9638ac40c4",
+        "name": "EpiK Protocol",
+        "symbol": "EPK",
+        "market_cap": 1499827.0970263174
+    },
+    {
+        "address": "0x4DF812F6064def1e5e029f1ca858777CC98D2D81",
+        "name": "Xaurum",
+        "symbol": "XAUR",
+        "market_cap": 1496454.1915357413
+    },
+    {
+        "address": "0x41a3dba3d677e573636ba691a70ff2d606c29666",
+        "name": "BlockWallet",
+        "symbol": "BLANK",
+        "market_cap": 1489782.7263572721
+    },
+    {
+        "address": "0x1614F18Fc94f47967A3Fbe5FfcD46d4e7Da3D787",
+        "name": "PAID Network",
+        "symbol": "PAID",
+        "market_cap": 1488958.1640384956
+    },
+    {
+        "address": "0xa3BeD4E1c75D00fa6f4E5E6922DB7261B5E9AcD2",
+        "name": "mStable Governance Token: Meta (MTA)",
+        "symbol": "MTA",
+        "market_cap": 1487238.7518328382
+    },
+    {
+        "address": "0x2f141ce366a2462f02cea3d12cf93e4dca49e4fd",
+        "name": "FREEdom Coin",
+        "symbol": "FREE",
+        "market_cap": 1474947.5945793132
+    },
+    {
+        "address": "0x89Fb927240750c1B15d4743cd58440fc5f14A11C",
+        "name": "Attila",
+        "symbol": "ATT",
+        "market_cap": 1468350.1180743075
+    },
+    {
+        "address": "0x5319e86F0e41a06E49eb37046b8c11D78bcAd68C",
+        "name": "Zelwin",
+        "symbol": "ZLW",
+        "market_cap": 1464007.4955334745
+    },
+    {
+        "address": "0xAA2ce7Ae64066175E0B90497CE7d9c190c315DB4",
+        "name": "suterusu",
+        "symbol": "SUTER",
+        "market_cap": 1463925.670638253
+    },
+    {
+        "address": "0xac0104cca91d167873b8601d2e71eb3d4d8c33e0",
+        "name": "Seascape Crowns",
+        "symbol": "CWS",
+        "market_cap": 1418155.1565433636
+    },
+    {
+        "address": "0x8e1b448ec7adfc7fa35fc2e885678bd323176e34",
+        "name": "Egretia",
+        "symbol": "EGT",
+        "market_cap": 1417910.501380685
+    },
+    {
+        "address": "0x3c6a7ab47b5f058be0e7c7fe1a4b7925b8aca40e",
+        "name": "Cajutel",
+        "symbol": "CAJ",
+        "market_cap": 1401626.9436169588
+    },
+    {
+        "address": "0x55f93985431fc9304077687a35a1ba103dc1e081",
+        "name": "SmartMesh",
+        "symbol": "SMT",
+        "market_cap": 1378053.5982139946
+    },
+    {
+        "address": "0x6ec8a24cabdc339a06a172f8223ea557055adaa5",
+        "name": "Genaro Network",
+        "symbol": "GNX",
+        "market_cap": 1354499.6759951622
+    },
+    {
+        "address": "0x1796ae0b0fa4862485106a0de9b654eFE301D0b2",
+        "name": "Polychain Monsters",
+        "symbol": "PMON",
+        "market_cap": 1351999.7737922422
+    },
+    {
+        "address": "0x84c722e6f1363e8d5c6db3ea600bef9a006da824",
+        "name": "Misbloc",
+        "symbol": "MSB",
+        "market_cap": 1349475.7383566084
+    },
+    {
+        "address": "0x69e5C11a7C30f0bf84A9faECBd5161AA7a94decA",
+        "name": "Loser Coin",
+        "symbol": "LOWB",
+        "market_cap": 1344380.9626160027
+    },
+    {
+        "address": "0x1Da87b114f35E1DC91F72bF57fc07A768Ad40Bb0",
+        "name": "Equalizer",
+        "symbol": "EQZ",
+        "market_cap": 1340720.9588690076
+    },
+    {
+        "address": "0x2eDf094dB69d6Dcd487f1B3dB9febE2eeC0dd4c5",
+        "name": "ZeroSwap",
+        "symbol": "ZEE",
+        "market_cap": 1336459.0331644996
+    },
+    {
+        "address": "0xaa0c5B3567fd1BAC8a2a11EB16c3F81a49eea90F",
+        "name": "MetamonkeyAi",
+        "symbol": "MMAI",
+        "market_cap": 1336108.9970545091
+    },
+    {
+        "address": "0xCd2828fc4D8E8a0eDe91bB38CF64B1a81De65Bf6",
+        "name": "Oddz",
+        "symbol": "ODDZ",
+        "market_cap": 1331631.5852344604
+    },
+    {
+        "address": "0x70401dfd142a16dc7031c56e862fc88cb9537ce0",
+        "name": "Bird.Money",
+        "symbol": "BIRD",
+        "market_cap": 1322867.3043687567
+    },
+    {
+        "address": "0x2BA8349123de45E931a8C8264c332E6e9CF593F9",
+        "name": "Blockchain Monster Hunt",
+        "symbol": "BCMC",
+        "market_cap": 1318356.277888193
+    },
+    {
+        "address": "0xa0cf46eb152656c7090e769916eb44a138aaa406",
+        "name": "Spheroid Universe",
+        "symbol": "SPH",
+        "market_cap": 1314344.544709644
+    },
+    {
+        "address": "0xd4fa1460f537bb9085d22c7bccb5dd450ef28e3a",
+        "name": "Populous",
+        "symbol": "PPT",
+        "market_cap": 1309719.7583210233
+    },
+    {
+        "address": "0xd43be54c1aedf7ee4099104f2dae4ea88b18a249",
+        "name": "Traxx",
+        "symbol": "TRAXX",
+        "market_cap": 1290089.6847862476
+    },
+    {
+        "address": "0xfFffFffF2ba8F66D4e51811C5190992176930278",
+        "name": "Furucombo",
+        "symbol": "COMBO",
+        "market_cap": 1276561.6059625694
+    },
+    {
+        "address": "0xf7920b0768ecb20a123fac32311d07d193381d6f",
+        "name": "Time New Bank",
+        "symbol": "TNB",
+        "market_cap": 1258559.1307292932
+    },
+    {
+        "address": "0x45448E05020576929fcDEabC228E35b420098840",
+        "name": "Idavoll DAO",
+        "symbol": "IDV",
+        "market_cap": 1258173.1657497424
+    },
+    {
+        "address": "0x936B6659Ad0C1b244Ba8Efe639092acae30dc8d6",
+        "name": "Corite",
+        "symbol": "CO",
+        "market_cap": 1256518.2110949138
+    },
+    {
+        "address": "0xcDa4e840411C00a614aD9205CAEC807c7458a0E3",
+        "name": "PureFi Protocol",
+        "symbol": "UFI",
+        "market_cap": 1244995.1128464495
+    },
+    {
+        "address": "0xFe459828c90c0BA4bC8b42F5C5D44F316700B430",
+        "name": "BBS Network",
+        "symbol": "BBS",
+        "market_cap": 1231528.0793649356
+    },
+    {
+        "address": "0x5218E472cFCFE0b64A064F055B43b4cdC9EfD3A6",
+        "name": "unFederalReserve",
+        "symbol": "eRSDL",
+        "market_cap": 1222802.7523452672
+    },
+    {
+        "address": "0x0db8d8b76bc361bacbb72e2c491e06085a97ab31",
+        "name": "IQeon",
+        "symbol": "IQN",
+        "market_cap": 1221968.1170951389
+    },
+    {
+        "address": "0xA64D5d1eB67748226d84812B45711453f1118c32",
+        "name": "Cheems Inu (new)",
+        "symbol": "CINU",
+        "market_cap": 1204383.7786133043
+    },
+    {
+        "address": "0xCd7492db29E2ab436e819b249452EE1bbDf52214",
+        "name": "SafeMoon Inu",
+        "symbol": "SMI",
+        "market_cap": 1201063.5973509846
+    },
+    {
+        "address": "0x0aa7efe4945db24d95ca6e117bba65ed326e291a",
+        "name": "Ojamu",
+        "symbol": "OJA",
+        "market_cap": 1188118.8913299344
+    },
+    {
+        "address": "0x8a74bc8c372bc7f0e9ca3f6ac0df51be15aec47a",
+        "name": "PulsePad",
+        "symbol": "PLSPAD",
+        "market_cap": 1181203.9546987878
+    },
+    {
+        "address": "0x03d1e72765545729a035e909edd9371a405f77fb",
+        "name": "Nabox",
+        "symbol": "NABOX",
+        "market_cap": 1181119.6229869584
+    },
+    {
+        "address": "0x89551b940e2a8ed8eccf509935bac9213fe30584",
+        "name": "DoDreamChain",
+        "symbol": "DRM",
+        "market_cap": 1172170.602411553
+    },
+    {
+        "address": "0x35b08722aa26be119c1608029ccbc976ac5c1082",
+        "name": "Eminer",
+        "symbol": "EM",
+        "market_cap": 1161547.444929838
+    },
+    {
+        "address": "0x2620638EDA99F9e7E902Ea24a285456EE9438861",
+        "name": "Crust Shadow",
+        "symbol": "CSM",
+        "market_cap": 1148426.253470181
+    },
+    {
+        "address": "0x4824a7b64e3966b0133f4f4ffb1b9d6beb75fff7",
+        "name": "TokenClub",
+        "symbol": "TCT",
+        "market_cap": 1135518.1956379744
+    },
+    {
+        "address": "0xc834fa996fa3bec7aad3693af486ae53d8aa8b50",
+        "name": "Convergence",
+        "symbol": "CONV",
+        "market_cap": 1135360.0089042168
+    },
+    {
+        "address": "0xc0ba369c8db6eb3924965e5c4fd0b4c1b91e305f",
+        "name": "Duck DAO (DLP Duck Token)",
+        "symbol": "DUCK",
+        "market_cap": 1118853.0874081282
+    },
+    {
+        "address": "0x6e9730ecffbed43fd876a264c982e254ef05a0de",
+        "name": "Nord Finance",
+        "symbol": "NORD",
+        "market_cap": 1114647.3594105016
+    },
+    {
+        "address": "0xb6ed7644c69416d67b522e20bc294a9a9b405b31",
+        "name": "0xBitcoin",
+        "symbol": "0xBTC",
+        "market_cap": 1109014.2710362661
+    },
+    {
+        "address": "0x46e98FFE40E408bA6412bEb670507e083C8B95ff",
+        "name": "Primate",
+        "symbol": "PRIMATE",
+        "market_cap": 1097340.8488679042
+    },
+    {
+        "address": "0x0C9c7712C83B3C70e7c5E11100D33D9401BdF9dd",
+        "name": "Wombat Web 3 Gaming Platform",
+        "symbol": "WOMBAT",
+        "market_cap": 1093391.7272485944
+    },
+    {
+        "address": "0x0CDF9acd87E940837ff21BB40c9fd55F68bba059",
+        "name": "Public Mint",
+        "symbol": "MINT",
+        "market_cap": 1076009.8713385367
+    },
+    {
+        "address": "0xf970b8e36e23f7fc3fd752eea86f8be8d83375a6",
+        "name": "Ripio Credit Network",
+        "symbol": "RCN",
+        "market_cap": 1073046.310534283
+    },
+    {
+        "address": "0x7e291890b01e5181f7ecc98d79ffbe12ad23df9e",
+        "name": "Unifty",
+        "symbol": "NIF",
+        "market_cap": 1069576.1410756772
+    },
+    {
+        "address": "0x1ab43204a195a0fd37edec621482afd3792ef90b",
+        "name": "Aurigami",
+        "symbol": "PLY",
+        "market_cap": 1064747.8641903047
+    },
+    {
+        "address": "0xC9fE6E1C76210bE83DC1B5b20ec7FD010B0b1D15",
+        "name": "Fringe Finance",
+        "symbol": "FRIN",
+        "market_cap": 1064028.2710859664
+    },
+    {
+        "address": "0xe7976c4Efc60d9f4C200Cc1bCEF1A1e3B02c73e7",
+        "name": "MAX Exchange Token",
+        "symbol": "MAX",
+        "market_cap": 1061402.7466114806
+    },
+    {
+        "address": "0x7240aC91f01233BaAf8b064248E80feaA5912BA3",
+        "name": "OctoFi",
+        "symbol": "OCTO",
+        "market_cap": 1060687.6130854238
+    },
+    {
+        "address": "0x8dB1D28Ee0d822367aF8d220C0dc7cB6fe9DC442",
+        "name": "ETHPad",
+        "symbol": "ETHPAD",
+        "market_cap": 1051413.8256240264
+    },
+    {
+        "address": "0xf21661d0d1d76d3ecb8e1b9f1c923dbfffae4097",
+        "name": "Realio Network",
+        "symbol": "RIO",
+        "market_cap": 1049909.5138291141
+    },
+    {
+        "address": "0xa41f142b6eb2b164f8164cae0716892ce02f311f",
+        "name": "Avocado DAO Token",
+        "symbol": "AVG",
+        "market_cap": 1046943.0330071684
+    },
+    {
+        "address": "0x0aee8703d34dd9ae107386d3eff22ae75dd616d1",
+        "name": "Tranche Finance",
+        "symbol": "SLICE",
+        "market_cap": 1038791.2735172403
+    },
+    {
+        "address": "0x01b23286ff60a543ec29366ae8d6b6274ca20541",
+        "name": "Brother Music Platform",
+        "symbol": "BMP",
+        "market_cap": 1026529.5544015049
+    },
+    {
+        "address": "0x990f341946a3fdb507ae7e52d17851b87168017c",
+        "name": "Strong",
+        "symbol": "STRONG",
+        "market_cap": 1017420.8392749274
+    },
+    {
+        "address": "0xc744df3419a8c9bd4d6b9852a503eb1c5308a326",
+        "name": "RED TOKEN",
+        "symbol": "RED",
+        "market_cap": 1011098.0702382909
+    },
+    {
+        "address": "0xabe580e7ee158da464b51ee1a83ac0289622e6be",
+        "name": "Offshift (old)",
+        "symbol": "XFT",
+        "market_cap": 991603.4034566943
+    },
+    {
+        "address": "0xfa3118b34522580c35ae27f6cf52da1dbb756288",
+        "name": "LinkEye",
+        "symbol": "LET",
+        "market_cap": 976293.8498600995
+    },
+    {
+        "address": "0x8bbe1a2961B41340468D0548c2cd5B7DFA9b684c",
+        "name": "Handy",
+        "symbol": "HANDY",
+        "market_cap": 975103.7638642597
+    },
+    {
+        "address": "0xdb0170e2d0c1cc1b2e7a90313d9b9afa4f250289",
+        "name": "ADAPad",
+        "symbol": "ADAPAD",
+        "market_cap": 971498.4915640864
+    },
+    {
+        "address": "0x4057db5bd9f67a566aa10e5587b1a964affc6a16",
+        "name": "TrueFeedBack",
+        "symbol": "TFBX",
+        "market_cap": 970394.0172916319
+    },
+    {
+        "address": "0x23894DC9da6c94ECb439911cAF7d337746575A72",
+        "name": "Geojam Token",
+        "symbol": "JAM",
+        "market_cap": 961996.4217205268
+    },
+    {
+        "address": "0xa0f0546eb5e3ee7e8cfc5da12e5949f3ae622675",
+        "name": "Tokoin",
+        "symbol": "TOKO",
+        "market_cap": 959167.4240814106
+    },
+    {
+        "address": "0x8888801af4d980682e47f1a9036e589479e835c5",
+        "name": "88mph",
+        "symbol": "MPH",
+        "market_cap": 954767.8631742643
+    },
+    {
+        "address": "0x8ae4bf2c33a8e667de34b54938b0ccd03eb8cc06",
+        "name": "Patientory",
+        "symbol": "PTOY",
+        "market_cap": 953799.7637195641
+    },
+    {
+        "address": "0x4688a8b1f292fdab17e9a90c8bc379dc1dbd8713",
+        "name": "COVER Protocol",
+        "symbol": "COVER",
+        "market_cap": 952295.1692068583
+    },
+    {
+        "address": "0x4463e6A3dEd0dBE3F6e15bC8420dFc55e5FeA830",
+        "name": "Project TXA",
+        "symbol": "TXA",
+        "market_cap": 943046.6684026847
+    },
+    {
+        "address": "0x6e8908cfa881c9f6f2c64d3436e7b80b1bf0093f",
+        "name": "Bistroo",
+        "symbol": "BIST",
+        "market_cap": 940853.3170426413
+    },
+    {
+        "address": "0x8b3870df408ff4d7c3a26df852d41034eda11d81",
+        "name": "IOI Token",
+        "symbol": "IOI",
+        "market_cap": 935112.8705680857
+    },
+    {
+        "address": "0x5f0e628b693018f639d10e4a4f59bd4d8b2b6b44",
+        "name": "Whiteheart",
+        "symbol": "WHITE",
+        "market_cap": 908085.174215458
+    },
+    {
+        "address": "0x056354F3Ff20743aa4c0DA365603871c7000b081",
+        "name": "TriumphX",
+        "symbol": "TRIX",
+        "market_cap": 898665.9823847758
+    },
+    {
+        "address": "0x9ed8e7c9604790f7ec589f99b94361d8aab64e5e",
+        "name": "Unistake",
+        "symbol": "UNISTAKE",
+        "market_cap": 876466.9679776321
+    },
+    {
+        "address": "0x63b4f3e3fa4e438698ce330e365e831f7ccd1ef4",
+        "name": "CyberFi Token",
+        "symbol": "CFi",
+        "market_cap": 865768.9509474424
+    },
+    {
+        "address": "0x6fc13eace26590b80cccab1ba5d51890577d83b2",
+        "name": "Umbrella Network",
+        "symbol": "UMB",
+        "market_cap": 858407.1156930974
+    },
+    {
+        "address": "0x51db5ad35c671a87207d88fc11d593ac0c8415bd",
+        "name": "Moeda Loyalty Points",
+        "symbol": "MDA",
+        "market_cap": 849506.6688355412
+    },
+    {
+        "address": "0x3ebb4A4e91Ad83BE51F8d596533818b246F4bEe1",
+        "name": "Signata",
+        "symbol": "SATA",
+        "market_cap": 835175.6698704456
+    },
+    {
+        "address": "0x725c263e32c72ddc3a19bea12c5a0479a81ee688",
+        "name": "Bridge Mutual",
+        "symbol": "BMI",
+        "market_cap": 824218.769550312
+    },
+    {
+        "address": "0xDb05EA0877A2622883941b939f0bb11d1ac7c400",
+        "name": "Opacity",
+        "symbol": "OPCT",
+        "market_cap": 810402.6006144147
+    },
+    {
+        "address": "0x5a666c7d92E5fA7Edcb6390E4efD6d0CDd69cF37",
+        "name": "UnMarshal",
+        "symbol": "MARSH",
+        "market_cap": 806881.2982325774
+    },
+    {
+        "address": "0x58f9102bf53cf186682bd9a281d3cd3c616eec41",
+        "name": "Triall",
+        "symbol": "TRL",
+        "market_cap": 803921.9908758552
+    },
+    {
+        "address": "0xd07d9fe2d2cc067015e2b4917d24933804f42cfa",
+        "name": "Tolar",
+        "symbol": "TOL",
+        "market_cap": 800695.2475113773
+    },
+    {
+        "address": "0x0E5C8C387C5EBa2eCbc137aD012aeD5Fe729e251",
+        "name": "Rangers Protocol",
+        "symbol": "RPG",
+        "market_cap": 798404.831201357
+    },
+    {
+        "address": "0xf51EBf9a26DbC02B13F8B3a9110dac47a4d62D78",
+        "name": "APIX",
+        "symbol": "APIX",
+        "market_cap": 793784.8056471534
+    },
+    {
+        "address": "0x1559fa1b8f28238fd5d76d9f434ad86fd20d1559",
+        "name": "Eden",
+        "symbol": "EDEN",
+        "market_cap": 787956.5916458463
+    },
+    {
+        "address": "0x4674a4F24C5f63D53F22490Fb3A08eAAAD739ff8",
+        "name": "Brokoli Network",
+        "symbol": "BRKL",
+        "market_cap": 786523.9224096161
+    },
+    {
+        "address": "0x614D7f40701132E25fe6fc17801Fbd34212d2Eda",
+        "name": "SafeBlast",
+        "symbol": "BLAST",
+        "market_cap": 786128.7102690809
+    },
+    {
+        "address": "0x217ddead61a42369a266f1fb754eb5d3ebadc88a",
+        "name": "Don-key",
+        "symbol": "DON",
+        "market_cap": 779412.2439508814
+    },
+    {
+        "address": "0x0f71b8de197a1c84d31de0f1fa7926c365f052b3",
+        "name": "Arcona",
+        "symbol": "ARCONA",
+        "market_cap": 767172.0781754593
+    },
+    {
+        "address": "0xfc05987bd2be489ACCF0f509E44B0145d68240f7",
+        "name": "Essentia",
+        "symbol": "ESS",
+        "market_cap": 748172.3122998693
+    },
+    {
+        "address": "0xFeea0bDd3D07eb6FE305938878C0caDBFa169042",
+        "name": "8PAY",
+        "symbol": "8PAY",
+        "market_cap": 743456.1930830696
+    },
+    {
+        "address": "0x491e136ff7ff03e6ab097e54734697bb5802fc1c",
+        "name": "Kattana",
+        "symbol": "KTN",
+        "market_cap": 742680.5420880233
+    },
+    {
+        "address": "0x6bb61215298f296c55b19ad842d3df69021da2ef",
+        "name": "Drops Ownership Power",
+        "symbol": "DOP",
+        "market_cap": 742446.4022394636
+    },
+    {
+        "address": "0x69fa0fee221ad11012bab0fdb45d444d3d2ce71c",
+        "name": "Thorstarter",
+        "symbol": "XRUNE",
+        "market_cap": 736826.3480839274
+    },
+    {
+        "address": "0x10086399dd8c1e3de736724af52587a2044c9fa2",
+        "name": "The Midas Touch Gold",
+        "symbol": "TMTG",
+        "market_cap": 732343.7848987789
+    },
+    {
+        "address": "0x6c936D4AE98E6d2172dB18c16C4b601C99918EE6",
+        "name": "Life Crypto",
+        "symbol": "LIFE",
+        "market_cap": 717024.4872777109
+    },
+    {
+        "address": "0xc36b4311b21fc0c2ead46f1ea6ce97c9c4d98d3d",
+        "name": "Creaticles",
+        "symbol": "CRE8",
+        "market_cap": 714084.3192735764
+    },
+    {
+        "address": "0x1f8a626883d7724dbd59ef51cbd4bf1cf2016d13",
+        "name": "Jigstack",
+        "symbol": "STAK",
+        "market_cap": 709090.9673529379
+    },
+    {
+        "address": "0x06a00715e6f92210af9d7680b584931faf71a833",
+        "name": "Chronicle",
+        "symbol": "XNL",
+        "market_cap": 700776.2235224729
+    },
+    {
+        "address": "0x8e0fe2947752be0d5acf73aae77362daf79cb379",
+        "name": "NFTrade",
+        "symbol": "NFTD",
+        "market_cap": 699855.7648936395
+    },
+    {
+        "address": "0xdeCF7Be29F8832E9C2Ddf0388c9778B8Ba76af43",
+        "name": "BonusCloud",
+        "symbol": "BXC",
+        "market_cap": 687015.0956726583
+    },
+    {
+        "address": "0x60eb57d085c59932d5faa6c6026268a4386927d0",
+        "name": "LOCGame",
+        "symbol": "LOCG",
+        "market_cap": 681703.926148059
+    },
+    {
+        "address": "0x31fdd1c6607f47c14a2821f599211c67ac20fa96",
+        "name": "Burency",
+        "symbol": "BUY",
+        "market_cap": 679857.6479553776
+    },
+    {
+        "address": "0xB6ff96B8A8d214544Ca0dBc9B33f7AD6503eFD32",
+        "name": "SYNC Network",
+        "symbol": "SYNC",
+        "market_cap": 678463.5330024122
+    },
+    {
+        "address": "0x68d57c9a1c35f63e2c83ee8e49a64e9d70528d25",
+        "name": "SIRIN LABS Token",
+        "symbol": "SRN",
+        "market_cap": 675506.7935888255
+    },
+    {
+        "address": "0xf4b5470523ccd314c6b9da041076e7d79e0df267",
+        "name": "blockbank",
+        "symbol": "BBANK",
+        "market_cap": 671372.3080284065
+    },
+    {
+        "address": "0xe477292f1b3268687a29376116b0ed27a9c76170",
+        "name": "HEROcoin",
+        "symbol": "PLAY",
+        "market_cap": 665035.3807081615
+    },
+    {
+        "address": "0x4BDCb66B968060D9390C1D12bd29734496205581",
+        "name": "Acquire.Fi",
+        "symbol": "ACQ",
+        "market_cap": 657860.3723972297
+    },
+    {
+        "address": "0xec5483804e637d45cde22fa0869656b64b5ab1ab",
+        "name": "ACENT",
+        "symbol": "ACE",
+        "market_cap": 653427.2477007611
+    },
+    {
+        "address": "0xea3983fc6d0fbbc41fb6f6091f68f3e08894dc06",
+        "name": "Unido EP",
+        "symbol": "UDO",
+        "market_cap": 628623.2744207897
+    },
+    {
+        "address": "0x255aa6df07540cb5d3d297f0d0d4d84cb52bc8e6",
+        "name": "Raiden Network Token",
+        "symbol": "RDN",
+        "market_cap": 624218.3756316453
+    },
+    {
+        "address": "0x6fe56c0bcdd471359019fcbc48863d6c3e9d4f41",
+        "name": "Props Token",
+        "symbol": "PROPS",
+        "market_cap": 615063.6960789473
+    },
+    {
+        "address": "0xE1D7C7a4596B038CEd2A84bF65B8647271C53208",
+        "name": "NFTY Token",
+        "symbol": "NFTY",
+        "market_cap": 610287.5426445195
+    },
+    {
+        "address": "0x73C69d24ad28e2d43D03CBf35F79fE26EBDE1011",
+        "name": "Archimedes Finance",
+        "symbol": "ARCH",
+        "market_cap": 599634.9881471986
+    },
+    {
+        "address": "0x77777777772cf0455fB38eE0e75f38034dFa50DE",
+        "name": "XY Finance",
+        "symbol": "XY",
+        "market_cap": 597524.4009973292
+    },
+    {
+        "address": "0xa16a609fF4e1A15b6cCb469E7a5dD14E89305283",
+        "name": "Spume Protocol",
+        "symbol": "SPUME",
+        "market_cap": 591015.3296574187
+    },
+    {
+        "address": "0xf4d861575ecc9493420a3f5a14f85b13f0b50eb3",
+        "name": "Fractal",
+        "symbol": "FCL",
+        "market_cap": 588442.4740944507
+    },
+    {
+        "address": "0xf4CD3d3Fda8d7Fd6C5a500203e38640A70Bf9577",
+        "name": "YFDAI.FINANCE",
+        "symbol": "YF-DAI",
+        "market_cap": 579910.2900653922
+    },
+    {
+        "address": "0x578b49c45961f98d8df92854b53f1641af0a5036",
+        "name": "LINKA",
+        "symbol": "LINKA",
+        "market_cap": 576009.3440685788
+    },
+    {
+        "address": "0x30f271c9e86d2b7d00a6376cd96a1cfbd5f0b9b3",
+        "name": "Decentr",
+        "symbol": "DEC",
+        "market_cap": 573109.2142702112
+    },
+    {
+        "address": "0x00281dfce4cfd72c0b6fda2aaaf077258743f9e8",
+        "name": "NuriFootBall",
+        "symbol": "NRFB",
+        "market_cap": 572570.5104822243
+    },
+    {
+        "address": "0x38A2fDc11f526Ddd5a607C1F251C065f40fBF2f7",
+        "name": "PhoenixDAO",
+        "symbol": "PHNX",
+        "market_cap": 562709.0021284632
+    },
+    {
+        "address": "0x965697b4ef02f0de01384d0d4f9f782b1670c163",
+        "name": "Oxygen",
+        "symbol": "OXY",
+        "market_cap": 555587.4985978288
+    },
+    {
+        "address": "0x888888888889c00c67689029d7856aac1065ec11",
+        "name": "Opium",
+        "symbol": "OPIUM",
+        "market_cap": 547237.9185988668
+    },
+    {
+        "address": "0x8c088775e4139af116Ac1FA6f281Bbf71E8c1c73",
+        "name": "PUMLx",
+        "symbol": "PUMLX",
+        "market_cap": 537665.6108266303
+    },
+    {
+        "address": "0x32d74896f05204d1b6ae7b0a3cebd7fc0cd8f9c7",
+        "name": "Kcash",
+        "symbol": "KCASH",
+        "market_cap": 536424.736283017
+    },
+    {
+        "address": "0x24e89bdf2f65326b94e36978a7edeac63623dafa",
+        "name": "Tiger King Coin",
+        "symbol": "TKING",
+        "market_cap": 533222.710379472
+    },
+    {
+        "address": "0x5Eaa69B29f99C84Fe5dE8200340b4e9b4Ab38EaC",
+        "name": "Raze Network",
+        "symbol": "RAZE",
+        "market_cap": 523644.9126101776
+    },
+    {
+        "address": "0x9F5F3CFD7a32700C93F971637407ff17b91c7342",
+        "name": "Scry.info",
+        "symbol": "DDD",
+        "market_cap": 518530.10127189447
+    },
+    {
+        "address": "0x009c43b42aefac590c719e971020575974122803",
+        "name": "Bibox Token",
+        "symbol": "BIX",
+        "market_cap": 516512.7636672365
+    },
+    {
+        "address": "0x5d30aD9C6374Bf925D0A75454fa327AACf778492",
+        "name": "PERI Finance",
+        "symbol": "PERI",
+        "market_cap": 513581.9251682744
+    },
+    {
+        "address": "0xa6446d655a0c34bc4f05042ee88170d056cbaf45",
+        "name": "Caspian",
+        "symbol": "CSP",
+        "market_cap": 509868.1357191
+    },
+    {
+        "address": "0x72f020f8f3e8fd9382705723cd26380f8d0c66bb",
+        "name": "PlotX",
+        "symbol": "PLOT",
+        "market_cap": 504324.86221562227
+    },
+    {
+        "address": "0xd528cf2e081f72908e086f8800977df826b5a483",
+        "name": "Paribus",
+        "symbol": "PBX",
+        "market_cap": 502627.1115503065
+    },
+    {
+        "address": "0xc55c2175e90a46602fd42e931f62b3acc1a013ca",
+        "name": "Mogul Productions",
+        "symbol": "STARS",
+        "market_cap": 492789.73908552574
+    },
+    {
+        "address": "0x09Ccd2DA5dCDd0510268d4979e792381337138b8",
+        "name": "Naka Bodhi Token",
+        "symbol": "NBOT",
+        "market_cap": 490287.1261055351
+    },
+    {
+        "address": "0xe75ad3aab14e4b0df8c5da4286608dabb21bd864",
+        "name": "Double-A Chain",
+        "symbol": "AAC",
+        "market_cap": 486896.54858545435
+    },
+    {
+        "address": "0x7968bc6a03017ea2de509aaa816f163db0f35148",
+        "name": "Hedget",
+        "symbol": "HGET",
+        "market_cap": 483459.6286325662
+    },
+    {
+        "address": "0x6D614686550B9E1c1DF4b2cD8f91C9D4df66C810",
+        "name": "Skeb Coin",
+        "symbol": "SKEB",
+        "market_cap": 474741.0281251135
+    },
+    {
+        "address": "0x0f7F961648aE6Db43C75663aC7E5414Eb79b5704",
+        "name": "Blockzero Labs",
+        "symbol": "XIO",
+        "market_cap": 474591.41276081034
+    },
+    {
+        "address": "0xcbcc0f036ed4788f63fc0fee32873d6a7487b908",
+        "name": "Humaniq",
+        "symbol": "HMQ",
+        "market_cap": 471868.11756834696
+    },
+    {
+        "address": "0x6b1a8f210ec6b7b6643cea3583fb0c079f367898",
+        "name": "Baanx",
+        "symbol": "BXX",
+        "market_cap": 456026.96734858706
+    },
+    {
+        "address": "0xCdeee767beD58c5325f68500115d4B722b3724EE",
+        "name": "Carbon",
+        "symbol": "CRBN",
+        "market_cap": 455741.48356927914
+    },
+    {
+        "address": "0x2f75113b13D136F861d212Fa9b572F2C79Ac81C4",
+        "name": "Ekta",
+        "symbol": "EKTA",
+        "market_cap": 454594.6035784155
+    },
+    {
+        "address": "0xc77b230f31b517f1ef362e59c173c2be6540b5e8",
+        "name": "VIDY",
+        "symbol": "VIDY",
+        "market_cap": 453547.12222187035
+    },
+    {
+        "address": "0x71fc1f555a39e0b698653ab0b475488ec3c34d57",
+        "name": "Rainmaker Games",
+        "symbol": "RAIN",
+        "market_cap": 452325.53750359826
+    },
+    {
+        "address": "0x946112efab61c3636cbd52de2e1392d7a75a6f01",
+        "name": "Hydro",
+        "symbol": "HYDRO",
+        "market_cap": 443109.30034946714
+    },
+    {
+        "address": "0xaD996A45fd2373ed0B10Efa4A8eCB9de445A4302",
+        "name": "Shirtum",
+        "symbol": "SHI",
+        "market_cap": 429384.32479644904
+    },
+    {
+        "address": "0x001a8ffcb0f03e99141652ebcdecdb0384e3bd6c",
+        "name": "Polker",
+        "symbol": "PKR",
+        "market_cap": 427655.3230841274
+    },
+    {
+        "address": "0xE55d97A97ae6A17706ee281486E98A84095d8AAf",
+        "name": "AIPAD",
+        "symbol": "AIPAD",
+        "market_cap": 421805.98211592284
+    },
+    {
+        "address": "0x41dbecc1cdc5517c6f76f6a6e836adbee2754de3",
+        "name": "Medicalchain",
+        "symbol": "MTN",
+        "market_cap": 421672.92540089926
+    },
+    {
+        "address": "0x3A82D3111aB5faF39d847D46023d9090261A658F",
+        "name": "Tycoon",
+        "symbol": "TYC",
+        "market_cap": 421553.0776855125
+    },
+    {
+        "address": "0x4a8f5f96d5436e43112c2fbc6a9f70da9e4e16d4",
+        "name": "Internxt",
+        "symbol": "INXT",
+        "market_cap": 420744.61461548734
+    },
+    {
+        "address": "0x9008064E6cf73e27a3Aba4B10E69f855A4F8efcC",
+        "name": "Gemie",
+        "symbol": "GEM",
+        "market_cap": 417643.0929301529
+    },
+    {
+        "address": "0x3505f494c3f0fed0b594e01fa41dd3967645ca39",
+        "name": "Swarm",
+        "symbol": "SWM",
+        "market_cap": 413547.7954465979
+    },
+    {
+        "address": "0x725440512cb7b78bf56b334e50e31707418231cb",
+        "name": "DEXA COIN",
+        "symbol": "DEXA",
+        "market_cap": 413052.6231033617
+    },
+    {
+        "address": "0xff19138b039d938db46bdda0067dc4ba132ec71c",
+        "name": "Snetwork",
+        "symbol": "SNET",
+        "market_cap": 404078.1917582187
+    },
+    {
+        "address": "0x4297394c20800e8a38a619a243e9bbe7681ff24e",
+        "name": "Hot Cross",
+        "symbol": "HOTCROSS",
+        "market_cap": 397811.4858799367
+    },
+    {
+        "address": "0x47b9f01b16e9c9cb99191dca68c9cc5bf6403957",
+        "name": "ONSTON",
+        "symbol": "ONSTON",
+        "market_cap": 396069.3217699834
+    },
+    {
+        "address": "0xB70835D7822eBB9426B56543E391846C107bd32C",
+        "name": "Game.com",
+        "symbol": "GTC",
+        "market_cap": 387986.0194824214
+    },
+    {
+        "address": "0x00aba6fe5557de1a1d565658cbddddf7c710a1eb",
+        "name": "EasyFi",
+        "symbol": "EZ",
+        "market_cap": 387633.7227908728
+    },
+    {
+        "address": "0x70d2b7c19352bb76e4409858ff5746e500f2b67c",
+        "name": "Pawtocol",
+        "symbol": "UPI",
+        "market_cap": 386555.54440177814
+    },
+    {
+        "address": "0x048fe49be32adfc9ed68c37d32b5ec9df17b3603",
+        "name": "Skrumble Network",
+        "symbol": "SKM",
+        "market_cap": 384921.85373685113
+    },
+    {
+        "address": "0x9d86b1b2554ec410eccffbf111a6994910111340",
+        "name": "Open Platform",
+        "symbol": "OPEN",
+        "market_cap": 376680.4996679911
+    },
+    {
+        "address": "0x2c4e8f2d746113d0696ce89b35f0d8bf88e0aeca",
+        "name": "OST",
+        "symbol": "OST",
+        "market_cap": 372639.85256195994
+    },
+    {
+        "address": "0xdF290B162a7D3E0A328cF198308D421954f08b94",
+        "name": "Beyond Protocol",
+        "symbol": "BP",
+        "market_cap": 371716.03201821
+    },
+    {
+        "address": "0xe8663a64a96169ff4d95b4299e7ae9a76b905b31",
+        "name": "DPRating",
+        "symbol": "RATING",
+        "market_cap": 365437.1771597528
+    },
+    {
+        "address": "0xDF49C9F599A0A9049D97CFF34D0C30E468987389",
+        "name": "SaTT",
+        "symbol": "SATT",
+        "market_cap": 360471.3854506674
+    },
+    {
+        "address": "0x9f284e1337a815fe77d2ff4ae46544645b20c5ff",
+        "name": "Darwinia Commitment Token",
+        "symbol": "KTON",
+        "market_cap": 359342.4389459401
+    },
+    {
+        "address": "0xd49ff13661451313ca1553fd6954bd1d9b6e02b9",
+        "name": "Electrify.Asia",
+        "symbol": "ELEC",
+        "market_cap": 355666.439512265
+    },
+    {
+        "address": "0x33e07f5055173cf8febede8b21b12d1e2b523205",
+        "name": "Etherland",
+        "symbol": "ELAND",
+        "market_cap": 340787.72726576217
+    },
+    {
+        "address": "0xea38eaa3c86c8f9b751533ba2e562deb9acded40",
+        "name": "Etherparty",
+        "symbol": "FUEL",
+        "market_cap": 330961.0945740026
+    },
+    {
+        "address": "0x3136ef851592acf49ca4c825131e364170fa32b3",
+        "name": "CoinFi",
+        "symbol": "COFI",
+        "market_cap": 330776.2533874004
+    },
+    {
+        "address": "0xed0d5747a9ab03a75fbfec3228cd55848245b75d",
+        "name": "e-Money",
+        "symbol": "NGM",
+        "market_cap": 329103.9142289098
+    },
+    {
+        "address": "0x00a8b738E453fFd858a7edf03bcCfe20412f0Eb0",
+        "name": "AllianceBlock",
+        "symbol": "ALBT",
+        "market_cap": 325811.83574264176
+    },
+    {
+        "address": "0x7995ab36bB307Afa6A683C24a25d90Dc1Ea83566",
+        "name": "HitChain",
+        "symbol": "HIT",
+        "market_cap": 325736.18572444416
+    },
+    {
+        "address": "0x4092678e4E78230F46A1534C0fbc8fA39780892B",
+        "name": "Odyssey",
+        "symbol": "OCN",
+        "market_cap": 320389.95985581167
+    },
+    {
+        "address": "0x63f584fa56e60e4d0fe8802b27c7e6e3b33e007f",
+        "name": "ContentBox",
+        "symbol": "BOX",
+        "market_cap": 316918.2641279301
+    },
+    {
+        "address": "0x24a6a37576377f63f194caa5f518a60f45b42921",
+        "name": "Float Protocol (Bank)",
+        "symbol": "BANK",
+        "market_cap": 312743.6595667048
+    },
+    {
+        "address": "0xae1eaae3f627aaca434127644371b67b18444051",
+        "name": "Yield Optimization Platform & Protocol",
+        "symbol": "YOP",
+        "market_cap": 305585.38893079717
+    },
+    {
+        "address": "0xe7f58a92476056627f9fdb92286778abd83b285f",
+        "name": "DecentraWeb",
+        "symbol": "DWEB",
+        "market_cap": 304375.8489143714
+    },
+    {
+        "address": "0xfe5f141bf94fe84bc28ded0ab966c16b17490657",
+        "name": "Cred",
+        "symbol": "LBA",
+        "market_cap": 302844.0340613874
+    },
+    {
+        "address": "0x4730fb1463a6f1f44aeb45f6c5c422427f37f4d0",
+        "name": "4THPILLAR TECHNOLOGIES",
+        "symbol": "FOUR",
+        "market_cap": 301053.76958080067
+    },
+    {
+        "address": "0x8a40c222996f9f3431f63bf80244c36822060f12",
+        "name": "Finxflo",
+        "symbol": "FXF",
+        "market_cap": 301004.431793694
+    },
+    {
+        "address": "0x73968b9a57c6e53d41345fd57a6e6ae27d6cdb2f",
+        "name": "Stake DAO",
+        "symbol": "SDT",
+        "market_cap": 296849.8956198554
+    },
+    {
+        "address": "0xd7dcd9b99787c619b4d57979521258d1a7267ad7",
+        "name": "EVRYNET",
+        "symbol": "EVRY",
+        "market_cap": 294710.2310235898
+    },
+    {
+        "address": "0x0f8c45b896784a1e408526b9300519ef8660209c",
+        "name": "XMax",
+        "symbol": "XMX",
+        "market_cap": 293516.6005815109
+    },
+    {
+        "address": "0x3a4cab3dcfab144fe7eb2b5a3e288cc03dc07659",
+        "name": "OnGO",
+        "symbol": "FTG",
+        "market_cap": 286978.64303524664
+    },
+    {
+        "address": "0xf25c91c87e0b1fd9b4064af0f427157aab0193a7",
+        "name": "BASIC",
+        "symbol": "BASIC",
+        "market_cap": 281635.8493192276
+    },
+    {
+        "address": "0x00d8318e44780edeefcf3020a5448f636788883c",
+        "name": "dAppstore",
+        "symbol": "DAPPX",
+        "market_cap": 281385.4939809594
+    },
+    {
+        "address": "0xC57d533c50bC22247d49a368880fb49a1caA39F7",
+        "name": "PowerTrade Fuel",
+        "symbol": "PTF",
+        "market_cap": 281262.19017612806
+    },
+    {
+        "address": "0xE1c7E30C42C24582888C758984f6e382096786bd",
+        "name": "Curate",
+        "symbol": "XCUR",
+        "market_cap": 280587.1860753269
+    },
+    {
+        "address": "0x1beef31946fbbb40b877a72e4ae04a8d1a5cee06",
+        "name": "Parachute",
+        "symbol": "PAR",
+        "market_cap": 276125.83778722986
+    },
+    {
+        "address": "0x7fbec0bb6a7152e77c30d005b5d49cbc08a602c3",
+        "name": "disBalancer",
+        "symbol": "DDOS",
+        "market_cap": 270428.6789913747
+    },
+    {
+        "address": "0xbe428c3867f05dea2a89fc76a102b544eac7f772",
+        "name": "CyberVein",
+        "symbol": "CVT",
+        "market_cap": 270386.66206517734
+    },
+    {
+        "address": "0x8a9c67fee641579deba04928c4bc45f66e26343a",
+        "name": "Jarvis Network",
+        "symbol": "JRT",
+        "market_cap": 268465.4892159304
+    },
+    {
+        "address": "0x515d7e9d75e2b76db60f8a051cd890eba23286bc",
+        "name": "Governor DAO",
+        "symbol": "GDAO",
+        "market_cap": 261132.68453045923
+    },
+    {
+        "address": "0x9b39a0b97319a9bd5fed217c1db7b030453bac91",
+        "name": "TigerCash",
+        "symbol": "TCH",
+        "market_cap": 260533.95172632427
+    },
+    {
+        "address": "0xb31ef9e52d94d4120eb44fe1ddfde5b4654a6515",
+        "name": "DOSE",
+        "symbol": "DOSE",
+        "market_cap": 256429.8336200342
+    },
+    {
+        "address": "0xaec7d1069e3a914a3eb50f0bfb1796751f2ce48a",
+        "name": "S4FE",
+        "symbol": "S4F",
+        "market_cap": 256234.7391360959
+    },
+    {
+        "address": "0xa23c1194d421f252b4e6d5edcc3205f7650a4ebe",
+        "name": "Launchblock.com",
+        "symbol": "LBP",
+        "market_cap": 252383.9814133397
+    },
+    {
+        "address": "0x3449FC1Cd036255BA1EB19d65fF4BA2b8903A69a",
+        "name": "Basis Cash",
+        "symbol": "BAC",
+        "market_cap": 250679.0599505684
+    },
+    {
+        "address": "0x2c9c19ce3b15ae77c6d80aec3c1194cfd6f7f3fa",
+        "name": "2crazyNFT",
+        "symbol": "2CRZ",
+        "market_cap": 250135.00224072326
+    },
+    {
+        "address": "0x69b148395ce0015c13e36bffbad63f49ef874e03",
+        "name": "DATA",
+        "symbol": "DTA",
+        "market_cap": 248359.75233673648
+    },
+    {
+        "address": "0xa249de6948022783765fee4850d7b85e43118fcc",
+        "name": "Jarvis+",
+        "symbol": "JAR",
+        "market_cap": 245115.75462627027
+    },
+    {
+        "address": "0x06e0feb0d74106c7ada8497754074d222ec6bcdf",
+        "name": "BitBall",
+        "symbol": "BTB",
+        "market_cap": 244391.68669644525
+    },
+    {
+        "address": "0x80ce3027a70e0a928d9268994e9b85d03bd4cdcf",
+        "name": "Lokr",
+        "symbol": "LKR",
+        "market_cap": 244303.944811903
+    },
+    {
+        "address": "0xff75ced57419bcaebe5f05254983b013b0646ef5",
+        "name": "Cook Finance",
+        "symbol": "COOK",
+        "market_cap": 243830.88730516876
+    },
+    {
+        "address": "0x07150e919b4de5fd6a63de1f9384828396f25fdc",
+        "name": "Base Protocol",
+        "symbol": "BASE",
+        "market_cap": 243489.44597779372
+    },
+    {
+        "address": "0x6bC1F3A1ae56231DbB64d3E82E070857EAe86045",
+        "name": "Xensor",
+        "symbol": "XSR",
+        "market_cap": 240492.30881936097
+    },
+    {
+        "address": "0x358AA737e033F34df7c54306960a38d09AaBd523",
+        "name": "Ares Protocol",
+        "symbol": "ARES",
+        "market_cap": 239649.7732412135
+    },
+    {
+        "address": "0x62Dc4817588d53a056cBbD18231d91ffCcd34b2A",
+        "name": "DeHive",
+        "symbol": "DHV",
+        "market_cap": 234788.52585071087
+    },
+    {
+        "address": "0x9040e237C3bF18347bb00957Dc22167D0f2b999d",
+        "name": "Standard",
+        "symbol": "STND",
+        "market_cap": 231464.28276966116
+    },
+    {
+        "address": "0x73c9275c3a2dd84b5741fd59aebf102c91eb033f",
+        "name": "Bitball Treasure",
+        "symbol": "BTRS",
+        "market_cap": 228600.40970077307
+    },
+    {
+        "address": "0xa2881f7f441267042f9778ffa0d4f834693426be",
+        "name": "The HUSL",
+        "symbol": "HUSL",
+        "market_cap": 222759.5847689197
+    },
+    {
+        "address": "0x6c2adc2073994fb2ccc5032cc2906fa221e9b391",
+        "name": "Delphy",
+        "symbol": "DPY",
+        "market_cap": 221394.38987862808
+    },
+    {
+        "address": "0x7e9e431a0b8c4d532c745b1043c7fa29a48d4fba",
+        "name": "eosDAC",
+        "symbol": "EOSDAC",
+        "market_cap": 217728.48530420737
+    },
+    {
+        "address": "0x8e30ea2329d95802fd804f4291220b0e2f579812",
+        "name": "Decentralized Vulnerability Platform",
+        "symbol": "DVP",
+        "market_cap": 214369.49478069026
+    },
+    {
+        "address": "0xf3db5fa2c66b7af3eb0c0b782510816cbe4813b8",
+        "name": "Everex",
+        "symbol": "EVX",
+        "market_cap": 212914.4001996756
+    },
+    {
+        "address": "0xf278c1ca969095ffddded020290cf8b5c424ace2",
+        "name": "Ruff",
+        "symbol": "RUFF",
+        "market_cap": 211783.65503847995
+    },
+    {
+        "address": "0x549905519f9e06d55d7dfcd4d54817780f6b93e8",
+        "name": "TouchCon",
+        "symbol": "TOC",
+        "market_cap": 210840.02433482656
+    },
+    {
+        "address": "0x026e62dded1a6ad07d93d39f96b9eabd59665e0d",
+        "name": "Birdchain",
+        "symbol": "BIRD",
+        "market_cap": 207846.79646894193
+    },
+    {
+        "address": "0x20a8cec5fffea65be7122bcab2ffe32ed4ebf03a",
+        "name": "DinoX",
+        "symbol": "DNXC",
+        "market_cap": 206140.15913092074
+    },
+    {
+        "address": "0x2e1e15c44ffe4df6a0cb7371cd00d5028e571d14",
+        "name": "Mettalex",
+        "symbol": "MTLX",
+        "market_cap": 205012.61340444625
+    },
+    {
+        "address": "0x66186008C1050627F979d464eABb258860563dbE",
+        "name": "MediShares",
+        "symbol": "MDS",
+        "market_cap": 204423.96891906395
+    },
+    {
+        "address": "0xc03a652efbbacfabde37cd66c7a4ff4332f7186c",
+        "name": "Xeno Token",
+        "symbol": "XNO",
+        "market_cap": 203633.42864313786
+    },
+    {
+        "address": "0x59e9261255644c411afdd00bd89162d09d862e38",
+        "name": "ETHA Lend",
+        "symbol": "ETHA",
+        "market_cap": 200144.46238980017
+    },
+    {
+        "address": "0x29cbd0510eec0327992cd6006e63f9fa8e7f33b7",
+        "name": "Tidal Finance",
+        "symbol": "TIDAL",
+        "market_cap": 194327.66453703083
+    },
+    {
+        "address": "0x76960dccd5a1fe799f7c29be9f19ceb4627aeb2f",
+        "name": "RED",
+        "symbol": "RED",
+        "market_cap": 191421.18645860953
+    },
+    {
+        "address": "0x7FA7dF4996AC59F398476892cfB195eD38543520",
+        "name": "WagyuSwap",
+        "symbol": "WAG",
+        "market_cap": 189841.7913530282
+    },
+    {
+        "address": "0xfe9a29ab92522d14fc65880d817214261d8479ae",
+        "name": "SnowSwap",
+        "symbol": "SNOW",
+        "market_cap": 186376.76768686323
+    },
+    {
+        "address": "0x661ab0ed68000491d98c796146bcf28c20d7c559",
+        "name": "Shadows",
+        "symbol": "DOWS",
+        "market_cap": 177860.1645225711
+    },
+    {
+        "address": "0x5c64031c62061865e5fd0f53d3cdaef80f72e99d",
+        "name": "Hashgard",
+        "symbol": "GARD",
+        "market_cap": 177112.48603916998
+    },
+    {
+        "address": "0x006BeA43Baa3f7A6f765F14f10A1a1b08334EF45",
+        "name": "Stox",
+        "symbol": "STX",
+        "market_cap": 176360.06566333357
+    },
+    {
+        "address": "0x9aeB50f542050172359A0e1a25a9933Bc8c01259",
+        "name": "OIN Finance",
+        "symbol": "OIN",
+        "market_cap": 174988.24974339854
+    },
+    {
+        "address": "0xf7413489c474ca4399eee604716c72879eea3615",
+        "name": "APYSwap",
+        "symbol": "APYS",
+        "market_cap": 170214.58794834334
+    },
+    {
+        "address": "0x8716fc5da009d3a208f0178b637a50f4ef42400f",
+        "name": "UGAS",
+        "symbol": "UGAS",
+        "market_cap": 169523.82181089648
+    },
+    {
+        "address": "0x5aaefe84e0fb3dd1f0fcff6fa7468124986b91bd",
+        "name": "Evedo",
+        "symbol": "EVED",
+        "market_cap": 166447.24117188714
+    },
+    {
+        "address": "0x3543638ed4a9006e4840b105944271bcea15605d",
+        "name": "U Network",
+        "symbol": "UUU",
+        "market_cap": 165960.3115738474
+    },
+    {
+        "address": "0xc813EA5e3b48BEbeedb796ab42A30C5599b01740",
+        "name": "Autonio",
+        "symbol": "NIOX",
+        "market_cap": 164791.0779420017
+    },
+    {
+        "address": "0x066798d9ef0833ccc719076dab77199ecbd178b0",
+        "name": "SakeToken",
+        "symbol": "SAKE",
+        "market_cap": 164539.8108906844
+    },
+    {
+        "address": "0x0A913beaD80F321E7Ac35285Ee10d9d922659cB7",
+        "name": "DOS Network",
+        "symbol": "DOS",
+        "market_cap": 162536.8286345395
+    },
+    {
+        "address": "0x657B83A0336561C8f64389a6f5aDE675C04b0C3b",
+        "name": "Playcent",
+        "symbol": "PCNT",
+        "market_cap": 162451.98862529083
+    },
+    {
+        "address": "0xd6929179D752d5D25c5efe2d9729eb77D7138A80",
+        "name": "Goons of Balatroon",
+        "symbol": "GOB",
+        "market_cap": 156769.15147506623
+    },
+    {
+        "address": "0xff44b937788215eca197baaf9af69dbdc214aa04",
+        "name": "ROCKI",
+        "symbol": "ROCKI",
+        "market_cap": 151648.16000545578
+    },
+    {
+        "address": "0xf0ee6b27b759c9893ce4f094b49ad28fd15a23e4",
+        "name": "Enigma",
+        "symbol": "ENG",
+        "market_cap": 150779.01815745863
+    },
+    {
+        "address": "0xeed3ae7b0f8b5b9bb8c035a9941382b1822671cd",
+        "name": "EveryCoin ",
+        "symbol": "EVY",
+        "market_cap": 150688.15488289448
+    },
+    {
+        "address": "0x1cd2528522A17B6Be63012fB63AE81f3e3e29D97",
+        "name": "Mind Music",
+        "symbol": "MND",
+        "market_cap": 150498.57334668795
+    },
+    {
+        "address": "0x9e04f519b094f5f8210441e285f603f4d2b50084",
+        "name": "EarthFund",
+        "symbol": "1EARTH",
+        "market_cap": 147754.31656507571
+    },
+    {
+        "address": "0xb1e93236ab6073fdac58ada5564897177d4bcc43",
+        "name": "Seele-N",
+        "symbol": "SEELE",
+        "market_cap": 146311.22174363807
+    },
+    {
+        "address": "0x12f649a9e821f90bb143089a6e56846945892ffb",
+        "name": "Hyprr",
+        "symbol": "UDOO",
+        "market_cap": 143398.1791511634
+    },
+    {
+        "address": "0x4af328c52921706dcb739f25786210499169afe6",
+        "name": "Sakura Bloom",
+        "symbol": "SKB",
+        "market_cap": 143253.39901514055
+    },
+    {
+        "address": "0x488E0369f9BC5C40C002eA7c1fe4fd01A198801c",
+        "name": "Golff",
+        "symbol": "GOF",
+        "market_cap": 141022.6861246891
+    },
+    {
+        "address": "0x329cf160F30D21006bCD24b67EAde561E54CDE4c",
+        "name": "CareCoin",
+        "symbol": "CARE",
+        "market_cap": 137818.24939113262
+    },
+    {
+        "address": "0x5d4abc77b8405ad177d8ac6682d584ecbfd46cec",
+        "name": "Primas",
+        "symbol": "PST",
+        "market_cap": 133261.3755713868
+    },
+    {
+        "address": "0xEd91879919B71bB6905f23af0A68d231EcF87b14",
+        "name": "DMM: Governance",
+        "symbol": "DMG",
+        "market_cap": 133145.11274129822
+    },
+    {
+        "address": "0xEda8B016efA8b1161208Cf041cD86972eeE0F31E",
+        "name": "IHT Real Estate Protocol",
+        "symbol": "IHT",
+        "market_cap": 131822.1822220421
+    },
+    {
+        "address": "0xbd1848e1491d4308ad18287a745dd4db2a4bd55b",
+        "name": "Mochi Market",
+        "symbol": "MOMA",
+        "market_cap": 129834.17880923394
+    },
+    {
+        "address": "0x8f1135eA4f8946949441716d66e5390C5A990DF0",
+        "name": "MesChain",
+        "symbol": "MES",
+        "market_cap": 129404.57045670334
+    },
+    {
+        "address": "0xdD0020B1D5Ba47A54E2EB16800D73Beb6546f91A",
+        "name": "Moola",
+        "symbol": "AXPR",
+        "market_cap": 127023.8155429097
+    },
+    {
+        "address": "0x727f064a78dc734d33eec18d5370aef32ffd46e4",
+        "name": "Orion Money",
+        "symbol": "ORION",
+        "market_cap": 126389.88591376605
+    },
+    {
+        "address": "0x11613b1f840bb5A40F8866d857e24DA126B79D73",
+        "name": "Cappasity",
+        "symbol": "CAPP",
+        "market_cap": 124360.7274985762
+    },
+    {
+        "address": "0x39795344cbcc76cc3fb94b9d1b15c23c2070c66d",
+        "name": "Seigniorage Shares",
+        "symbol": "SHARE",
+        "market_cap": 123634.03647816331
+    },
+    {
+        "address": "0x054f76beed60ab6dbeb23502178c52d6c5debe40",
+        "name": "DeFiner",
+        "symbol": "FIN",
+        "market_cap": 121487.80349010725
+    },
+    {
+        "address": "0x21381e026ad6d8266244f2a583b35f9e4413fa2a",
+        "name": "Formation Fi",
+        "symbol": "FORM",
+        "market_cap": 120791.00042395157
+    },
+    {
+        "address": "0x60bb16c4a931b1a0b8a7d945c651dd90f41d42cf",
+        "name": "FBX by KXCO",
+        "symbol": "FBX",
+        "market_cap": 116270.70563262196
+    },
+    {
+        "address": "0xd2d6158683aee4cc838067727209a0aaf4359de3",
+        "name": "Bounty0x",
+        "symbol": "BNTY",
+        "market_cap": 110619.72530990801
+    },
+    {
+        "address": "0x07e3c70653548B04f0A75970C1F81B4CBbFB606f",
+        "name": "Agrello",
+        "symbol": "DLT",
+        "market_cap": 107103.81167031977
+    },
+    {
+        "address": "0xe88f8313e61a97cec1871ee37fbbe2a8bf3ed1e4",
+        "name": "SORA Validator Token",
+        "symbol": "VAL",
+        "market_cap": 104319.86840559999
+    },
+    {
+        "address": "0x2baac9330cf9ac479d819195794d79ad0c7616e3",
+        "name": "adbank",
+        "symbol": "ADB",
+        "market_cap": 102534.73444445488
+    },
+    {
+        "address": "0x8185bc4757572da2a610f887561c32298f1a5748",
+        "name": "Aluna.Social",
+        "symbol": "ALN",
+        "market_cap": 101109.27972633415
+    },
+    {
+        "address": "0x5d3a4F62124498092Ce665f865E0b38fF6F5FbEa",
+        "name": "Ideaology",
+        "symbol": "IDEA",
+        "market_cap": 100710.043760046
+    },
+    {
+        "address": "0x89bd2e7e388fab44ae88bef4e1ad12b4f1e0911c",
+        "name": "Peanut",
+        "symbol": "NUX",
+        "market_cap": 99625.34555559729
+    },
+    {
+        "address": "0x3c03b4ec9477809072ff9cc9292c9b25d4a8e6c6",
+        "name": "CoverCompared",
+        "symbol": "CVR",
+        "market_cap": 99544.98827889793
+    },
+    {
+        "address": "0x83984d6142934bb535793a82adb0a46ef0f66b6d",
+        "name": "Remme",
+        "symbol": "REM",
+        "market_cap": 99139.56290994097
+    },
+    {
+        "address": "0xc7bba5b765581efb2cdd2679db5bea9ee79b201f",
+        "name": "Gems ",
+        "symbol": "GEM",
+        "market_cap": 98874.35596076264
+    },
+    {
+        "address": "0xe0b9a2c3e9f40cf74b2c7f591b2b0cca055c3112",
+        "name": "Genesis Shards",
+        "symbol": "GS",
+        "market_cap": 98623.63089917284
+    },
+    {
+        "address": "0x2bba3cf6de6058cc1b4457ce00deb359e2703d7f",
+        "name": "HashCoin",
+        "symbol": "HSC",
+        "market_cap": 98490.02131006005
+    },
+    {
+        "address": "0x1C95b093d6C236d3EF7c796fE33f9CC6b8606714",
+        "name": "BOMB",
+        "symbol": "BOMB",
+        "market_cap": 97203.13597720207
+    },
+    {
+        "address": "0x14da7b27b2e0fedefe0a664118b0c9bc68e2e9af",
+        "name": "Blockchain Cuties Universe Governance",
+        "symbol": "BCUG",
+        "market_cap": 96330.59539350407
+    },
+    {
+        "address": "0x8a77e40936bbc27e80e9a3f526368c967869c86d",
+        "name": "Merculet",
+        "symbol": "MVP",
+        "market_cap": 92355.69959125287
+    },
+    {
+        "address": "0x943ed852dadb5c3938ecdc6883718df8142de4c8",
+        "name": "FansTime",
+        "symbol": "FTI",
+        "market_cap": 92252.2663181199
+    },
+    {
+        "address": "0xecc0f1f860a82ab3b442382d93853c02d6384389",
+        "name": "Axis DeFi",
+        "symbol": "AXIS",
+        "market_cap": 91857.95293422136
+    },
+    {
+        "address": "0x675bbc7514013e2073db7a919f6e4cbef576de37",
+        "name": "Coldstack",
+        "symbol": "CLS",
+        "market_cap": 89543.03499177423
+    },
+    {
+        "address": "0x23352036e911a22cfc692b5e2e196692658aded9",
+        "name": "Friendz",
+        "symbol": "FDZ",
+        "market_cap": 85878.71945306094
+    },
+    {
+        "address": "0xec681f28f4561c2a9534799aa38e0d36a83cf478",
+        "name": "YVS.Finance",
+        "symbol": "YVS",
+        "market_cap": 85701.52976911464
+    },
+    {
+        "address": "0x2604fa406be957e542beb89e6754fcde6815e83f",
+        "name": "Playkey",
+        "symbol": "PKT",
+        "market_cap": 80375.65784305452
+    },
+    {
+        "address": "0xed3d4e446a96dc3b181b64b75c3c70da41dc3cbe",
+        "name": "Vodra",
+        "symbol": "VDR",
+        "market_cap": 79989.7606173421
+    },
+    {
+        "address": "0x7A41e0517a5ecA4FdbC7FbebA4D4c47B9fF6DC63",
+        "name": "Zeusshield",
+        "symbol": "ZSC",
+        "market_cap": 76277.54960733734
+    },
+    {
+        "address": "0xa6a840e50bcaa50da017b91a0d86b8b2d41156ee",
+        "name": "EchoLink",
+        "symbol": "EKO",
+        "market_cap": 76166.2064975097
+    },
+    {
+        "address": "0xf70a642bd387f94380ffb90451c2c81d4eb82cbc",
+        "name": "Starbase",
+        "symbol": "STAR",
+        "market_cap": 74133.56309471752
+    },
+    {
+        "address": "0xEE1CeA7665bA7aa97e982EdeaeCb26B59a04d035",
+        "name": "ORAO Network",
+        "symbol": "ORAO",
+        "market_cap": 74076.35526712604
+    },
+    {
+        "address": "0x734c90044a0ba31b3f2e640c10dc5d3540499bfd",
+        "name": "TradeStars",
+        "symbol": "TSX",
+        "market_cap": 73576.4657716106
+    },
+    {
+        "address": "0x0fD67B4ceb9b607Ef206904eC73459c4880132c9",
+        "name": "ShoeFy",
+        "symbol": "SHOE",
+        "market_cap": 68212.56461385197
+    },
+    {
+        "address": "0x94804dc4948184ffd7355f62ccbb221c9765886f",
+        "name": "Rage Fan",
+        "symbol": "RAGE",
+        "market_cap": 67202.8513790879
+    },
+    {
+        "address": "0xa1a36d3537bbe375cc9694795f663ddc8d516db9",
+        "name": "Polinate",
+        "symbol": "POLI",
+        "market_cap": 64606.173236744195
+    },
+    {
+        "address": "0xa8B61CfF52564758A204F841E636265bEBC8db9B",
+        "name": "Yield Protocol",
+        "symbol": "YIELD",
+        "market_cap": 62953.40583538705
+    },
+    {
+        "address": "0x9a257c90fa239fba07771ef7da2d554d148c2e89",
+        "name": "MEDIA EYE NFT Portal",
+        "symbol": "eYe",
+        "market_cap": 62802.02986096607
+    },
+    {
+        "address": "0xa13f0743951b4f6e3e3aa039f682e17279f52bc3",
+        "name": "Sentinel Chain",
+        "symbol": "SENC",
+        "market_cap": 60365.82334752856
+    },
+    {
+        "address": "0x24c19f7101c1731b85f1127eaa0407732e36ecdd",
+        "name": "SharedStake",
+        "symbol": "SGT",
+        "market_cap": 59967.87260950344
+    },
+    {
+        "address": "0x6ff1bfa14a57594a5874b37ff6ac5efbd9f9599a",
+        "name": "TotemFi",
+        "symbol": "TOTM",
+        "market_cap": 59650.73993136143
+    },
+    {
+        "address": "0x1e4E46b7BF03ECE908c88FF7cC4975560010893A",
+        "name": "Internet of Energy Network",
+        "symbol": "IOEN",
+        "market_cap": 58237.107367979945
+    },
+    {
+        "address": "0x4bb3205bf648b7f59ef90dee0f1b62f6116bc7ca",
+        "name": "NBX",
+        "symbol": "BYN",
+        "market_cap": 57796.601543302786
+    },
+    {
+        "address": "0xed0889f7e1c7c7267407222be277e1f1ef4d4892",
+        "name": "MELX",
+        "symbol": "MEL",
+        "market_cap": 57589.02479328582
+    },
+    {
+        "address": "0x20945ca1df56d237fd40036d47e866c7dccd2114",
+        "name": "Nsure.Network",
+        "symbol": "NSURE",
+        "market_cap": 54547.07603893714
+    },
+    {
+        "address": "0x2610f0bfc21ef389fe4d03cfb7de9ac1e6c99d6e",
+        "name": "Skyrim Finance",
+        "symbol": "SKYRIM",
+        "market_cap": 53792.92086535565
+    },
+    {
+        "address": "0x4f5fa8f2d12e5eb780f6082dd656c565c48e0f24",
+        "name": "Gourmet Galaxy",
+        "symbol": "GUM",
+        "market_cap": 52402.40636228057
+    },
+    {
+        "address": "0x8b1f49491477e0fb46a29fef53f1ea320d13c349",
+        "name": "MicroMoney",
+        "symbol": "AMM",
+        "market_cap": 52368.20222679605
+    },
+    {
+        "address": "0x4674672bcddda2ea5300f5207e1158185c944bc0",
+        "name": "Gem Exchange and Trading",
+        "symbol": "GXT",
+        "market_cap": 50459.71860913717
+    },
+    {
+        "address": "0x2C2f7e7C5604D162d75641256b80F1Bf6f4dC796",
+        "name": "POLKARARE",
+        "symbol": "PRARE",
+        "market_cap": 49554.92233646084
+    },
+    {
+        "address": "0x3adfc4999f77d04c8341bac5f3a76f58dff5b37a",
+        "name": "Privatix",
+        "symbol": "PRIX",
+        "market_cap": 49185.860582633184
+    },
+    {
+        "address": "0xAeC65404DdC3af3C897AD89571d5772C1A695F22",
+        "name": "Phoenix Token",
+        "symbol": "PHX",
+        "market_cap": 45827.61657779022
+    },
+    {
+        "address": "0xe4dae00bc1c46ea2f44ae71b1beb8b171c15d812",
+        "name": "PREMA",
+        "symbol": "PRMX",
+        "market_cap": 41285.622622626805
+    },
+    {
+        "address": "0x80c8c3dcfb854f9542567c8dac3f44d709ebc1de",
+        "name": "Spaceswap MILK2",
+        "symbol": "MILK2",
+        "market_cap": 41232.6778019747
+    },
+    {
+        "address": "0x2bdc0d42996017fce214b21607a515da41a9e0c5",
+        "name": "SkinCoin",
+        "symbol": "SKIN",
+        "market_cap": 40756.07630975507
+    },
+    {
+        "address": "0xa4ef4b0b23c1fc81d3f9ecf93510e64f58a4a016",
+        "name": "1MillionNFTs",
+        "symbol": "1MIL",
+        "market_cap": 39295.027216008464
+    },
+    {
+        "address": "0x40d1f63b5d2048e67e9bedb1b4c2f1a9fb4b6817",
+        "name": "Golden Goose",
+        "symbol": "GOLD",
+        "market_cap": 38133.26721869032
+    },
+    {
+        "address": "0xc666081073e8dff8d3d1c2292a29ae1a2153ec09",
+        "name": "Digitex",
+        "symbol": "DGTX",
+        "market_cap": 36319.564586736626
+    },
+    {
+        "address": "0x5b11aacb6bddb9ffab908fdce739bf4aed554327",
+        "name": "TrueDeck",
+        "symbol": "TDP",
+        "market_cap": 34072.37813618287
+    },
+    {
+        "address": "0xb62d18dea74045e822352ce4b3ee77319dc5ff2f",
+        "name": "EventChain",
+        "symbol": "EVC",
+        "market_cap": 33508.11768053515
+    },
+    {
+        "address": "0x8727c112c712c4a03371ac87a74dd6ab104af768",
+        "name": "Jetcoin",
+        "symbol": "JET",
+        "market_cap": 31784.923571623134
+    },
+    {
+        "address": "0xef53462838000184f35f7d991452e5f25110b207",
+        "name": "Knit Finance",
+        "symbol": "KFT",
+        "market_cap": 28820.674592386462
+    },
+    {
+        "address": "0x9f195617fa8fbad9540c5d113a99a0a0172aaedc",
+        "name": "Niobium Coin",
+        "symbol": "NBC",
+        "market_cap": 27008.17039633472
+    },
+    {
+        "address": "0x44197a4c44d6a059297caf6be4f7e172bd56caaf",
+        "name": "ELTCOIN",
+        "symbol": "ELTCOIN",
+        "market_cap": 24957.373488261674
+    },
+    {
+        "address": "0x4a1d542b52a95ad01ddc70c2e7df0c7bbaadc56f",
+        "name": "Niftify",
+        "symbol": "NIFT",
+        "market_cap": 22778.378571573914
+    },
+    {
+        "address": "0xaa99199d1e9644b588796F3215089878440D58e0",
+        "name": "Alphr finance",
+        "symbol": "ALPHR",
+        "market_cap": 17884.096216786173
+    },
+    {
+        "address": "0x0e2ef8aecb3c01ad5d596f1b67134e178199984d",
+        "name": "Landbox",
+        "symbol": "LAND",
+        "market_cap": 12194.966034745417
+    },
+    {
+        "address": "0xe84d9e32dC8cE819b8D6c83e50EDAfD46c6354dB",
+        "name": "Koi Network",
+        "symbol": "KOI",
+        "market_cap": 11811.555101586122
+    },
+    {
+        "address": "0x00d46727c2E4A6E358A8c0D638137a3d91B19BE6",
+        "name": "DragonVein",
+        "symbol": "DVC",
+        "market_cap": 11523.175034055044
+    },
+    {
+        "address": "0x187d1018e8ef879be4194d6ed7590987463ead85",
+        "name": "FUZE Token",
+        "symbol": "FUZE",
+        "market_cap": 4850.550679013109
+    },
+    {
+        "address": "0x26CB3641aaA43911f1D4cB2ce544eb652AAc7c47",
+        "name": "Crystal Token",
+        "symbol": "CYL",
+        "market_cap": 1053.794904904004
+    },
+    {
+        "address": "0x3b7f247f21bf3a07088c2d3423f64233d4b069f7",
+        "name": "Dynamite",
+        "symbol": "DYNMT",
+        "market_cap": 658.1815631518491
+    },
+    {
+        "address": "0x8a6ACA71A218301c7081d4e96D64292D3B275ce0",
+        "name": "S.Finance",
+        "symbol": "SFG",
+        "market_cap": 333.00489249656664
+    },
+    {
+        "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "name": "WETH",
+        "symbol": "WETH",
+        "market_cap": 0
+    },
+    {
+        "address": "0xa35923162c49cf95e6bf26623385eb431ad920d3",
+        "name": "Turbo",
+        "symbol": "TURBO",
+        "market_cap": 0
+    },
+    {
+        "address": "0x9bf1d7d63dd7a4ce167cf4866388226eeefa702e",
+        "name": "Ben",
+        "symbol": "BEN",
+        "market_cap": 0
+    },
+    {
+        "address": "0x244b797d622d4dee8b188b03546acaabd0cf91a0",
+        "name": "FourCoin",
+        "symbol": "FOUR",
+        "market_cap": 0
+    },
+    {
+        "address": "0x25722cd432d02895d9be45f5deb60fc479c8781e",
+        "name": "Sponge",
+        "symbol": "$SPONGE",
+        "market_cap": 0
+    },
+    {
+        "address": "0x5026F006B85729a8b14553FAE6af249aD16c9aaB",
+        "name": "Wojak",
+        "symbol": "WOJAK",
+        "market_cap": 0
+    },
+    {
+        "address": "0x1ce270557C1f68Cfb577b856766310Bf8B47FD9C",
+        "name": "MongCoin",
+        "symbol": "$MONG",
+        "market_cap": 0
+    },
+    {
+        "address": "0x7D8146cf21e8D7cbe46054e01588207b51198729",
+        "name": "BOB",
+        "symbol": "BOB",
+        "market_cap": 0
+    },
+    {
+        "address": "0xf03d5fc6e08de6ad886fca34abf9a59ef633b78a",
+        "name": "Capybara",
+        "symbol": "CAPY",
+        "market_cap": 0
+    },
+    {
+        "address": "0x9ee91F9f426fA633d227f7a9b000E28b9dfd8599",
+        "name": "Lido Staked Matic",
+        "symbol": "stMATIC",
+        "market_cap": 0
+    },
+    {
+        "address": "0x4be10da47a07716af28ad199fbe020501bddd7af",
+        "name": "XT.com Token",
+        "symbol": "XT",
+        "market_cap": 0
+    },
+    {
+        "address": "0x9DB0FB0Aebe6A925B7838D16e3993A3976A64AaB",
+        "name": "Bambi",
+        "symbol": "BAM",
+        "market_cap": 0
+    },
+    {
+        "address": "0xb69753c06bb5c366be51e73bfc0cc2e3dc07e371",
+        "name": "POOH",
+        "symbol": "POOH",
+        "market_cap": 0
+    },
+    {
+        "address": "0x8F8eD076e61A27DB72a5724ea0907A66fb0ddB32",
+        "name": "gold pieces",
+        "symbol": "GP",
+        "market_cap": 0
+    },
+    {
+        "address": "0x925206b8a707096Ed26ae47C84747fE0bb734F59",
+        "name": "WhiteBIT Token",
+        "symbol": "WBT",
+        "market_cap": 0
+    },
+    {
+        "address": "0x3ecab35b64345bfc472477a653e4a3abe70532d9",
+        "name": "ENTERBUTTON",
+        "symbol": "ENTC",
+        "market_cap": 0
+    },
+    {
+        "address": "0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0",
+        "name": "Lido wstETH",
+        "symbol": "WSTETH",
+        "market_cap": 0
+    },
+    {
+        "address": "0xB477718f329DFFda6bc09b0e265Acc38966536F8",
+        "name": "TOM",
+        "symbol": "TOM",
+        "market_cap": 0
+    },
+    {
+        "address": "0xf831938caf837cd505de196bbb408d81a06376ab",
+        "name": "JEFF",
+        "symbol": "JEFF",
+        "market_cap": 0
+    },
+    {
+        "address": "0x1f17d72cbe65df609315df5c4f5f729efbd00ade",
+        "name": "Gyoshi",
+        "symbol": "GYOSHI",
+        "market_cap": 0
+    },
+    {
+        "address": "0x510975edA48A97E0cA228dD04d1217292487bea6",
+        "name": "XENO Governance",
+        "symbol": "GXE",
+        "market_cap": 0
+    },
+    {
+        "address": "0xbe9895146f7af43049ca1c1ae358b0541ea49704",
+        "name": "Coinbase Wrapped Staked ETH",
+        "symbol": "CBETH",
+        "market_cap": 0
+    },
+    {
+        "address": "0xd87D72248093597df8D56d2a53C1ab7c1A0Cc8DA",
+        "name": "Hasaki",
+        "symbol": "HAHA",
+        "market_cap": 0
+    },
+    {
+        "address": "0xb794ad95317f75c44090f64955954c3849315ffe",
+        "name": "Ribbit",
+        "symbol": "RIBBIT",
+        "market_cap": 0
+    },
+    {
+        "address": "0x06450dEe7FD2Fb8E39061434BAbCFC05599a6Fb8",
+        "name": "XEN Crypto",
+        "symbol": "XEN",
+        "market_cap": 0
+    },
+    {
+        "address": "0xcaabcaa4ca42e1d86de1a201c818639def0ba7a7",
+        "name": "Talken",
+        "symbol": "TALK",
+        "market_cap": 0
+    },
+    {
+        "address": "0x4527a3b4a8a150403090a99b87effc96f2195047",
+        "name": "P2P Solutions foundation",
+        "symbol": "P2PS",
+        "market_cap": 0
+    },
+    {
+        "address": "0xd7e0f80fb28233bdde0006c50568606a8feb964c",
+        "name": "Australian Dollar Token",
+        "symbol": "AUDT",
+        "market_cap": 0
+    },
+    {
+        "address": "0x39aa39c021dfbae8fac545936693ac917d5e7563",
+        "name": "Compound USD Coin",
+        "symbol": "CUSDC",
+        "market_cap": 0
+    },
+    {
+        "address": "0xbc7250c8c3eca1dfc1728620af835fca489bfdf3",
+        "name": "GM Wagmi",
+        "symbol": "GM",
+        "market_cap": 0
+    },
+    {
+        "address": "0x271a66F8c4728b07A6a8D3895cf825f4A0791d3C",
+        "name": "minionseth",
+        "symbol": "MINIONS",
+        "market_cap": 0
+    },
+    {
+        "address": "0xf03a7eb46d01d9ecaa104558c732cf82f6b6b645",
+        "name": "Stader MaticX",
+        "symbol": "MATICX",
+        "market_cap": 0
+    }
+]
