@@ -167,7 +167,7 @@ contract OrderBookExchange {
         // Price slippage check (positive slippage is allowed).
         // (amountB_asked * discount) must be lower than (amountB_received)
         require(
-            ((amountA * order.priceX96) >> 96) * (10000 - order.maxSlippage) <
+            ((amountA * order.priceX96) >> 96) * (10000 - order.maxSlippage) <=
                 amountB * 10000,
             "Price rejected (too much slippage ?)"
         ); // Use >> 96 to convert to fixed point float. Use * 10000 to convert to bips and avoid division.
