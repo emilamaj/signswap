@@ -57,7 +57,7 @@ contract OrderBookExchangeTest is Test {
         (uint8 v, bytes32 r, bytes32 s) = vm.sign(privateKey, messageHash);
 
         // Save the signature
-        bytes memory signature = abi.encodePacked(v, r, s);
+        bytes memory signature = abi.encodePacked(r, s, v);
 
         // Create the final order
         return
