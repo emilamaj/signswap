@@ -189,7 +189,9 @@ async function validateOrder(order, checkNonce = false) {
         order.signature.s
     );
 
+    // Check if the signer is the same as the user, or if the signer is address(0)
     if (signer !== order.user) return false;
+    if (signer === "0x0000000000000000000000000000000000000000") return false;
 }
 
 // This function calls the executeTrade function in the smart contract to perform the trade.

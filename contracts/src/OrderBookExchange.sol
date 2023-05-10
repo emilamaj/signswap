@@ -1,3 +1,4 @@
+// This is the core smart contract for the protocol. It is used to execute trades using the two provided, cryptographicly signed orders.
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
@@ -35,6 +36,7 @@ contract OrderBookExchange {
 
     // Store the nonces of the users to prevent replay attacks and to allow order cancellation.
     mapping(address => uint256) public nonces;
+
 
     function executeTrade(
         Order memory orderA,
@@ -83,7 +85,8 @@ contract OrderBookExchange {
 
     // No need to verify the signature here. Only the user can cancel his own orders.
     function cancelOrder() external {
-        nonces[msg.sender]++;
+        emit CancelOrder(msg.sender, nonces[msg.sender]);
+        nonces[msg.sender] += 1;
     }
 
     function checkSignature(Order memory order) public view {
@@ -114,34 +117,14 @@ contract OrderBookExchange {
         bytes32 prefixedHash = keccak256(
             abi.encodePacked("\x19Ethereum Signed Message:\n32", messageHash)
         );
-        (uint8 v, bytes32 r, bytes32 s) = _splitSignature(order.signature);
-
-        require(
-            ecrecover(prefixedHash, v, r, s) == order.user,
-            "Invalid signature"
+        (uint8 v, bytes32 r, bytes32 s) = abi.decode(
+            order.signature,
+            (uint8, bytes32, bytes32)
         );
-    }
 
-    function _splitSignature(
-        bytes memory sig
-    ) internal pure returns (uint8 v, bytes32 r, bytes32 s) {
-        require(sig.length == 65, "Invalid signature length");
-
-        assembly {
-            // First 32 bytes, after the length prefix
-            r := mload(add(sig, 32))
-            // Next 32 bytes
-            s := mload(add(sig, 64))
-            // Final byte (first byte of the next 32 bytes)
-            v := byte(0, mload(add(sig, 96)))
-        }
-
-        // Version of signature should be 27 or 28, but 0 and 1 are also possible versions
-        if (v < 27) {
-            v += 27;
-        }
-
-        require(v == 27 || v == 28, "Invalid signature version");
+        address signer = ecrecover(prefixedHash, v, r, s); // Fails silently if the signature is invalid, need to check the signer is not 0x0.
+        require(signer == order.user, "Wrong signer");
+        require(signer != address(0), "Invalid signature");
     }
 
     // Checks wether given trade match with the parameters specified by the user.
