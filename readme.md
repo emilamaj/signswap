@@ -18,6 +18,14 @@ The code is articulated in 3 main parts:
 - The UI, which is a React app, in the `ui` folder. It is where users interact with the protocol.
 - The backend, which is a Node.js app, in the `api` folder. It is where the orders are stored and matched.
 
+TODO:
+- [ ] More thorough fuzz tests
+- [ ] Add a fee mechanism to the protocol
+- [ ] EIP-712 Compatible signature format
+- [ ] Add execution time estimation engine for potential orders
+- [ ] Multiple order aggregation
+- [ ] Upgradeable contracts, guaranteed revocation of old orders
+
 # Running the code
 
 ## Smart contracts
