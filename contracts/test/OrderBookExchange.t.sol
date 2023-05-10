@@ -465,158 +465,49 @@ contract OrderBookExchangeTest is Test {
         );
     }
 
-    // // Fuzz test orders with random slippage values. Simple prices are tested.
-    // function testFuzz_slippageSimple(
-    //     uint256 slippage1,
-    //     uint256 slippage2
-    // ) public {
-    //     // Set fuzzing parameters
-    //     slippage1 = bound(slippage1, 0, 10000);
-    //     slippage2 = bound(slippage2, 0, 10000);
+    // Fuzz test orders with random slippage values. Simple prices are tested.
+    function testFuzz_slippageSimple(uint256 slippage1, uint256 slippage2) public {
+        // Set fuzzing parameters
+        slippage1 = bound(slippage1, 0, 10000);
+        slippage2 = bound(slippage2, 0, 10000);
 
-    //     // Generate the orders
-    //     OrderBookExchange.Order memory order1 = orderStub(true);
-    //     OrderBookExchange.Order memory order2 = orderStub(false);
+        // Generate the orders
+        OrderBookExchange.Order memory order1 = orderStub(true);
+        OrderBookExchange.Order memory order2 = orderStub(false);
 
-    //     // Set order parameters
-    //     order1.maxSlippage = slippage1;
-    //     order2.maxSlippage = slippage2;
+        // Set order parameters
+        order1.maxSlippage = slippage1;
+        order2.maxSlippage = slippage2;
 
-    //     // Generate the signed orders
-    //     OrderBookExchange.Order memory signedOrder1 = _generateSignedOrder(
-    //         order1,
-    //         0x0A
-    //     );
-    //     OrderBookExchange.Order memory signedOrder2 = _generateSignedOrder(
-    //         order2,
-    //         0x0B
-    //     );
+        // Generate the signed orders
+        OrderBookExchange.Order memory signedOrder1 = _generateSignedOrder(
+            order1,
+            0x0A
+        );
+        OrderBookExchange.Order memory signedOrder2 = _generateSignedOrder(
+            order2,
+            0x0B
+        );
 
-    //     // Fund the users now that we have generated their addresses
-    //     tokenA.transfer(signedOrder1.user, 2 ether);
-    //     tokenB.transfer(signedOrder2.user, 2 ether);
+        // Fund the users now that we have generated their addresses
+        tokenA.transfer(signedOrder1.user, 2 ether);
+        tokenB.transfer(signedOrder2.user, 2 ether);
 
-    //     // Approve the exchange contract to spend the tokens
-    //     vm.prank(signedOrder1.user);
-    //     tokenA.approve(address(exchangeContract), 2 ether);
-    //     vm.prank(signedOrder2.user);
-    //     tokenB.approve(address(exchangeContract), 2 ether);
+        // Approve the exchange contract to spend the tokens
+        vm.prank(signedOrder1.user);
+        tokenA.approve(address(exchangeContract), 2 ether);
+        vm.prank(signedOrder2.user);
+        tokenB.approve(address(exchangeContract), 2 ether);
 
-    //     // Submit the orders. The amount is 1 ether for both directions (ok, since both prices are exactly 1)
-    //     exchangeContract.executeTrade(
-    //         signedOrder1,
-    //         signedOrder2,
-    //         1 ether,
-    //         1 ether
-    //     );
+        // Submit the orders. The amount is 1 ether for both directions (ok, since both prices are exactly 1)
+        exchangeContract.executeTrade(
+            signedOrder1,
+            signedOrder2,
+            1 ether,
+            1 ether
+        );
 
-    //     // Check that the orders have been matched
-    //     assertEq(tokenA.balanceOf(signedOrder1.user), 1 ether);
-    //     assertEq(tokenB.balanceOf(signedOrder2.user), 1 ether);
-    // }
-
-    // // Fuzz test orders with random slippage values. Prices are set within the limits of slippage of the respective opposing party.
-    // function testFuzz_slippageComplex(
-    //     uint256 slippage1,
-    //     uint256 slippage2
-    // ) public {
-    //     // Set fuzzing parameters
-    //     slippage1 = bound(slippage1, 0, 10000);
-    //     slippage2 = bound(slippage2, 0, 10000);
-
-    //     // Generate the orders
-    //     OrderBookExchange.Order memory order1 = orderStub(true);
-    //     OrderBookExchange.Order memory order2 = orderStub(false);
-
-    //     // Set order parameters
-    //     order1.maxSlippage = slippage1;
-    //     order2.maxSlippage = slippage2;
-
-    //     // Set prices within the limits of slippage
-    //     order1.priceX96 = ((1 ether * 10000) / (10000 - slippage2)) << 96;
-    //     order2.priceX96 = ((1 ether * 10000) / (10000 + slippage1)) << 96;
-
-    //     // Generate the signed orders
-    //     OrderBookExchange.Order memory signedOrder1 = _generateSignedOrder(
-    //         order1,
-    //         0x0A
-    //     );
-    //     OrderBookExchange.Order memory signedOrder2 = _generateSignedOrder(
-    //         order2,
-    //         0x0B
-    //     );
-
-    //     // Fund the users now that we have generated their addresses
-    //     tokenA.transfer(signedOrder1.user, 2 ether);
-    //     tokenB.transfer(signedOrder2.user, 2 ether);
-
-    //     // Approve the exchange contract to spend the tokens
-    //     vm.prank(signedOrder1.user);
-    //     tokenA.approve(address(exchangeContract), 2 ether);
-    //     vm.prank(signedOrder2.user);
-    //     tokenB.approve(address(exchangeContract), 2 ether);
-
-    //     // Submit the orders. The amount is 1 ether for both directions
-    //     exchangeContract.executeTrade(
-    //         signedOrder1,
-    //         signedOrder2,
-    //         1 ether,
-    //         1 ether
-    //     );
-
-    //     // Check that the orders have been matched
-    //     assertEq(tokenA.balanceOf(signedOrder1.user), 1 ether);
-    //     assertEq(tokenB.balanceOf(signedOrder2.user), 1 ether);
-    // }
-
-    // // Fuzz test orders with random slippage values. Prices are set outside the limits of slippage of the respective opposing party.
-    // function testFuzz_slippageComplexInvalid(
-    //     uint256 slippage1,
-    //     uint256 slippage2
-    // ) public {
-    //     // Set fuzzing parameters
-    //     slippage1 = bound(slippage1, 0, 10000);
-    //     slippage2 = bound(slippage2, 0, 10000);
-
-    //     // Generate the orders
-    //     OrderBookExchange.Order memory order1 = orderStub(true);
-    //     OrderBookExchange.Order memory order2 = orderStub(false);
-
-    //     // Set order parameters
-    //     order1.maxSlippage = slippage1;
-    //     order2.maxSlippage = slippage2;
-
-    //     // Set prices outside the limits of slippage
-    //     order1.priceX96 = ((1 ether * 10000) / (10000 - slippage2 - 1)) << 96;
-    //     order2.priceX96 = ((1 ether * 10000) / (10000 + slippage1 + 1)) << 96;
-
-    //     // Generate the signed orders
-    //     OrderBookExchange.Order memory signedOrder1 = _generateSignedOrder(
-    //         order1,
-    //         0x0A
-    //     );
-    //     OrderBookExchange.Order memory signedOrder2 = _generateSignedOrder(
-    //         order2,
-    //         0x0B
-    //     );
-
-    //     // Fund the users now that we have generated their addresses
-    //     tokenA.transfer(signedOrder1.user, 2 ether);
-    //     tokenB.transfer(signedOrder2.user, 2 ether);
-
-    //     // Approve the exchange contract to spend the tokens
-    //     vm.prank(signedOrder1.user);
-    //     tokenA.approve(address(exchangeContract), 2 ether);
-    //     vm.prank(signedOrder2.user);
-    //     tokenB.approve(address(exchangeContract), 2 ether);
-
-    //     // Expect the transaction to revert due to invalid prices
-    //     vm.expectRevert();
-    //     exchangeContract.executeTrade(
-    //         signedOrder1,
-    //         signedOrder2,
-    //         1 ether,
-    //         1 ether
-    //     );
-    // }
-}
+        // Check that the orders have been matched
+        assertEq(tokenA.balanceOf(signedOrder1.user), 1 ether);
+        assertEq(tokenB.balanceOf(signedOrder2.user), 1 ether);
+    }
