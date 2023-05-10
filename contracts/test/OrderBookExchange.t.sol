@@ -511,3 +511,4 @@ contract OrderBookExchangeTest is Test {
         assertEq(tokenA.balanceOf(signedOrder1.user), 1 ether);
         assertEq(tokenB.balanceOf(signedOrder2.user), 1 ether);
     }
+}
