@@ -117,12 +117,11 @@ contract OrderBookExchange {
         bytes32 prefixedHash = keccak256(
             abi.encodePacked("\x19Ethereum Signed Message:\n32", messageHash)
         );
-        (uint8 v, bytes32 r, bytes32 s) = abi.decode(
-            order.signature,
-            (uint8, bytes32, bytes32)
-        );
 
+        // Process signature and extract the signer
+        (bytes32 r, bytes32 s, uint8 v) = splitSignature(order.signature);
         address signer = ecrecover(prefixedHash, v, r, s); // Fails silently if the signature is invalid, need to check the signer is not 0x0.
+
         require(signer == order.user, "Wrong signer");
         require(signer != address(0), "Invalid signature");
     }
@@ -158,5 +157,17 @@ contract OrderBookExchange {
         ); // Use >> 96 to convert to fixed point float. Use * 10000 to convert to bips and avoid division.
 
         return true;
+    }
+
+    function splitSignature(bytes memory sig) public pure returns (bytes32 r, bytes32 s, uint8 v) {
+        require(sig.length == 65, "invalid signature length");
+        assembly {
+            // first 32 bytes, after the length prefix
+            r := mload(add(sig, 32))
+            // second 32 bytes
+            s := mload(add(sig, 64))
+            // final byte (first byte of the next 32 bytes)
+            v := byte(0, mload(add(sig, 96)))
+        }
     }
 }
