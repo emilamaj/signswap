@@ -16,7 +16,8 @@ const HISTORY_FILE = 'orders_history.txt'; // File to store all valid orders sub
 app.use(cors());
 app.use(bodyParser.json());
 
-let currentOrderID = 0; // Current order ID. Used to identify orders in the order book
+// Current order ID. Used to identify orders in the order book. Set to timestamp of now.
+let currentOrderID = Date.now();
 let currentBlockNumber = 0; // Current block height. Used to check if an order has expired
 const orderBook = []; // Order book
 const cancellations = []; // Cancellation list
@@ -25,16 +26,38 @@ const cancellations = []; // Cancellation list
 const matchingEngine = new Worker('./matchingEngine.js');
 
 // Web3 setup
-const web3 = new Web3(process.env.NODE_RPC_URL);
-const contractABI = require('./abi/OrderBookExchange.json');
+const web3 = new Web3(new Web3.providers.HttpProvider(process.env.NODE_RPC_URL)); // Add your web3 provider to '.env'
+const contractJSON = fs.readFileSync('./abi/OrderBookExchange.json')
+const contractABI = JSON.parse(contractJSON).abi;
 const contractAddress = process.env.CONTRACT_ADDRESS; // Add your contract address to '.env'
 const contract = new web3.eth.Contract(contractABI, contractAddress);
 
+// Load order history from file
+fs.readFile(HISTORY_FILE, 'utf8', (err, data) => {
+    if (err) {
+        console.log(err);
+        return;
+    }
+
+    const lines = data.split('\n');
+    lines.forEach((line) => {
+        if (line !== '') {
+            const order = JSON.parse(line);
+
+            // If the order is still valid, add it to the order book
+            if (validateOrder(order)) {
+                orderBook.push(order);
+            }
+        }
+    });
+});
+
 // API endpoints
-app.post('/api/orders', async (req, res) => {
+app.post('/api/orders', async (req, res) => { // Receive new order from UI
     const order = req.body;
     order.id = currentOrderID;
     currentOrderID++;
+    console.log("New order received:", order)
 
     // Validate the order before adding it to the order book. Do compare the nonce with the on-chain value.
     if (await validateOrder(order, true)) {
@@ -47,7 +70,6 @@ app.post('/api/orders', async (req, res) => {
         orderBook.push(order);
         // Notify the matching engine of the new order
         matchingEngine.postMessage({ type: 'ADD_ORDER', order });
-
         res.status(201).send({ message: 'Order submitted successfully' });
     } else {
         res.status(400).send({ message: 'Invalid order' });
@@ -85,7 +107,7 @@ setInterval(async () => {
 
 // Periodically update current block height
 setInterval(async () => {
-    console.log("Updating block number...");
+    console.log("Updating block number");
     let newBN = await web3.eth.getBlockNumber();
     if (newBN > currentBlockNumber) {
         currentBlockNumber = newBN;
@@ -96,7 +118,9 @@ setInterval(async () => {
 
 // Listen for messages from the matching engine
 matchingEngine.on('message', async (message) => {
+    console.log("Message from matching engine:", message)
     if (message.type === 'MATCH_FOUND') {
+        console.log("Match found. Message:", message);
         const { orderA, orderB, amountA, amountB } = message;
         // Validate the orders again before executing the trade
         blockNumber = await web3.eth.getBlockNumber();
@@ -128,45 +152,36 @@ app.listen(port, () => {
 });
 
 async function validateOrder(order, checkNonce = false) {
-    // Check if the parameters are valid (null, expired, improper values, etc.)
+    // Check if the parameters are valid (bounds check, expired, improper values, etc.)
     if (
-        !order.user ||
-        !order.tokenA ||
-        !order.tokenB ||
-        !order.minAmountA ||
-        !order.maxAmountA ||
-        !order.price ||
-        !order.maxSlippage ||
-        !order.nonce ||
-        !order.expiration ||
-        !order.code ||
-        !order.signature ||
-        order.minAmountA > order.maxAmountA ||
-        order.price <= 0 ||
-        order.maxSlippage < 0 ||
-        order.maxSlippage > 10000 ||
-        order.expiration <= blockNumber
-    ) return false;
-
-    // Fetch the current nonce from the smart contract
-    if (checkNonce) {
-        const nonce = await contract.methods.nonces(order.user).call();
-        if (order.nonce < nonce) return false;
+        web3.utils.toBN(order.minAmountA).gt(web3.utils.toBN(order.maxAmountA)) ||
+        web3.utils.toBN(order.priceX96).lte(web3.utils.toBN(0)) ||
+        web3.utils.toBN(order.maxSlippage).lt(web3.utils.toBN(0)) ||
+        web3.utils.toBN(order.maxSlippage).gt(web3.utils.toBN(10000)) ||
+        web3.utils.toBN(order.expiration).lte(currentBlockNumber)
+    ){
+        console.log("Parameter bounds check failed");
+        return false;
     }
 
     // Perform additional variable checks using web3.js helpers
     if (
         !web3.utils.isAddress(order.user) ||
         !web3.utils.isAddress(order.tokenA) ||
-        !web3.utils.isAddress(order.tokenB) ||
-        !Number.isInteger(order.minAmountA) || order.minAmountA < 0 ||
-        !Number.isInteger(order.maxAmountA) || order.maxAmountA < 0 ||
-        !Number.isInteger(order.price) || order.price < 0 ||
-        !Number.isInteger(order.maxSlippage) || order.maxSlippage < 0 ||
-        !Number.isInteger(order.nonce) || order.nonce < 0 ||
-        !Number.isInteger(order.expiration) || order.expiration < 0 ||
-        !Number.isInteger(order.code) || order.code < 0
-    ) return false;
+        !web3.utils.isAddress(order.tokenB)
+    ){
+        console.log("Not addresses");
+        return false;
+    }
+
+    // Fetch the current nonce from the smart contract
+    if (checkNonce) {
+        let nonce = await contract.methods.nonces(order.user).call();
+        if (web3.utils.toBN(order.nonce) < web3.utils.toBN(nonce)){
+            console.log("Nonce check failed");
+            return false;
+        }
+    }
 
     // Verify the order signature
     const messageHash = web3.utils.soliditySha3(
@@ -175,27 +190,31 @@ async function validateOrder(order, checkNonce = false) {
         { t: 'address', v: order.tokenB },
         { t: 'uint256', v: order.minAmountA },
         { t: 'uint256', v: order.maxAmountA },
-        { t: 'uint256', v: Math.floor(order.price * 2 ** 96) }, // Apply bitwise left-shift by 96
+        { t: 'uint256', v: order.priceX96 },
         { t: 'uint256', v: order.maxSlippage },
         { t: 'uint256', v: order.nonce },
         { t: 'uint256', v: order.expiration },
-        { t: 'uint256', v: IMPLEMENTATION_CODE },
+        { t: 'uint256', v: order.code },
     );
 
+    // Signature is received as a string in the format "0x000...abcd"
     const signer = web3.eth.accounts.recover(
         messageHash,
-        order.signature.v,
-        order.signature.r,
-        order.signature.s
-    );
+        order.signature
+    ).toLowerCase();
 
     // Check if the signer is the same as the user, or if the signer is address(0)
-    if (signer !== order.user) return false;
-    if (signer === "0x0000000000000000000000000000000000000000") return false;
+    if (signer !== order.user || signer === "0x0000000000000000000000000000000000000000"){
+        console.log("Signer mismatch or invalid signature");
+        return false;
+    }
+
+    return true;
 }
 
 // This function calls the executeTrade function in the smart contract to perform the trade.
 async function executeTrade(orderA, orderB, amountA, amountB) {
+    console.log("Executing trade...")
     // Contract function
     const executeTradeData = contract.methods.executeTrade(
         orderA,
@@ -227,7 +246,7 @@ async function executeTrade(orderA, orderB, amountA, amountB) {
 // This function processes a trade cancellation. Either by smart contract nonce increase or by local invalidation.
 async function removeCancelledOrder(order) {
     const orderIndex = orderBook.findIndex((o) => o.id === order.id);
-    const order = orderBook.splice(orderIndex, 1)[0];
+    orderBook.splice(orderIndex, 1)[0];
 
     // Notify the matching engine of the removed order
     matchingEngine.postMessage({ type: 'REMOVE_ORDER', order });
