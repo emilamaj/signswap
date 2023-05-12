@@ -62,9 +62,14 @@ To deploy the smart contract locally, first run the local node using the followi
 anvil
 ```
 
-Then, in another terminal, run the following command to deploy the smart contract:
+Then, in another terminal, open the `contracts` folder and run the following command to deploy the smart contract:
 
 ```bash
-forge script script/Deploy.s.sol:DeployContract --rpc-url local --broadcast -vv 
+forge script script/Deploy.s.sol:DeployScript --rpc-url local --broadcast -vv 
 ```
 
+For testing purposes (local simulation), you can deploy 2 test tokens using the following command:
+
+```bash
+forge script script/DeployTokens.s.sol:DeployTokens --rpc-url local --broadcast -vv 
+```
