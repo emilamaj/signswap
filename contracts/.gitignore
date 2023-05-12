@@ -1,3 +1,9 @@
 cache
 lib
 out
+broadcast
+
+# Deploy results
+contract.txt
+tokenA.txt
+tokenB.txt
