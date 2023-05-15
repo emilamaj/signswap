@@ -89,13 +89,7 @@ contract OrderBookExchange {
         nonces[msg.sender] += 1;
     }
 
-    function checkSignature(Order memory order) public view {
-        // Check the order expiration
-        require(block.timestamp <= order.expiration, "Order expired");
-
-        // Check the order nonce
-        require(order.nonce == nonces[order.user], "Invalid nonce");
-
+    function checkSignature(Order memory order) public pure {
         // Verify the order signature
         // Hash the struct containing the parameters of the trade
         bytes32 messageHash = keccak256(
