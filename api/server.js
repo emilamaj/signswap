@@ -26,6 +26,7 @@ const cancellations = []; // Cancellation list
 const matchingEngine = new Worker('./matchingEngine.js');
 
 // Web3 setup
+const bn = (n) => Web3.utils.toBN(n);
 const web3 = new Web3(new Web3.providers.HttpProvider(process.env.NODE_RPC_URL)); // Add your web3 provider to '.env'
 const contractJSON = fs.readFileSync('./abi/OrderBookExchange.json')
 const contractABI = JSON.parse(contractJSON).abi;
@@ -118,31 +119,37 @@ setInterval(async () => {
 
 // Listen for messages from the matching engine
 matchingEngine.on('message', async (message) => {
-    console.log("Message from matching engine:", message)
+    console.log("Message from matching engine:", message.type)
     if (message.type === 'MATCH_FOUND') {
-        console.log("Match found. Message:", message);
         const { orderA, orderB, amountA, amountB } = message;
         // Validate the orders again before executing the trade
         blockNumber = await web3.eth.getBlockNumber();
 
-        // If one of the orders has become invalid, remove it from the order book
-        if (!await validateOrder(orderA, true)) {
-            removeCancelledOrder(orderA);
-            return;
-        }
-        if (!await validateOrder(orderB, true)) {
-            removeCancelledOrder(orderB);
-            return;
-        }
-
-        // Execute the trade on-chain by sending the signed payloads to the smart contract
-        executeTrade(orderA, orderB, amountA, amountB);
-
-        // Remove the orders from the order book
-        const orderAIndex = orderBook.findIndex((order) => order.id === orderA.id);
-        const orderBIndex = orderBook.findIndex((order) => order.id === orderB.id);
-        if (orderAIndex !== -1) orderBook.splice(orderAIndex, 1);
-        if (orderBIndex !== -1) orderBook.splice(orderBIndex, 1);
+        Promise.all([
+            validateOrder(orderA),
+            validateTradeOrder(orderA, amountA, amountB, true),
+            validateOrder(orderB),
+            validateTradeOrder(orderB, amountB, amountA, true)
+        ]).then((results) => {
+            if (results[0] && results[1] && results[2] && results[3]) {
+                console.log("Orders are valid");
+                // Execute the trade on-chain by sending the signed payloads to the smart contract
+                if (executeTrade(orderA, orderB, amountA, amountB)) {
+                    // Remove the orders from the order book
+                    removeCancelledOrder(orderA);
+                    removeCancelledOrder(orderB);
+                }
+            } else {
+                if (!results[0] || !results[1]) {
+                    console.log("Order A is invalid");
+                    removeCancelledOrder(orderA);
+                }
+                if (!results[2] || !results[3]) {
+                    console.log("Order B is invalid");
+                    removeCancelledOrder(orderB);
+                }
+            }
+        });
     }
 });
 
@@ -151,15 +158,15 @@ app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
 
-async function validateOrder(order, checkNonce = false) {
+async function validateOrder(order, onChainChecks = false) {
     // Check if the parameters are valid (bounds check, expired, improper values, etc.)
     if (
-        web3.utils.toBN(order.minAmountA).gt(web3.utils.toBN(order.maxAmountA)) ||
-        web3.utils.toBN(order.priceX96).lte(web3.utils.toBN(0)) ||
-        web3.utils.toBN(order.maxSlippage).lt(web3.utils.toBN(0)) ||
-        web3.utils.toBN(order.maxSlippage).gt(web3.utils.toBN(10000)) ||
-        web3.utils.toBN(order.expiration).lte(currentBlockNumber)
-    ){
+        bn(order.minAmountA).gt(bn(order.maxAmountA)) ||
+        bn(order.priceX96).lte(bn(0)) ||
+        bn(order.maxSlippage).lt(bn(0)) ||
+        bn(order.maxSlippage).gt(bn(10000)) ||
+        bn(order.expiration).lte(currentBlockNumber)
+    ) {
         console.log("Parameter bounds check failed");
         return false;
     }
@@ -169,18 +176,9 @@ async function validateOrder(order, checkNonce = false) {
         !web3.utils.isAddress(order.user) ||
         !web3.utils.isAddress(order.tokenA) ||
         !web3.utils.isAddress(order.tokenB)
-    ){
+    ) {
         console.log("Not addresses");
         return false;
-    }
-
-    // Fetch the current nonce from the smart contract
-    if (checkNonce) {
-        let nonce = await contract.methods.nonces(order.user).call();
-        if (web3.utils.toBN(order.nonce) < web3.utils.toBN(nonce)){
-            console.log("Nonce check failed");
-            return false;
-        }
     }
 
     // Verify the order signature
@@ -204,8 +202,61 @@ async function validateOrder(order, checkNonce = false) {
     ).toLowerCase();
 
     // Check if the signer is the same as the user, or if the signer is address(0)
-    if (signer !== order.user || signer === "0x0000000000000000000000000000000000000000"){
+    if (signer !== order.user || signer === "0x0000000000000000000000000000000000000000") {
         console.log("Signer mismatch or invalid signature");
+        return false;
+    }
+
+    return true;
+}
+
+// Check for validity of the trade
+async function validateTradeOrder(order, amountA, amountB, checkOnChain = false) {
+    try {
+        if (bn(amountA).gt(bn(order.maxAmountA)))
+        {
+            console.log("Amount A too high");
+            return false;
+        } 
+        if (bn(amountA).lt(bn(order.minAmountA))){
+            console.log("Amount A too low");
+            return false;
+        }
+
+        // require(((amountA * order.priceX96) >> 96) * (10000 - order.maxSlippage) <= amountB * 10000, "Price rejected (too much slippage ?)");
+        const leftSide = bn(amountA).mul(bn(order.priceX96)).mul(bn(10000).sub(bn(order.maxSlippage)));
+        const rightSide = bn(amountB).mul(bn(10000)).mul(bn(2).pow(bn(96)));
+        if (leftSide.gt(rightSide)){
+            console.log("Price rejected (too much slippage ?)");
+            return false;
+        }
+
+        if (checkOnChain) {
+            const nonce = await contract.methods.nonces(order.user).call();
+            if (!bn(order.nonce).eq(bn(nonce))){
+                console.log("Nonce mismatch");
+                return false;
+            }
+
+            // Fetch current balance and allowance for tokenA
+            const erc20ABI = JSON.parse(fs.readFileSync('./abi/ERC20.json')).abi;
+            const tokenInContract = new web3.eth.Contract(erc20ABI, order.tokenA)
+            let tokenBalance = await tokenInContract.methods.balanceOf(order.user).call();
+            let tokenAllowance = await tokenInContract.methods.allowance(order.user, contractAddress).call();
+            if (bn(tokenBalance).lt(bn(amountA))){
+                console.log("Insufficient balance");
+                return false;
+            }
+            if (bn(tokenAllowance).lt(bn(amountA))){
+                console.log("Insufficient allowance");
+                return false;
+            }
+        }
+
+    }
+    catch (e) {
+        console.log("Order validation failed");
+        console.log(e);
         return false;
     }
 
@@ -215,32 +266,59 @@ async function validateOrder(order, checkNonce = false) {
 // This function calls the executeTrade function in the smart contract to perform the trade.
 async function executeTrade(orderA, orderB, amountA, amountB) {
     console.log("Executing trade...")
-    // Contract function
-    const executeTradeData = contract.methods.executeTrade(
-        orderA,
-        orderB,
-        amountA,
-        amountB
-    ).encodeABI();
+    try {
+        // Contract function
+        const executeTradeData = contract.methods.executeTrade(
+            orderA,
+            orderB,
+            amountA,
+            amountB
+        ).encodeABI();
 
-    // Add on-chain trade execution logic here
-    const gasPrice = await web3.eth.getGasPrice();
+        // Add on-chain trade execution logic here
+        const gasPrice = Math.floor(await web3.eth.getGasPrice());
+        console.log("Gas price:", gasPrice);
 
-    const tx = {
-        from: orderA.user,
-        to: contractAddress,
-        data: executeTradeData,
-        gasPrice,
-        gas: 500000, // Hard coded limit. Gas is estimated right after.
-    };
+        // Calculate EOA from private key
+        const eoa = web3.eth.accounts.privateKeyToAccount(process.env.EOA_PRIVATE_KEY).address;
+        console.log("Calculated EOA:", eoa);
 
-    // Estimate gas required for the transaction
-    const gas = await web3.eth.estimateGas(tx);
-    tx.gas = gas * 1.1;
+        const tx = {
+            from: eoa,
+            to: contractAddress,
+            data: executeTradeData,
+            gasPrice,
+            gas: 500000, // Hard coded limit. Gas is estimated right after.
+        };
 
-    // Send final transaction to the network
-    const signedTx = await web3.eth.accounts.signTransaction(tx, process.env.EOA_PRIVATE_KEY);
-    await web3.eth.sendSignedTransaction(signedTx.rawTransaction);
+        // Fetch current block number
+        const blockNumber = await web3.eth.getBlockNumber();
+        console.log("Current block number:", blockNumber);
+
+        // Estimate gas required for the transaction
+        const gas = await web3.eth.estimateGas(tx);
+        console.log("Gas estimate:", gas);
+        tx.gasPrice = Math.floor(gasPrice * 1.1);
+        tx.gas = Math.floor(gas * 1.1);
+
+        // Send final transaction to the network
+        const signedTx = await web3.eth.accounts.signTransaction(tx, process.env.EOA_PRIVATE_KEY);
+        await web3.eth.sendSignedTransaction(signedTx.rawTransaction);
+        console.log("Transaction sent.");
+
+        // Check if the transaction was successful
+        const receipt = await web3.eth.getTransactionReceipt(signedTx.transactionHash);
+        if (receipt.status) {
+            console.log("Transaction successful");
+            return true;
+        } else {
+            console.log("Transaction failed");
+            return false;
+        }
+    } catch (e) {
+        console.log("Trade execution failed:", e);
+        return false;
+    }
 }
 
 // This function processes a trade cancellation. Either by smart contract nonce increase or by local invalidation.
