@@ -147,7 +147,6 @@ function App() {
 	return (
 		<div className="container-app">
 			<div className="container-top">
-				<Typography variant="h4">Order Book Decentralized Exchange</Typography>
 			</div>
 			<div className="container-middle-panels">
 				<div className="container-submit">
@@ -225,9 +224,9 @@ function App() {
 						</div>
 					</form>
 				</div>
-				<div className="container-recent">
+				{/* <div className="container-recent">
 					<Typography variant="h5">Recent orders</Typography>
-				</div>
+				</div> */}
 			</div>
 		</div>
 	);

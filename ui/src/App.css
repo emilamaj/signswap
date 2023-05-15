@@ -3,6 +3,10 @@ body {
     background-color: #f5f5f5;
     margin: 0;
     padding: 0;
+    /* background: linear-gradient(to bottom, #f0f0f0, #a8a8a8); */
+    background: linear-gradient(to right, #ff8800, #e52d27);
+
+    /* background-image: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05) 5px, transparent 5px, transparent 10px); */
 }
 
 .container-app {
@@ -34,9 +38,10 @@ body {
     max-width: 400px;
     margin: 0 auto;
     padding: 2rem;
-    background-color: #e9e9e9;
+    /* background-color: #ffc5c5; */
+    background: linear-gradient(to right, #ffb25b, #e7615d);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
+    border-radius: 8px;
 }
 
 .container-recent {
@@ -61,7 +66,14 @@ body {
 }
 
 h4 {
-    margin-bottom: 2rem;
+    color: #ffdada;
+    margin-bottom: 5rem;
+}
+
+h5 {
+    color: #ffffff;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 form {
