@@ -9,10 +9,10 @@ const bn = (n) => Web3.utils.toBN(n);
 
 parentPort.on('message', (message) => {
     if (message.type === 'ADD_ORDER') {
-        console.log("Order added:", message.order);
+        console.log("Matching engine received order id:", message.order.id);
         orderBook.push(message.order);
     } else if (message.type === 'REMOVE_ORDER') {
-        console.log("Order removed:", message.order);
+        console.log("Order removed:", message.order.id);
         const index = orderBook.findIndex((order) => order.id === message.order.id);
         if (index !== -1) {
             orderBook.splice(index, 1);
@@ -43,40 +43,26 @@ function matchOrders() {
             ) {
                 // Calculate the amount of tokens to swap
                 const { amountA, amountB } = findAmounts_simple(orderA, orderB);
+                console.log("Amounts A/B:", amountA.toString(), amountB.toString());
                 if (checkTradeSimple(orderA, amountA, amountB) && checkTradeSimple(orderB, amountB, amountA)) {
                     // Send a message to the main thread
-                    parentPort.postMessage({ type: 'MATCH_FOUND', orderA, orderB, amountA, amountB });
+                    parentPort.postMessage({ type: 'MATCH_FOUND', orderA, orderB, amountA: amountA.toString(), amountB: amountB.toString() });
                     return;
+                } else {
+                    console.log("Price matched but trade params invalid.");
                 }
+            } else {
+                console.log("No match found");
             }
         }
     }
 }
 
 function isPriceMatch(orderA, orderB) {
-    // function isPriceMatch(orderA, orderB) {
-    //     // This function checks if the two orders can be matched based on their specified prices and slippage
-    //     // Slippage in the favorable direction is always allowed for either party.
-    //     const priceA = orderA.price >> 96; // Apply bitwise right-shift by 96
-    //     const priceB = orderB.price >> 96; // Apply bitwise right-shift by 96
-
-    //     // Check if orderB's most generous price is acceptable to orderA
-    //     // Most generous price is highest price seen by userA (he gets most "out" tokens for a given "in" tokens)
-    //     // Highest price for userA is lowest price for userB, because userA sees 1/orderB.price as the price
-    //     // const invPriceB = 2 ** 92 / priceB;
-    //     const minInvPriceB = 2 ** 96 * 10000 / ((10000 - orderB.maxSlippage) * priceB);
-    //     const priceValidA = minInvPriceB >= priceA * (10000 - orderA.maxSlippage / 10000);
-
-    //     // Check if orderA's most generous price is acceptable to orderB
-    //     const minInvPriceA = 2 ** 96 * 10000 / ((10000 - orderA.maxSlippage) * priceA);
-    //     const priceValidB = minInvPriceA >= priceB * (10000 - orderB.maxSlippage / 10000);
-
-    //     return priceValidA && priceValidB;
-    // }
     // This function checks if the two orders can be matched based on their specified prices and slippage
     // Slippage in the favorable direction is always allowed for either party.
-    const priceA = bn(orderA.price).shrn(96); // Apply bitwise right-shift by 96
-    const priceB = bn(orderB.price).shrn(96); // Apply bitwise right-shift by 96
+    const priceA = bn(orderA.priceX96).shrn(96); // Apply bitwise right-shift by 96
+    const priceB = bn(orderB.priceX96).shrn(96); // Apply bitwise right-shift by 96
 
     // Check if orderB's most generous price is acceptable to orderA
     // Most generous price is highest price seen by userA (he gets most "out" tokens for a given "in" tokens)
@@ -93,8 +79,16 @@ function isPriceMatch(orderA, orderB) {
 
 // Check only bounds and slippage.
 function checkTradeSimple(order, amountA, amountB) {
-    if (bn(amountA).gt(bn(order.maxAmountA))) return false;
-    if (bn(amountA).lt(bn(order.minAmountA))) return false;
+    if (amountA.gt(bn(order.maxAmountA))){
+        console.log("AmountA: ", amountA.toString());
+        console.log("AmountA too high");
+        return false;
+    }
+    if (amountA.lt(bn(order.minAmountA))) {
+        console.log("AmountA: ", amountA.toString());
+        console.log("AmountA too low");
+        return false;
+    }
 
     // require(
     //     ((amountA * order.priceX96) >> 96) * (10000 - order.maxSlippage) <=
@@ -115,11 +109,15 @@ function findAmounts_simple(order1, order2) { // Garbage, throw away asap.
     // Calculate trade price: average between the two worst-case prices
     // Values are either represented as relative values or absolute values (relative to own pricing, or in absolute tokenA/tokenB of order1)
     // In the context of order2, minPrice = price * (1 - maxSlippageB) = tokenA/tokenB * (1 - maxSlippageB)
+    // console.log("Price 1r: ", order1.priceX96.toString());
     const minPrice1r = bn(order1.priceX96).mul(bn(10000 - order1.maxSlippage)).div(bn(10000));
-    const p2r = bn(order2.priceX96).div(bn(2).pow(bn(96)));
-    const minPrice2r = p2r.mul(bn(10000 - order2.maxSlippage)).div(bn(10000));
-    const maxPrice2a = bn(2).pow(bn(192)).div(p2r);
+    // console.log("Min price 1r: ", minPrice1r.toString());
+    const minPrice2r = bn(order2.priceX96).mul(bn(10000 - order2.maxSlippage)).div(bn(10000));
+    // console.log("Min price 2r: ", minPrice2r.toString());
+    const maxPrice2a = bn(2).pow(bn(192)).div(minPrice2r);
+    // console.log("Max price 2a: ", maxPrice2a.toString());
     const pa = minPrice1r.add(maxPrice2a).div(bn(2));
+    // console.log("Found price: ", pa.toString());
 
     // Calculate the amount of tokenA to swap. Must be between minAmountA and maxAmountA
     const maxAmountA1a = bn(order1.maxAmountA);
