@@ -9,7 +9,7 @@ import "../lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol";
 
 contract mockToken is ERC20 {
     constructor(string memory name, string memory symbol) ERC20(name, symbol) {
-        _mint(msg.sender, 1 ether);
+        _mint(msg.sender, 100 ether);
     }
 }
 
@@ -18,6 +18,7 @@ contract DeployTokens is Script {
     // Users to fund with tokens
     address constant USER_A = 0xA6B2d0f124CcDE41479aE551F19d34310BaEebCE;
     address constant USER_B = 0x3c000F207ea062576C9cA79d5A8D99E5fC914FFC;
+    uint constant USER_AMOUNT = 10 ether;
     //////////////////////////////////////////////////////////////////////
 
     ERC20 tokenA;
@@ -27,25 +28,30 @@ contract DeployTokens is Script {
         
         uint256 deployerPrivateKey = vm.envUint("EOA_PRIVATE_KEY");
         console.log("Deployer private key: ", deployerPrivateKey);
-        address deployerAddress = address(uint160(uint256(keccak256(abi.encodePacked(deployerPrivateKey))))); // This is the public address that corresponds to the private key.
+        address deployerAddress = vm.addr(deployerPrivateKey);
         console.log("Deployer public address: ", deployerAddress);
 
-        // Deploy the contract
+        // Craft and send the transactions
         /////////////////////////////
         // NOTE 1: Sometimes, the deployment fails for unknown reasons. To redeploy, the nonce of the transcation needs to be bumped by 1.
         // vm.setNonce(address(this), vm.getNonce(address(this)) + 1);
         /////////////////////////////
-        vm.startBroadcast(deployerPrivateKey);
+        vm.startBroadcast(deployerPrivateKey); // Performed by the deployer
         // Deploy Tokens
         tokenA = new mockToken("TokenA", "TKA");
         tokenB = new mockToken("TokenB", "TKB");
 
         // Fund users with tokens
-        tokenA.transfer(USER_A, 1 ether);
-        tokenB.transfer(USER_B, 1 ether);
+        tokenA.transfer(USER_A, USER_AMOUNT);
+        tokenB.transfer(USER_B, USER_AMOUNT);
 
-        // Fund deployer with 1 ETH
-        vm.deal(deployerAddress, 1 ether);
+        // Fund deployer with ETH, in case the account used is not one of the default proposed by Anvil.
+        vm.deal(deployerAddress, 10 ether);
+
+        // Fund users with ETH to pay for approval gas
+        payable(USER_A).transfer(1 ether);
+        payable(USER_B).transfer(1 ether);
+        
         vm.stopBroadcast();
 
         // Token addresses
