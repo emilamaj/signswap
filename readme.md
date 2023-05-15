@@ -126,6 +126,7 @@ The parameters of the swap order can now be filled in. They are:
 - Min input amount and max input amount.
 - Price (output/input, eg WETH=>DAI is 1950/1)
 - Slippage in basis points bp (1bp = 0.01%, 150bp = 1.5%)
-- Expiration block number (need to check current block)
+- Expiration block number (need to check current block).
+
 When the user has specified the parameters of the swap, he must make sure that the exchange contract has been approved an allowance of input token at least equal to the **max input amount**. This can be done by clicking the "Approve" button. This will trigger a transaction in the wallet, which will ask the user to sign it. The transaction will be sent to the blockchain, and the allowance will be set. In the future, this will only require a free signature (EIP-2612 permit).
 Finally the user can submit the order to sign it, and send it to the API. The API will store it in the database, and try to match it to other orders. If a match is found, the API will call the smart contract to execute the trade.
