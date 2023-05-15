@@ -1,3 +1,4 @@
+// This script is used to perform tests on a local node. It deploys 2 ERC20 tokens, funds 2 EOAs with these tokens, and funds the transaction broadcast address with ETH to pay for gas.
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.0;
 
@@ -13,16 +14,21 @@ contract mockToken is ERC20 {
 }
 
 contract DeployTokens is Script {
-    ERC20 tokenA;
-    ERC20 tokenB;
+    /////////////////////////////////////////////////////////////////////
     // Users to fund with tokens
     address constant USER_A = 0xA6B2d0f124CcDE41479aE551F19d34310BaEebCE;
     address constant USER_B = 0x3c000F207ea062576C9cA79d5A8D99E5fC914FFC;
+    //////////////////////////////////////////////////////////////////////
+
+    ERC20 tokenA;
+    ERC20 tokenB;
 
     function run() public {
         
         uint256 deployerPrivateKey = vm.envUint("EOA_PRIVATE_KEY");
         console.log("Deployer private key: ", deployerPrivateKey);
+        address deployerAddress = address(uint160(uint256(keccak256(abi.encodePacked(deployerPrivateKey))))); // This is the public address that corresponds to the private key.
+        console.log("Deployer public address: ", deployerAddress);
 
         // Deploy the contract
         /////////////////////////////
@@ -37,6 +43,9 @@ contract DeployTokens is Script {
         // Fund users with tokens
         tokenA.transfer(USER_A, 1 ether);
         tokenB.transfer(USER_B, 1 ether);
+
+        // Fund deployer with 1 ETH
+        vm.deal(deployerAddress, 1 ether);
         vm.stopBroadcast();
 
         // Token addresses
