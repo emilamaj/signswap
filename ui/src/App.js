@@ -6,13 +6,19 @@ import './App.css';
 const IMPLEMENTATION_CODE = "0x01"; // Constant value for the implementation code
 const web3 = new Web3(Web3.givenProvider);
 
+const bn = (n) => Web3.utils.toBN(n);
+
 const contractAddress = process.env.REACT_APP_CONTRACT_ADDRESS; // Add your contract address here
 let contractABI; // Read the abi from /public/abi/OrderBookExchange.json
+let erc20ABI; // Read the abi from /public/abi/ERC20.json
 let contract;
 // Defer contract creation until ABI is loaded
 fetch('/abi/OrderBookExchange.json').then((response) => response.json()).then((data) => {
 	contractABI = data.abi;
 	contract = new web3.eth.Contract(contractABI, contractAddress);
+});
+fetch('/abi/ERC20.json').then((response) => response.json()).then((data) => {
+	erc20ABI = data.abi;
 });
 
 function App() {
@@ -33,8 +39,7 @@ function App() {
 		// Check if not already loaded
 		const storedValue = decimals[tokenAddress];
 		if (storedValue === undefined) {
-			const erc20abi = await fetch('/abi/ERC20.json').then((response) => response.json()).then((data) => data.abi);
-			const tokenContract = new web3.eth.Contract(erc20abi, tokenAddress);
+			const tokenContract = new web3.eth.Contract(erc20ABI, tokenAddress);
 			const decimals = await tokenContract.methods.decimals().call();
 			setDecimals({ ...decimals, [tokenAddress]: decimals });
 			return decimals;
@@ -43,13 +48,37 @@ function App() {
 		}
 	}
 
+	// Approve contract to spend tokens of userA and userB
+	const handleApprove = async (e) => {
+		e.preventDefault(); // Prevent the page from reloading
+		console.log("Approving tokens...")
+
+		// Load wallet
+		let loadedAccount = account;
+		if (window.ethereum) {
+			const accs = await window.ethereum.enable();
+			console.log("Wallet returned accounts: ", accs)
+			loadedAccount = accs[0];
+			setAccount(loadedAccount);
+			console.log("Loaded account: ", loadedAccount)
+		}
+
+		// Load token contract
+		const tokenContractA = new web3.eth.Contract(erc20ABI, tokenA);
+
+		// Approve contract to spend tokens (max amount)
+		const maxAmount = bn(2).pow(bn(256)).sub(bn(1)).toString();
+		await tokenContractA.methods.approve(contractAddress, maxAmount).send({ from: loadedAccount });
+		console.log("Approved Exchange contract to spend tokens of userA")
+	};
+
 	// Submit order to backend
 	const handleSubmit = async (e) => {
 		e.preventDefault(); // Prevent the page from reloading
 		console.log("Submitting order...")
 
 		// Load wallet
-		let loadedAccount;
+		let loadedAccount = account;
 		if (window.ethereum) {
 			const accs = await window.ethereum.enable();
 			console.log("Wallet returned accounts: ", accs)
@@ -65,14 +94,14 @@ function App() {
 		// Load nonce
 		const nonce = await contract.methods.nonces(loadedAccount).call();
 		console.log("Current user nonce:", nonce)
-		
+
 		let order = {
 			user: loadedAccount,
 			tokenA,
 			tokenB,
-			minAmountA: web3.utils.toBN(minAmountA).mul(web3.utils.toBN(10).pow(web3.utils.toBN(decA))).toString(),
-			maxAmountA: web3.utils.toBN(maxAmountA).mul(web3.utils.toBN(10).pow(web3.utils.toBN(decA))).toString(),
-			priceX96: web3.utils.toBN(price).mul(web3.utils.toBN(2).pow(web3.utils.toBN(96))).toString(),
+			minAmountA: bn(Math.floor(minAmountA * 10 ** 6)).mul(bn(10).pow(bn(decA))).div(bn(10 ** 6)).toString(),
+			maxAmountA: bn(Math.floor(maxAmountA * 10 ** 6)).mul(bn(10).pow(bn(decA))).div(bn(10 ** 6)).toString(),
+			priceX96: bn(Math.floor(price * 10 ** 6)).mul(bn(2).pow(bn(96))).div(bn(10 ** 6)).toString(),
 			maxSlippage: maxSlippage,
 			nonce: nonce,
 			expiration: expiration,
@@ -114,10 +143,11 @@ function App() {
 			});
 	};
 
+
 	return (
 		<div className="container-app">
 			<div className="container-top">
-				<Typography variant="h2">Order Book Decentralized Exchange</Typography>
+				<Typography variant="h4">Order Book Decentralized Exchange</Typography>
 			</div>
 			<div className="container-middle-panels">
 				<div className="container-submit">
@@ -130,6 +160,15 @@ function App() {
 							fullWidth
 							margin="normal"
 						/>
+						<Button variant="contained"
+							color="secondary"
+							onClick={() => {
+								setTokenA(tokenB);
+								setTokenB(tokenA);
+							}}>
+							Switch
+						</Button>
+
 						<TextField
 							label="Token B"
 							value={tokenB}
@@ -137,20 +176,23 @@ function App() {
 							fullWidth
 							margin="normal"
 						/>
-						<TextField
-							label="Min Amount A"
-							value={minAmountA}
-							onChange={(e) => setMinAmountA(e.target.value)}
-							fullWidth
-							margin="normal"
-						/>
-						<TextField
-							label="Max Amount A"
-							value={maxAmountA}
-							onChange={(e) => setMaxAmountA(e.target.value)}
-							fullWidth
-							margin="normal"
-						/>
+						<div className="container-amounts"
+						>
+							<TextField
+								label="Min Amount A"
+								value={minAmountA}
+								onChange={(e) => setMinAmountA(e.target.value)}
+								fullWidth
+								margin="normal"
+							/>
+							<TextField
+								label="Max"
+								value={maxAmountA}
+								onChange={(e) => setMaxAmountA(e.target.value)}
+								fullWidth
+								margin="normal"
+							/>
+						</div>
 						<TextField
 							label="Price"
 							value={price}
@@ -159,22 +201,28 @@ function App() {
 							margin="normal"
 						/>
 						<TextField
-							label="Max Slippage"
+							label="Max Slippage (1bp = 0.01%)"
 							value={maxSlippage}
 							onChange={(e) => setMaxSlippage(e.target.value)}
 							fullWidth
 							margin="normal"
+							autoComplete="off"
 						/>
 						<TextField
-							label="Expiration"
+							label="Expiration Block"
 							value={expiration}
 							onChange={(e) => setExpiration(e.target.value)}
 							fullWidth
 							margin="normal"
 						/>
-						<Button type="submit" variant="contained" color="primary">
-							Submit Order
-						</Button>
+						<div className="container-buttons">
+							<Button variant="contained" color="secondary" onClick={handleApprove}>
+								Approve
+							</Button>
+							<Button type="submit" variant="contained" color="primary">
+								Submit Order
+							</Button>
+						</div>
 					</form>
 				</div>
 				<div className="container-recent">
