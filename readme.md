@@ -1,4 +1,4 @@
-# Gasless Swap Protocol
+# Signswap - Gasless Swap Protocol
 
 This project is a proof of concept for a DeFi protocol using cryptographic signatures to provide a potentially completely gas-free swap experience to DApp users.
 
@@ -22,13 +22,25 @@ The code is articulated in 3 main parts:
 - The backend, which is a Node.js app, in the `api` folder. It is where the orders are stored and matched.
 
 TODO:
-- [ ] Add gasless approval (EIP-2612 permit)
-- [ ] Signature formatting to EIP-712
+- User Interface: 
+    - [ ] Auto-approve
+    - [ ] Icons
+    - [ ] Token metadata integration
+    - [ ] Price base inversion
+    - [ ] Token balance display
+    - [ ] Token USD value
+    - [ ] Current block number
+    - [ ] Plain target duration text
+    - [ ] Display slippage price equivalent
+    - [ ] Switch bips to pct
+- [ ] Contract signature formatting to EIP-712
+- [ ] Add gasless approval for compatible tokens (EIP-2612 permit)
 - [ ] More thorough fuzz tests
 - [ ] Add a fee mechanism to the protocol
-- [ ] Add execution time estimation engine for potential orders
 - [ ] Multiple order aggregation
 - [ ] Upgradeable contracts, with guaranteed revocation of old orders
+- [ ] In-house matchmaker engine
+- [ ] Add execution time estimation engine for potential orders. Use current active orders, 
 
 # Running the code
 

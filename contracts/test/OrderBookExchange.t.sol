@@ -149,6 +149,18 @@ contract OrderBookExchangeTest is Test {
         assertEq(tokenB.balanceOf(signedOrder2.user), 1 ether);
     }
 
+    // Price diff=10%, slippageA is 5%, slippageB is 10%. The trade should be allowed.
+    function test_case0() public {
+    }
+
+    // Price diff=5%, slippageA is 1%, slippageB is 10%. Price is favorable for userA, so userA's tigher slippage is ignored.
+    function test_case1() public {
+    }
+
+    // Same price=1, slippage=0%, but orderA.minAmountA = 2 ether, and orderB.maxAmountA = 1 ether. The trade should NOT be allowed.
+    function test_case2_invalid() public {
+    }
+
     // Test the matching of orders with an obvious invalid price.
     function test_trivialInvalidPrice() public {
         // Generate the orders
