@@ -1,11 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import Web3 from 'web3';
-import { Button, TextField, Container, Typography } from '@mui/material';
+import { Button, TextField, Container, Typography, Stack } from '@mui/material';
 import './App.css';
+import IconSwitch from './components/IconSwitch';
+import IconShow from './components/IconShow';
+import TokenInput from './components/TokenInput';
 
-const IMPLEMENTATION_CODE = "0x01"; // Constant value for the implementation code
+// Token Data
+const WETH = {
+	chainId: 1,
+	address: "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+	name: "Wrapped Ether",
+	symbol: "WETH",
+	decimals: 18,
+	logoURI: "https://assets.coingecko.com/coins/images/2518/thumb/weth.png?1628852295"
+};
+const DAI = {
+	chainId: 1,
+	address: "0x6b175474e89094c44da98b954eedeac495271d0f",
+	name: "Dai",
+	symbol: "DAI",
+	decimals: 18,
+	logoURI: "https://assets.coingecko.com/coins/images/9956/thumb/Badge_Dai.png?1687143508"
+};
+
+
 const web3 = new Web3(Web3.givenProvider);
-
 const bn = (n) => Web3.utils.toBN(n);
 
 const contractAddress = process.env.REACT_APP_CONTRACT_ADDRESS; // Add your contract address here
@@ -22,10 +42,12 @@ fetch('/abi/ERC20.json').then((response) => response.json()).then((data) => {
 });
 
 function App() {
+	// Functional state
+	const [isAdvanced, setIsAdvanced] = useState(false);
 	// Form inputs
 	const [account, setAccount] = useState('');
-	const [tokenA, setTokenA] = useState('');
-	const [tokenB, setTokenB] = useState('');
+	const [tokenA, setTokenA] = useState(WETH);
+	const [tokenB, setTokenB] = useState(DAI);
 	const [minAmountA, setMinAmountA] = useState(''); // Ignore token decimals in App.js, convert to correct integer in handleSubmit()
 	const [maxAmountA, setMaxAmountA] = useState('');
 	const [price, setPrice] = useState('');
@@ -33,6 +55,7 @@ function App() {
 	const [expiration, setExpiration] = useState('');
 	// App data
 	const [decimals, setDecimals] = useState({});
+	const [tokenList, setTokenList] = useState([]);
 
 	// Find decimals of tokenA
 	const getDecimals = async (tokenAddress) => {
@@ -64,7 +87,7 @@ function App() {
 		}
 
 		// Load token contract
-		const tokenContractA = new web3.eth.Contract(erc20ABI, tokenA);
+		const tokenContractA = new web3.eth.Contract(erc20ABI, tokenA.address);
 
 		// Approve contract to spend tokens (max amount)
 		const maxAmount = bn(2).pow(bn(256)).sub(bn(1)).toString();
@@ -88,7 +111,7 @@ function App() {
 		}
 
 		// Decimals of A
-		const decA = await getDecimals(tokenA);
+		const decA = await getDecimals(tokenA.address);
 		console.log("Decimals of A: ", decA)
 
 		// Load nonce
@@ -97,22 +120,22 @@ function App() {
 
 		let order = {
 			user: loadedAccount,
-			tokenA,
-			tokenB,
+			tokenA: tokenA.address,
+			tokenB: tokenB.address,
 			minAmountA: bn(Math.floor(minAmountA * 10 ** 6)).mul(bn(10).pow(bn(decA))).div(bn(10 ** 6)).toString(),
 			maxAmountA: bn(Math.floor(maxAmountA * 10 ** 6)).mul(bn(10).pow(bn(decA))).div(bn(10 ** 6)).toString(),
 			priceX96: bn(Math.floor(price * 10 ** 6)).mul(bn(2).pow(bn(96))).div(bn(10 ** 6)).toString(),
 			maxSlippage: maxSlippage,
 			nonce: nonce,
 			expiration: expiration,
-			code: IMPLEMENTATION_CODE,
+			code: process.env.IMPLEMENTATION_CODE,
 		};
 		console.log("Order: ", order)
 
 		const messageHash = web3.utils.soliditySha3(
 			{ t: 'address', v: order.user },
-			{ t: 'address', v: order.tokenA },
-			{ t: 'address', v: order.tokenB },
+			{ t: 'address', v: order.tokenA.address },
+			{ t: 'address', v: order.tokenB.address },
 			{ t: 'uint256', v: order.minAmountA },
 			{ t: 'uint256', v: order.maxAmountA },
 			{ t: 'uint256', v: order.priceX96 },
@@ -143,6 +166,36 @@ function App() {
 			});
 	};
 
+	// Fetch external token lists, asynchronously
+	useEffect(() => {
+		console.log("Fetching token list...")
+		const list_url = "https://tokens.coingecko.com/ethereum/all.json";
+		fetch(list_url)
+			.then((response) => response.json())
+			.then((data) => {
+				// Filter tokens so that the addresses are unique
+				const tokens = Object.values(data.tokens).filter((token, index, self) =>
+					index === self.findIndex((t) => (
+						t.address === token.address
+					))
+				);
+				// Sort tokens by name
+				tokens.sort((a, b) => a.name.localeCompare(b.name));
+
+				setTokenList(tokens);
+			})
+			.catch((error) => {
+				console.error('Error:', error);
+			});
+		console.log("Token list fetched")
+	}, []);
+
+	// Function to fetch token balance
+	const getBalance = async (tokenAddress) => {
+		const tokenContract = new web3.eth.Contract(erc20ABI, tokenAddress);
+		const balance = await tokenContract.methods.balanceOf(account).call();
+		return balance;
+	}
 
 	return (
 		<div className="container-app">
@@ -150,33 +203,57 @@ function App() {
 			</div>
 			<div className="container-middle-panels">
 				<div className="container-submit">
-					<Typography variant="h5">Submit swap order</Typography>
-					<form onSubmit={handleSubmit}>
-						<TextField
-							label="Token A"
-							value={tokenA}
-							onChange={(e) => setTokenA(e.target.value)}
-							fullWidth
-							margin="normal"
-						/>
-						<Button variant="contained"
-							color="secondary"
-							onClick={() => {
-								setTokenA(tokenB);
-								setTokenB(tokenA);
-							}}>
-							Switch
-						</Button>
+					<Stack direction="row"
+						alignItems="flex-start"
+						justifyContent="space-between">
+						<Stack direction="column">
+							<Typography
+								variant="h5"
+								sx={{
+									color: 'text.primary',
+									fontWeight: 'bold'
+								}}
+							>Signswap</Typography>
+							<Typography
+								variant="h6"
+								sx={{
+									color: 'text.secondary',
+								}}
+							>Gasless swaps</Typography>
+						</Stack>
+					</Stack>
 
-						<TextField
-							label="Token B"
-							value={tokenB}
-							onChange={(e) => setTokenB(e.target.value)}
-							fullWidth
-							margin="normal"
+					<form onSubmit={handleSubmit}>
+						<TokenInput
+							label="Token A"
+							tokenList={tokenList}
+							token={tokenA}
+							updateToken={(t) => {
+								// First, update tokenA
+								setTokenA(t);
+
+								// Then fetch balance of tokenA
+								getBalance(t.address).then((balance) => {
+									// Update tokenA balance
+									setTokenA({ ...t, balance: balance });
+								});
+							}}
 						/>
-						<div className="container-amounts"
-						>
+
+						<IconSwitch switchAction={() => {
+							const temp = tokenA;
+							setTokenA(tokenB);
+							setTokenB(temp);
+						}} />
+
+						<TokenInput
+							label="Token B"
+							tokenList={tokenList}
+							token={tokenB}
+							updateToken={(t) => setTokenB(t)}
+						/>
+
+						<div className="container-amounts">
 							<TextField
 								label="Min Amount A"
 								value={minAmountA}
@@ -193,7 +270,7 @@ function App() {
 							/>
 						</div>
 						<TextField
-							label="Price"
+							label="Desired Price"
 							value={price}
 							onChange={(e) => setPrice(e.target.value)}
 							fullWidth
@@ -219,8 +296,12 @@ function App() {
 								Approve
 							</Button>
 							<Button type="submit" variant="contained" color="primary">
-								Submit Order
+								Submit
 							</Button>
+							{/* <IconShow isShow={isAdvanced}
+								action={() => {
+									setIsAdvanced(!isAdvanced);
+								}} /> */}
 						</div>
 					</form>
 				</div>

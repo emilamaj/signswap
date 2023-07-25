@@ -35,9 +35,9 @@ body {
 }
 
 .container-submit {
-    max-width: 400px;
+    max-width: 300px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 1rem;
     /* background-color: #ffc5c5; */
     background: linear-gradient(to right, #ffb25b, #e7615d);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -63,17 +63,6 @@ body {
     display: flex;
     justify-content: center;
     gap: 2rem;
-}
-
-h4 {
-    color: #ffdada;
-    margin-bottom: 5rem;
-}
-
-h5 {
-    color: #ffffff;
-    margin-bottom: 1rem;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 form {
