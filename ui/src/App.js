@@ -203,8 +203,8 @@ function App() {
 		<div className="container-app">
 			<div className="container-top">
 				<div className="navbar">
-					<img className="navbar-logo" src="signswap_logo_white.png" alt="Signswap Logo" style={{ filter: 'drop-shadow(0 0 0.75rem #000000)' }} />
-					<Typography variant="h4" className="navbar-title" sx={{ color: 'white', fontWeight: 'bold', filter: 'drop-shadow(0 0 0.75rem #000000)' }}>
+					<img className="navbar-logo" src="signswap_logo_white.png" alt="Signswap Logo" style={{ filter: 'drop-shadow(0 0 0.4rem #000000)' }} />
+					<Typography variant="h4" className="navbar-title" sx={{ color: 'white', fontWeight: 'bold', filter: 'drop-shadow(0 0 0.4rem #000000)' }}>
 						Signswap</Typography>
 					<div className="navbar-links">
 						<IconGithub link="https://github.com/emilamaj/signswap" height="32" />
@@ -218,12 +218,12 @@ function App() {
 						alignItems="flex-start"
 						justifyContent="space-between">
 						<Stack direction="column">
-							<Typography
+							{/* <Typography
 								variant="h6"
 								sx={{
 									color: 'text.secondary',
 								}}
-							>Gasless swap</Typography>
+							>Gasless swap</Typography> */}
 						</Stack>
 					</Stack>
 
@@ -273,21 +273,24 @@ function App() {
 								margin="normal"
 							/>
 						</div>
-						<TextField
-							label="Desired Price"
-							value={price}
-							onChange={(e) => setPrice(e.target.value)}
-							fullWidth
-							margin="normal"
-						/>
-						<TextField
-							label="Max Slippage (1bp = 0.01%)"
-							value={maxSlippage}
-							onChange={(e) => setMaxSlippage(e.target.value)}
-							fullWidth
-							margin="normal"
-							autoComplete="off"
-						/>
+
+						<Stack direction="row" gap={2}>
+							<TextField
+								label="Desired Price"
+								value={price}
+								onChange={(e) => setPrice(e.target.value)}
+								fullWidth
+								margin="normal"
+							/>
+							<TextField
+								label="Slippage %"
+								value={maxSlippage}
+								onChange={(e) => setMaxSlippage(e.target.value)}
+								fullWidth
+								margin="normal"
+								autoComplete="off"
+							/>
+						</Stack>
 						<TextField
 							label="Expiration Block"
 							value={expiration}
@@ -296,11 +299,8 @@ function App() {
 							margin="normal"
 						/>
 						<div className="container-buttons">
-							<Button variant="contained" color="secondary" onClick={handleApprove}>
-								Approve
-							</Button>
-							<Button type="submit" variant="contained" color="primary">
-								Swap
+							<Button type="submit" variant="contained" color="secondary">
+								{account ? "Swap" : "Connect wallet"}
 							</Button>
 							{/* <IconShow isShow={isAdvanced}
 								action={() => {
