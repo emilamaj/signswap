@@ -5,6 +5,8 @@ import './App.css';
 import IconSwitch from './components/IconSwitch';
 import IconShow from './components/IconShow';
 import TokenInput from './components/TokenInput';
+import IconGithub from './components/IconGithub';
+import IconEtherscan from './components/IconEtherscan';
 
 // Token Data
 const WETH = {
@@ -200,6 +202,15 @@ function App() {
 	return (
 		<div className="container-app">
 			<div className="container-top">
+				<div className="navbar">
+					<img className="navbar-logo" src="signswap_logo_white.png" alt="Signswap Logo" style={{ filter: 'drop-shadow(0 0 0.75rem #000000)' }} />
+					<Typography variant="h4" className="navbar-title" sx={{ color: 'white', fontWeight: 'bold', filter: 'drop-shadow(0 0 0.75rem #000000)' }}>
+						Signswap</Typography>
+					<div className="navbar-links">
+						<IconGithub link="https://github.com/emilamaj/signswap" height="32" />
+						<IconEtherscan link="https://etherscan.io/address/your-contract-address" height="32" />
+					</div>
+				</div>
 			</div>
 			<div className="container-middle-panels">
 				<div className="container-submit">
@@ -208,18 +219,11 @@ function App() {
 						justifyContent="space-between">
 						<Stack direction="column">
 							<Typography
-								variant="h5"
-								sx={{
-									color: 'text.primary',
-									fontWeight: 'bold'
-								}}
-							>Signswap</Typography>
-							<Typography
 								variant="h6"
 								sx={{
 									color: 'text.secondary',
 								}}
-							>Gasless swaps</Typography>
+							>Gasless swap</Typography>
 						</Stack>
 					</Stack>
 
@@ -296,7 +300,7 @@ function App() {
 								Approve
 							</Button>
 							<Button type="submit" variant="contained" color="primary">
-								Submit
+								Swap
 							</Button>
 							{/* <IconShow isShow={isAdvanced}
 								action={() => {

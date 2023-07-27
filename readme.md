@@ -24,6 +24,7 @@ The code is articulated in 3 main parts:
 TODO:
 - User Interface: 
     - [ ] Auto-approve
+    - [x] Navbar
     - [x] Icons
     - [x] Token metadata integration
     - [ ] Price base inversion

@@ -3,10 +3,48 @@ body {
     background-color: #f5f5f5;
     margin: 0;
     padding: 0;
-    /* background: linear-gradient(to bottom, #f0f0f0, #a8a8a8); */
     background: linear-gradient(to right, #ff8800, #e52d27);
+}
 
-    /* background-image: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05) 5px, transparent 5px, transparent 10px); */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    background: linear-gradient(to right, #ff6b22, #ff143b);
+    position: fixed;
+    width: calc(100% - 2rem);
+    top: 0;
+    left: 0;
+    z-index: 1000; /* This will ensure that the navbar is always on top */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.navbar-logo {
+    height: 50px;
+    margin: 0 1rem 0 0;
+}
+
+.navbar-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    /* background: -webkit-linear-gradient(left, #ffcfb8, #f19b9c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar-links a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
 }
 
 .container-app {
@@ -31,7 +69,7 @@ body {
     display: flex;
     justify-content: center;
     gap: 2rem;
-    margin: 2rem 0;
+    margin: 6rem 0;
 }
 
 .container-submit {
