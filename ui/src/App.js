@@ -68,6 +68,7 @@ function App() {
 	const [maxSlippage, setMaxSlippage] = useState('');
 	const [expiration, setExpiration] = useState('');
 	// App data
+	const [ethPrice, setEthPrice] = useState(null); // USD price of ETH
 	const [decimals, setDecimals] = useState({});
 	const [tokenList, setTokenList] = useState([]);
 
@@ -83,6 +84,30 @@ function App() {
 		} else {
 			return storedValue;
 		}
+	}
+
+	// Get ETH price in USD
+	const getEthPrice = async () => {
+		let price = ethPrice;
+		if (price === null) {
+			const apiUrl = "https://api.etherscan.io/api?module=stats&action=ethprice";
+			await fetch(apiUrl)
+				.then((response) => response.json())
+				.then((data) => {
+					price = parseFloat(data.result.ethusd);
+					console.log("ETH price: ", price);
+					setEthPrice(price);
+				})
+				.catch((error) => {
+					console.error('Error:', error);
+				});
+		}
+		return price;
+	}
+
+	// Display Approval error
+	const displayApprovalError = () => {
+		console.log("Approval error, need to approve more tokens");
 	}
 
 	// Connect wallet if not already connected
@@ -128,9 +153,28 @@ function App() {
 		console.log("Approved Exchange contract to spend tokens of userA")
 	};
 
+	// Check up to how much if the Exchange Contract allowed to spend of user's token A.
+	const getAllowance = async () => {
+		return 0;
+	}
+
 	// Submit order to backend
 	const handleSubmit = async (e) => {
 		e.preventDefault(); // Prevent the page from reloading
+
+		// Connect Wallet
+		if (!account) {
+			await loadAccount();
+			return;
+		}
+
+		// Check approval
+		const approvalAmount = await getAllowance();
+		if (approvalAmount < maxAmountA) {
+			await displayApprovalError();
+			return;
+		}
+
 		console.log("Submitting order...")
 
 		// Load wallet
@@ -223,22 +267,65 @@ function App() {
 	// Function to fetch token balance, and the corresponding USD value if available.
 	const getBalance = async (tokenAddress) => {
 		if (!account) {
-			return -1;
+			return { token: null, usd: null }
 		}
 		const tokenContract = new web3.eth.Contract(erc20ABI, tokenAddress);
 		const balance = await tokenContract.methods.balanceOf(account).call();
 
-		// Find if the token has a pair with WETH on Uniswap V2.
-		// If so, fetch the price of the token in USD.
-		const pairAddress = await factoryContract.methods.getPair(tokenAddress, WETH.address).call();
-		if (bn(pairAddress.substring(2)).isZero()) {
-			return balance;
-		}
-		
-		const pairContract = new web3.eth.Contract(pairContractABI, pairAddress);
-		const reserves = await pairContract.methods.getReserves().call();
+		// Check if the token is WETH
+		if (tokenAddress.toLowerCase() !== WETH.address.toLowerCase()) {
+			// Find the decimals of the token, and find the balance in facing decimals.
+			const tokenDecimals = await getDecimals(tokenAddress);
+			const bal = bn(balance).div(bn(10).pow(bn(tokenDecimals)))
 
+			// Find if the token has a pair with WETH on Uniswap V2.
+			const pairAddress = await factoryContract.methods.getPair(tokenAddress, WETH.address).call();
+			if (bn(pairAddress.substring(2)).isZero()) {
+				return { token: bal.toString(), usd: null }
+			}
+
+			// The token has a pair with WETH on Uniswap V2. Fetch the reserves to find the price in ETH.
+			const pairContract = new web3.eth.Contract(pairContractABI, pairAddress);
+			const reserves = await pairContract.methods.getReserves().call();
+
+			// Assign the correct reserves to the token and WETH.
+			const reservesToken = tokenAddress.toLowerCase() < WETH.address.toLowerCase() ? reserves[0] : reserves[1];
+			const reservesWETH = tokenAddress.toLowerCase() < WETH.address.toLowerCase() ? reserves[1] : reserves[0];
+
+			// Find the price of the token in ETH, then in USD.
+			const tokenPriceInETH = bn(reservesWETH).mul(bn(10).pow(bn(tokenDecimals))).div(bn(reservesToken).mul(bn(10).pow(bn(18))));
+			const ep = await getEthPrice();
+			const tokenPriceInUSD = tokenPriceInETH.toNumber() * ep;
+
+			// Return the balance and the USD value.
+			let retBal = {
+				token: bal.toString(),
+				usd: tokenPriceInUSD * bal.toNumber()
+			}
+			console.log("Balance of ", tokenAddress, ": ", retBal)
+			return retBal;
+			
+		} else {
+			// The token is WETH. Return the balance and the USD value.
+			let retBal = {
+				token: bn(balance).div(bn(10).pow(bn(18))).toString(),
+				usd: bn(balance).div(bn(10).pow(bn(18))).toNumber() * await getEthPrice()
+			}
+			console.log("Balance of ", tokenAddress, ": ", retBal)
+			return retBal;
+		}
 	}
+
+	// Automatically fetch balance of tokenA and tokenB, on token change or account change.
+	useEffect(() => {
+		const fetchBalances = async () => {
+			const balA = await getBalance(tokenA.address);
+			const balB = await getBalance(tokenB.address);
+			setTokenA({ ...tokenA, balance: balA });
+			setTokenB({ ...tokenB, balance: balB });
+		}
+		fetchBalances();
+	}, [tokenA.address, tokenB.address, account]);
 
 	return (
 		<div className="container-app">
@@ -273,19 +360,7 @@ function App() {
 							label="Token A"
 							tokenList={tokenList}
 							token={tokenA}
-							updateToken={(t) => {
-								// First, update tokenA
-								setTokenA(t);
-
-								// Then fetch balance of tokenA
-								if (!account) {
-									return;
-								}
-								getBalance(t.address).then((balance) => {
-									// Update tokenA balance
-									setTokenA({ ...t, balance: balance });
-								});
-							}}
+							updateToken={(t) => setTokenA(t)}
 						/>
 
 						<IconSwitch switchAction={() => {
@@ -307,8 +382,6 @@ function App() {
 								value={minAmountA}
 								onChange={(e) => setMinAmountA(e.target.value)}
 								fullWidth
-								helperText="Minimum amount"
-
 							/>
 							<TextField
 								label="Max"
@@ -343,6 +416,9 @@ function App() {
 							fullWidth
 							margin="normal"
 						/>
+						<Typography variant="body2" sx={{ color: 'text.secondary', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}
+						>Account: {account ? account : "Not connected"}
+						</Typography>
 						<div className="container-buttons">
 							<Button type="submit" variant="contained" color="secondary">
 								{account ? "Swap" : "Connect wallet"}
