@@ -18,6 +18,28 @@ const TokenInput = ({ label, tokenList, token, updateToken }) => {
         handleModalClose();
     }
 
+    const balanceText = () => {
+        let text = '';
+        if (!token.balance) {
+            return "N/A"
+        }
+        
+        if (!token.balance.token) {
+            return "N/A"
+        }
+
+        text += token.balance.token;
+
+        // Check if usd balance is null (0 is a valid value !)
+        if (!token.balance.usd && token.balance.usd !== 0) {
+            text += " ($N/A)";
+        } else {
+            text += ` ($${token.balance.usd})`;
+        }
+
+        return text;
+    }
+
     return (
         <>
             <TextField
@@ -33,19 +55,14 @@ const TokenInput = ({ label, tokenList, token, updateToken }) => {
                     ),
                     endAdornment: (
                         <InputAdornment position="end">
-                            Balance: {token.balance ? token.balance : 'N/A'}
+                            Balance: {balanceText()}
                         </InputAdornment>
                     ),
                 }}
                 autoComplete='off'
                 fullWidth
                 margin="normal"
-                helperText="toto"
             />
-            <Typography variant="body2" display={token.balance ? 'block' : 'none'}
-                sx={{ color: 'text.secondary' }}>
-                {token.balance ? `Balance: ${token.balance}` : ''}
-            </Typography>
             <TokenModal
                 open={modalOpen}
                 onClose={handleModalClose}
