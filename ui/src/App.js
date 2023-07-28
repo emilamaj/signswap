@@ -8,6 +8,9 @@ import TokenInput from './components/TokenInput';
 import IconGithub from './components/IconGithub';
 import IconEtherscan from './components/IconEtherscan';
 
+const web3 = new Web3(Web3.givenProvider);
+const bn = (n) => Web3.utils.toBN(n);
+
 // Token Data
 const WETH = {
 	chainId: 1,
@@ -26,22 +29,31 @@ const DAI = {
 	logoURI: "https://assets.coingecko.com/coins/images/9956/thumb/Badge_Dai.png?1687143508"
 };
 
-
-const web3 = new Web3(Web3.givenProvider);
-const bn = (n) => Web3.utils.toBN(n);
-
-const contractAddress = process.env.REACT_APP_CONTRACT_ADDRESS; // Add your contract address here
-let contractABI; // Read the abi from /public/abi/OrderBookExchange.json
+// Web3 Initialization
+const exchangeContractAddress = process.env.REACT_APP_EXCHANGE_CONTRACT_ADDRESS; // Add your contract address here
+const UniswapV2FactoryAddress = "0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f";
+let exchangeContractABI; // Read the abi from /public/abi/OrderBookExchange.json
 let erc20ABI; // Read the abi from /public/abi/ERC20.json
-let contract;
+let exchangeContract;
+let factoryContract;
+let factoryContractABI; // Read the abi from /public/abi/UniswapV2Factory.json
+let pairContractABI; // Read the abi from /public/abi/UniswapV2Pair.json
 // Defer contract creation until ABI is loaded
 fetch('/abi/OrderBookExchange.json').then((response) => response.json()).then((data) => {
-	contractABI = data.abi;
-	contract = new web3.eth.Contract(contractABI, contractAddress);
+	exchangeContractABI = data.abi;
+	exchangeContract = new web3.eth.Contract(exchangeContractABI, exchangeContractAddress);
 });
 fetch('/abi/ERC20.json').then((response) => response.json()).then((data) => {
 	erc20ABI = data.abi;
 });
+fetch('/abi/UniswapV2Factory.json').then((response) => response.json()).then((data) => {
+	factoryContractABI = data;
+	factoryContract = new web3.eth.Contract(factoryContractABI, UniswapV2FactoryAddress);
+});
+fetch('/abi/UniswapV2Pair.json').then((response) => response.json()).then((data) => {
+	pairContractABI = data;
+});
+
 
 function App() {
 	// Functional state
@@ -73,19 +85,38 @@ function App() {
 		}
 	}
 
+	// Connect wallet if not already connected
+	const loadAccount = async () => {
+		if (account) {
+			console.log("Account already loaded: ", account)
+			return account;
+		} else {
+			console.log("Connecting wallet...")
+			if (window.ethereum) {
+				console.log("Wallet found. Enabling...")
+				const accs = await window.ethereum.enable();
+				console.log("Loaded account: ", accs[0])
+				setAccount(accs[0]);
+				return accs[0];
+			} else {
+				console.log("No wallet found")
+			}
+
+		}
+
+		return null;
+	};
+
 	// Approve contract to spend tokens of userA and userB
 	const handleApprove = async (e) => {
 		e.preventDefault(); // Prevent the page from reloading
 		console.log("Approving tokens...")
 
-		// Load wallet
-		let loadedAccount = account;
-		if (window.ethereum) {
-			const accs = await window.ethereum.enable();
-			console.log("Wallet returned accounts: ", accs)
-			loadedAccount = accs[0];
-			setAccount(loadedAccount);
-			console.log("Loaded account: ", loadedAccount)
+		// Load wallet if not already loaded
+		let loadedAccount = await loadAccount();
+		if (!loadedAccount) {
+			console.log("Cannot approve, no wallet found");
+			return;
 		}
 
 		// Load token contract
@@ -93,7 +124,7 @@ function App() {
 
 		// Approve contract to spend tokens (max amount)
 		const maxAmount = bn(2).pow(bn(256)).sub(bn(1)).toString();
-		await tokenContractA.methods.approve(contractAddress, maxAmount).send({ from: loadedAccount });
+		await tokenContractA.methods.approve(exchangeContractAddress, maxAmount).send({ from: loadedAccount });
 		console.log("Approved Exchange contract to spend tokens of userA")
 	};
 
@@ -103,13 +134,10 @@ function App() {
 		console.log("Submitting order...")
 
 		// Load wallet
-		let loadedAccount = account;
-		if (window.ethereum) {
-			const accs = await window.ethereum.enable();
-			console.log("Wallet returned accounts: ", accs)
-			loadedAccount = accs[0];
-			setAccount(loadedAccount);
-			console.log("Loaded account: ", loadedAccount)
+		let loadedAccount = await loadAccount();
+		if (!loadedAccount) {
+			console.log("Cannot submit order, no wallet found");
+			return;
 		}
 
 		// Decimals of A
@@ -117,7 +145,7 @@ function App() {
 		console.log("Decimals of A: ", decA)
 
 		// Load nonce
-		const nonce = await contract.methods.nonces(loadedAccount).call();
+		const nonce = await exchangeContract.methods.nonces(loadedAccount).call();
 		console.log("Current user nonce:", nonce)
 
 		let order = {
@@ -192,11 +220,24 @@ function App() {
 		console.log("Token list fetched")
 	}, []);
 
-	// Function to fetch token balance
+	// Function to fetch token balance, and the corresponding USD value if available.
 	const getBalance = async (tokenAddress) => {
+		if (!account) {
+			return -1;
+		}
 		const tokenContract = new web3.eth.Contract(erc20ABI, tokenAddress);
 		const balance = await tokenContract.methods.balanceOf(account).call();
-		return balance;
+
+		// Find if the token has a pair with WETH on Uniswap V2.
+		// If so, fetch the price of the token in USD.
+		const pairAddress = await factoryContract.methods.getPair(tokenAddress, WETH.address).call();
+		if (bn(pairAddress.substring(2)).isZero()) {
+			return balance;
+		}
+		
+		const pairContract = new web3.eth.Contract(pairContractABI, pairAddress);
+		const reserves = await pairContract.methods.getReserves().call();
+
 	}
 
 	return (
@@ -237,6 +278,9 @@ function App() {
 								setTokenA(t);
 
 								// Then fetch balance of tokenA
+								if (!account) {
+									return;
+								}
 								getBalance(t.address).then((balance) => {
 									// Update tokenA balance
 									setTokenA({ ...t, balance: balance });
@@ -263,14 +307,15 @@ function App() {
 								value={minAmountA}
 								onChange={(e) => setMinAmountA(e.target.value)}
 								fullWidth
-								margin="normal"
+								helperText="Minimum amount"
+
 							/>
 							<TextField
 								label="Max"
 								value={maxAmountA}
 								onChange={(e) => setMaxAmountA(e.target.value)}
 								fullWidth
-								margin="normal"
+
 							/>
 						</div>
 
