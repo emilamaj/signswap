@@ -80,6 +80,8 @@ body {
     background: linear-gradient(to right, #ffb25b, #e7615d);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+    /* When removing child elements, the container will shrink to fit the remaining elements. */
+    transition: all 0.3s ease-in-out;
 }
 
 .container-recent {
@@ -91,13 +93,8 @@ body {
     border-radius: 4px;
 }
 
-.container-amounts {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-}
-
 .container-buttons {
+    position: relative;
     display: flex;
     justify-content: center;
     gap: 2rem;
@@ -120,3 +117,11 @@ form button {
         padding: 1rem;
     }
 }
+
+/* Remove Arrows from Number Input */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+

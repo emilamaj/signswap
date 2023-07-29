@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Web3 from 'web3';
-import { Button, TextField, Container, Typography, Stack } from '@mui/material';
+import { Button, TextField, Container, Typography, Stack, Link, InputAdornment } from '@mui/material';
 import './App.css';
 import IconSwitch from './components/IconSwitch';
 import IconShow from './components/IconShow';
@@ -62,12 +62,15 @@ function App() {
 	const [account, setAccount] = useState('');
 	const [tokenA, setTokenA] = useState(WETH);
 	const [tokenB, setTokenB] = useState(DAI);
+	const [amountA, setAmountA] = useState('');
 	const [minAmountA, setMinAmountA] = useState(''); // Ignore token decimals in App.js, convert to correct integer in handleSubmit()
 	const [maxAmountA, setMaxAmountA] = useState('');
 	const [price, setPrice] = useState('');
-	const [maxSlippage, setMaxSlippage] = useState('');
-	const [expiration, setExpiration] = useState('');
+	const [maxSlippage, setMaxSlippage] = useState(1.0);
+	const [expiration, setExpiration] = useState(300);
 	// App data
+	const [errorMsg, setErrorMsg] = useState("");
+	const [allowance, setAllowance] = useState(0); // Amount of tokenA that the Exchange Contract is allowed to spend
 	const [ethPrice, setEthPrice] = useState(null); // USD price of ETH
 	const [decimals, setDecimals] = useState({});
 	const [tokenList, setTokenList] = useState([]);
@@ -103,11 +106,6 @@ function App() {
 				});
 		}
 		return price;
-	}
-
-	// Display Approval error
-	const displayApprovalError = () => {
-		console.log("Approval error, need to approve more tokens");
 	}
 
 	// Connect wallet if not already connected
@@ -153,10 +151,18 @@ function App() {
 		console.log("Approved Exchange contract to spend tokens of userA")
 	};
 
-	// Check up to how much if the Exchange Contract allowed to spend of user's token A.
-	const getAllowance = async () => {
-		return 0;
-	}
+	// Automatically fetch allowance on tokenA/account change
+	useEffect(() => {
+		const fetchAllowance = async () => {
+			if (!account) {
+				return;
+			}
+			const tokenContractA = new web3.eth.Contract(erc20ABI, tokenA.address);
+			const allowance = await tokenContractA.methods.allowance(account, exchangeContractAddress).call();
+			setAllowance(allowance);
+		}
+		fetchAllowance();
+	}, [tokenA.address, account]);
 
 	// Submit order to backend
 	const handleSubmit = async (e) => {
@@ -169,9 +175,8 @@ function App() {
 		}
 
 		// Check approval
-		const approvalAmount = await getAllowance();
-		if (approvalAmount < maxAmountA) {
-			await displayApprovalError();
+		if (!allowance || allowance < maxAmountA) {
+			setErrorMsg("Insufficient allowance");
 			return;
 		}
 
@@ -304,7 +309,7 @@ function App() {
 			}
 			console.log("Balance of ", tokenAddress, ": ", retBal)
 			return retBal;
-			
+
 		} else {
 			// The token is WETH. Return the balance and the USD value.
 			let retBal = {
@@ -376,7 +381,7 @@ function App() {
 							updateToken={(t) => setTokenB(t)}
 						/>
 
-						<div className="container-amounts">
+						{isAdvanced ? <Stack direction="row" gap={2}>
 							<TextField
 								label="Min Amount A"
 								value={minAmountA}
@@ -384,13 +389,19 @@ function App() {
 								fullWidth
 							/>
 							<TextField
-								label="Max"
+								label="Max Amount A"
 								value={maxAmountA}
 								onChange={(e) => setMaxAmountA(e.target.value)}
 								fullWidth
 
 							/>
-						</div>
+						</Stack>
+						: <TextField
+							label="Amount A"
+							value={maxAmountA}
+							onChange={(e) => setMaxAmountA(e.target.value)}
+							fullWidth
+						/>}
 
 						<Stack direction="row" gap={2}>
 							<TextField
@@ -401,32 +412,61 @@ function App() {
 								margin="normal"
 							/>
 							<TextField
-								label="Slippage %"
+								label="Slippage"
 								value={maxSlippage}
-								onChange={(e) => setMaxSlippage(e.target.value)}
-								fullWidth
 								margin="normal"
 								autoComplete="off"
+								onChange={(e) => setMaxSlippage(e.target.value)}
+								onBlur={(e) => setMaxSlippage(parseFloat(e.target.value).toFixed(1))}
+								InputProps={{
+									endAdornment: <InputAdornment position="end">%</InputAdornment>,
+								}}
+								type="number"
+								inputProps={{
+									min: 0,
+									max: 100,
+									step: 0.1,
+								}}
+
 							/>
 						</Stack>
-						<TextField
-							label="Expiration Block"
-							value={expiration}
-							onChange={(e) => setExpiration(e.target.value)}
-							fullWidth
-							margin="normal"
-						/>
-						<Typography variant="body2" sx={{ color: 'text.secondary', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}
-						>Account: {account ? account : "Not connected"}
-						</Typography>
+						{
+							isAdvanced && <TextField
+								label="Expire in"
+								value={expiration}
+								margin="normal"
+								onChange={(e) => setExpiration(e.target.value)}
+								onBlur={(e) => setExpiration(parseInt(e.target.value))}
+								InputProps={{
+									endAdornment: <InputAdornment position="end">blocks</InputAdornment>,
+								}}
+								type="number"
+								inputProps={{
+									min: 0,
+									max: 10000000,
+									step: 1,
+								}}
+							/>
+						}
+
+						{errorMsg && <Typography variant="body2" sx={{ color: 'red' }}>{errorMsg}</Typography>
+						}
+						{isAdvanced && <>
+							<Typography variant="body2" sx={{ color: 'text.secondary', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>
+								Wallet: {account ? account : "Not connected"}
+							</Typography>
+							<Typography variant="body2" sx={{ color: 'text.secondary', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>
+								Approval: {allowance} <Link href="#" onClick={handleApprove} sx={{ color: 'white', textDecoration: 'none' }}
+								>&nbsp;&nbsp;Approve More</Link>
+							</Typography>
+						</>
+						}
 						<div className="container-buttons">
-							<Button type="submit" variant="contained" color="secondary">
-								{account ? "Swap" : "Connect wallet"}
+							<Button type="submit" variant="contained" color="primary">
+								{account ? "Swap" : "Connect"}
 							</Button>
-							{/* <IconShow isShow={isAdvanced}
-								action={() => {
-									setIsAdvanced(!isAdvanced);
-								}} /> */}
+							<IconShow isShow={isAdvanced} sx={{ position: 'absolute', right: '0px' }}
+								action={() => { setIsAdvanced(!isAdvanced) }} />
 						</div>
 					</form>
 				</div>
