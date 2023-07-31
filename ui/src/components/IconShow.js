@@ -9,7 +9,7 @@ function IconShow({ isShow, action, sx }) {
             title="Hide"
             style={{ padding: 0, color: "white", height: "36px", minWidth: "16px", width: "32px", ...sx }}
             >
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M6 15l6-6 6 6" />
             </svg>
         </Button>
@@ -20,7 +20,7 @@ function IconShow({ isShow, action, sx }) {
             title="Show"
             style={{ padding: 0, color: "white", height: "36px", minWidth: "16px", width: "32px", ...sx }}
             >
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M6 9l6 6 6-6" />
             </svg>
         </Button>
