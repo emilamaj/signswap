@@ -66,7 +66,7 @@ const TokenModal = ({ open, onClose, onSelect, tokenList }) => {
                                     onClick={() => handleSelect(token)}
                                     fullWidth
                                 >
-                                    <div className='container-token'>
+                                    <div className='container-token' style={{ padding: '0 1rem' }}>
                                         <img src={token.logoURI} alt={token.name} width="32" height="32" loading='lazy'/>
                                         <div className='container-token-details'>
                                             <Typography variant="body1">
