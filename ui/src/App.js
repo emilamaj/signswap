@@ -58,14 +58,15 @@ fetch('/abi/UniswapV2Pair.json').then((response) => response.json()).then((data)
 function App() {
 	// Functional state
 	const [isAdvanced, setIsAdvanced] = useState(false);
+	const [isPriceInverted, setIsPriceInverted] = useState(false); // Use either TokenB/TokenA (normal) or TokenA/TokenB (inverted)
 	// Form inputs
 	const [account, setAccount] = useState('');
 	const [tokenA, setTokenA] = useState(WETH);
 	const [tokenB, setTokenB] = useState(DAI);
-	const [amountA, setAmountA] = useState('');
-	const [minAmountA, setMinAmountA] = useState(''); // Ignore token decimals in App.js, convert to correct integer in handleSubmit()
-	const [maxAmountA, setMaxAmountA] = useState('');
-	const [price, setPrice] = useState('');
+	const [minAmountA, setMinAmountA] = useState("0"); // Ignore token decimals in App.js, convert to correct integer in handleSubmit()
+	const [maxAmountA, setMaxAmountA] = useState("0");
+	const [receiveB, setReceiveB] = useState("0"); // [maxAmountA] * [price]
+	const [price, setPrice] = useState('1.0');
 	const [maxSlippage, setMaxSlippage] = useState(1.0);
 	const [expiration, setExpiration] = useState(300);
 	// App data
@@ -74,6 +75,15 @@ function App() {
 	const [ethPrice, setEthPrice] = useState(null); // USD price of ETH
 	const [decimals, setDecimals] = useState({});
 	const [tokenList, setTokenList] = useState([]);
+
+	// Calculate receiveB
+	useEffect(() => {
+		if (isPriceInverted) {
+			setReceiveB((parseFloat(maxAmountA) / parseFloat(price)).toFixed(3));
+		} else {
+			setReceiveB((parseFloat(maxAmountA) * parseFloat(price)).toFixed(3));
+		}
+	}, [maxAmountA, price, isPriceInverted]);
 
 	// Find decimals of tokenA
 	const getDecimals = async (tokenAddress) => {
@@ -89,24 +99,29 @@ function App() {
 		}
 	}
 
-	// Get ETH price in USD
-	const getEthPrice = async () => {
-		let price = ethPrice;
-		if (price === null) {
+	// Fetch ETH price once on load
+	useEffect(() => {
+		if (ethPrice) {
+			return;
+		}
+		const fetchEthPrice = async () => {
 			const apiUrl = "https://api.etherscan.io/api?module=stats&action=ethprice";
+			console.log(`Fetching price. Current timestamp (s.ms): ${Date.now() / 1000}`);
 			await fetch(apiUrl)
 				.then((response) => response.json())
 				.then((data) => {
-					price = parseFloat(data.result.ethusd);
+					const price = parseFloat(data.result.ethusd);
 					console.log("ETH price: ", price);
-					setEthPrice(price);
+					if (!!price) {
+						setEthPrice(price);
+					}
 				})
 				.catch((error) => {
 					console.error('Error:', error);
 				});
 		}
-		return price;
-	}
+		fetchEthPrice();
+	}, []);
 
 	// Connect wallet if not already connected
 	const loadAccount = async () => {
@@ -197,18 +212,35 @@ function App() {
 		const nonce = await exchangeContract.methods.nonces(loadedAccount).call();
 		console.log("Current user nonce:", nonce)
 
-		let order = {
-			user: loadedAccount,
-			tokenA: tokenA.address,
-			tokenB: tokenB.address,
-			minAmountA: bn(Math.floor(minAmountA * 10 ** 6)).mul(bn(10).pow(bn(decA))).div(bn(10 ** 6)).toString(),
-			maxAmountA: bn(Math.floor(maxAmountA * 10 ** 6)).mul(bn(10).pow(bn(decA))).div(bn(10 ** 6)).toString(),
-			priceX96: bn(Math.floor(price * 10 ** 6)).mul(bn(2).pow(bn(96))).div(bn(10 ** 6)).toString(),
-			maxSlippage: maxSlippage,
-			nonce: nonce,
-			expiration: expiration,
-			code: process.env.IMPLEMENTATION_CODE,
-		};
+		let order;
+		if (isAdvanced) {
+			order = {
+				user: loadedAccount,
+				tokenA: tokenA.address,
+				tokenB: tokenB.address,
+				minAmountA: bn(Math.floor(minAmountA * 10 ** 6)).mul(bn(10).pow(bn(decA))).div(bn(10 ** 6)).toString(),
+				maxAmountA: bn(Math.floor(maxAmountA * 10 ** 6)).mul(bn(10).pow(bn(decA))).div(bn(10 ** 6)).toString(),
+				priceX96: bn(Math.floor(price * 10 ** 6)).mul(bn(2).pow(bn(96))).div(bn(10 ** 6)).toString(),
+				maxSlippage: Math.floor(maxSlippage * 100),
+				nonce: nonce,
+				expiration: expiration,
+				code: process.env.IMPLEMENTATION_CODE,
+			};
+
+		} else {
+			order = {
+				user: loadedAccount,
+				tokenA: tokenA.address,
+				tokenB: tokenB.address,
+				minAmountA: bn(Math.floor(minAmountA * 10 ** 6)).mul(bn(10).pow(bn(decA))).div(bn(10 ** 6)).toString(),
+				maxAmountA: bn(Math.floor(maxAmountA * 10 ** 6)).mul(bn(10).pow(bn(decA))).div(bn(10 ** 6)).toString(),
+				priceX96: bn(Math.floor(price * 10 ** 6)).mul(bn(2).pow(bn(96))).div(bn(10 ** 6)).toString(),
+				maxSlippage: Math.floor(maxSlippage * 100),
+				nonce: nonce,
+				expiration: expiration,
+				code: process.env.IMPLEMENTATION_CODE,
+			};
+		}
 		console.log("Order: ", order)
 
 		const messageHash = web3.utils.soliditySha3(
@@ -299,8 +331,9 @@ function App() {
 
 			// Find the price of the token in ETH, then in USD.
 			const tokenPriceInETH = bn(reservesWETH).mul(bn(10).pow(bn(tokenDecimals))).div(bn(reservesToken).mul(bn(10).pow(bn(18))));
-			const ep = await getEthPrice();
-			const tokenPriceInUSD = tokenPriceInETH.toNumber() * ep;
+			const tokenPriceInUSD = tokenPriceInETH.toNumber() * ethPrice;
+			console.log("Token price in ETH: ", tokenPriceInETH.toString())
+			console.log("Token price in USD: ", tokenPriceInUSD)
 
 			// Return the balance and the USD value.
 			let retBal = {
@@ -314,7 +347,7 @@ function App() {
 			// The token is WETH. Return the balance and the USD value.
 			let retBal = {
 				token: bn(balance).div(bn(10).pow(bn(18))).toString(),
-				usd: bn(balance).div(bn(10).pow(bn(18))).toNumber() * await getEthPrice()
+				usd: bn(balance).div(bn(10).pow(bn(18))).toNumber() * ethPrice
 			}
 			console.log("Balance of ", tokenAddress, ": ", retBal)
 			return retBal;
@@ -381,27 +414,46 @@ function App() {
 							updateToken={(t) => setTokenB(t)}
 						/>
 
-						{isAdvanced ? <Stack direction="row" gap={2}>
-							<TextField
-								label="Min Amount A"
-								value={minAmountA}
-								onChange={(e) => setMinAmountA(e.target.value)}
-								fullWidth
-							/>
-							<TextField
-								label="Max Amount A"
-								value={maxAmountA}
-								onChange={(e) => setMaxAmountA(e.target.value)}
-								fullWidth
+						<Stack direction="row" gap={2}>
+							{isAdvanced ? <>
+								<TextField
+									label="Min Amount A"
+									value={minAmountA}
+									onChange={(e) => setMinAmountA(e.target.value)}
+									fullWidth
+								/>
+								<TextField
+									label="Max Amount A"
+									value={maxAmountA}
+									onChange={(e) => setMaxAmountA(e.target.value)}
+									fullWidth
 
-							/>
+								/>
+							</> : <>
+								<TextField
+									label="Amount A"
+									value={maxAmountA}
+									onChange={(e) => setMaxAmountA(e.target.value)}
+									fullWidth
+								/>
+								<TextField
+									label="Receive B"
+									value={receiveB}
+									disabled
+									fullWidth
+								/>
+							</>
+							}
 						</Stack>
-						: <TextField
-							label="Amount A"
-							value={maxAmountA}
-							onChange={(e) => setMaxAmountA(e.target.value)}
-							fullWidth
-						/>}
+						{isAdvanced &&
+							<TextField
+								label="Receive B"
+								value={receiveB}
+								disabled
+								fullWidth
+								margin='normal'
+							/>
+						}
 
 						<Stack direction="row" gap={2}>
 							<TextField
@@ -411,7 +463,7 @@ function App() {
 								fullWidth
 								margin="normal"
 							/>
-							<TextField
+							{isAdvanced && <TextField
 								label="Slippage"
 								value={maxSlippage}
 								margin="normal"
@@ -428,7 +480,7 @@ function App() {
 									step: 0.1,
 								}}
 
-							/>
+							/>}
 						</Stack>
 						{
 							isAdvanced && <TextField
@@ -445,7 +497,9 @@ function App() {
 									min: 0,
 									max: 10000000,
 									step: 1,
+									style: { textAlign: 'right' }
 								}}
+
 							/>
 						}
 
@@ -463,7 +517,7 @@ function App() {
 						}
 						<div className="container-buttons">
 							<Button type="submit" variant="contained" color="primary">
-								{account ? "Swap" : "Connect"}
+								{account ? "Swap" : "Connect Wallet"}
 							</Button>
 							<IconShow isShow={isAdvanced} sx={{ position: 'absolute', right: '0px' }}
 								action={() => { setIsAdvanced(!isAdvanced) }} />
