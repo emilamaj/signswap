@@ -19,9 +19,26 @@ const TokenModal = ({ open, onClose, onSelect, tokenList }) => {
             setDisplayTokens(tokenList.slice(0, tokenIndex));
         } else {
             // Search for tokens that match the search query
-            const searchResults = tokenList.filter((token) => {
+            let searchResults = tokenList.filter((token) => {
                 return token.symbol.toLowerCase().startsWith(e.target.value.toLowerCase()) || token.name.toLowerCase().startsWith(e.target.value.toLowerCase()) || token.address.toLowerCase().startsWith(e.target.value.toLowerCase());
             });
+            // If the list is empty, check if the search query is an address
+            if (searchResults.length === 0) {
+                if (e.target.value.startsWith('0x') && e.target.value.length === 42) {
+                    // Create an "unknown" token with the address
+                    const unknownToken = {
+                        address: e.target.value,
+                        name: 'Unknown Token',
+                        symbol: e.target.value,
+                        decimals: 18,
+                        logoURI: '/badge_unknown_token.webp'
+                    }
+
+                    // Modify the search results to include the unknown token
+                    searchResults = [unknownToken];
+                }
+            }
+            // Display the first 20 results
             setDisplayTokens(searchResults.slice(0, tokenIndex));
         }
         console.log("Done searching.")
