@@ -50,7 +50,9 @@ const TokenInput = ({ label, tokenList, token, updateToken }) => {
                     readOnly: true,
                     startAdornment: (
                         <InputAdornment position="start">
-                            <img src={token.logoURI} alt={token.symbol} style={{ width: '24px', height: '24px' }} />
+                            {
+                                token.logoURI && <img src={token.logoURI} alt={token.symbol} style={{ width: '24px', height: '24px' }} />
+                            }
                         </InputAdornment>
                     ),
                     endAdornment: (
