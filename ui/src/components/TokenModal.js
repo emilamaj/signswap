@@ -65,38 +65,57 @@ const TokenModal = ({ open, onClose, onSelect, tokenList }) => {
 
     return (
         <div className='container-token-modal'>
-            <Dialog open={open} onClose={handleCancel}>
-                <DialogTitle>Select a token</DialogTitle>
+            <Dialog open={open} onClose={handleCancel} PaperProps={{ style: { background: 'linear-gradient(to right, #ff8800, #e52d27)' } }}>
+                <DialogTitle sx={{ color: 'white', filter: 'drop-shadow(0 0 0.2rem #000000)' }}
+                >Select a token</DialogTitle>
                 <TextField
                     label="Search"
                     value={search}
                     onChange={handleSearch}
                     autoComplete='off'
-                    style={{margin: '0 16px'}}
+                    style={{
+                        margin: '0 16px 16px 16px',
+                        color: 'white',
+                    }}
                 />
-                <DialogContent onScroll={handleScroll}>
+                <DialogContent onScroll={handleScroll} sx={{ height: '35vh', padding: "0" }}>
                     <Stack direction="column" justifyContent="flex-start" alignItems="flex-start">
-                        {displayTokens.map((token) => {
-                            return (
-                                <Button
-                                    key={token.address}
-                                    onClick={() => handleSelect(token)}
-                                    fullWidth
-                                >
-                                    <div className='container-token' style={{ padding: '0 1rem' }}>
-                                        <img src={token.logoURI} alt={token.name} width="32" height="32" loading='lazy'/>
-                                        <div className='container-token-details'>
-                                            <Typography variant="body1">
-                                                {token.name}
-                                            </Typography>
-                                            <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                                                {token.symbol}
-                                            </Typography>
+                        { displayTokens.length !== 0 ?
+
+                            displayTokens.map((token) => {
+                                return (
+                                    <Button
+                                        key={token.address}
+                                        onClick={() => handleSelect(token)}
+                                        fullWidth
+                                    >
+                                        <div className='container-token' style={{
+                                            padding: '0 1rem', background: 'linear-gradient(to right, #ffb25b, #e7615d)'
+                                        }}>
+                                            <img src={token.logoURI} alt={token.name} width="32" height="32" loading='lazy' />
+                                            <div className='container-token-details'>
+                                                <Typography variant="body1" sx={{
+                                                    color: 'white', textTransform: "none", filter: 'drop-shadow(0 0 0.1rem #000000)'
+                                                }}>
+                                                    {token.name}
+                                                </Typography>
+                                                <Typography variant="body2" sx={{
+                                                    color: 'text.secondary', textTransform: "none"
+                                                }}>
+                                                    {token.symbol}
+                                                </Typography>
+                                            </div>
                                         </div>
-                                    </div>
-                                </Button>
-                            );
-                        })}
+                                    </Button>
+                                );
+                            }) :
+                            <Typography variant="body1" sx={{
+                                color: 'white', textTransform: "none", filter: 'drop-shadow(0 0 0.2rem #000000)'
+                            }}>
+                                No results found
+                            </Typography>
+
+                        }
                     </Stack>
                 </DialogContent>
                 <DialogActions>
