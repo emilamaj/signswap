@@ -7,6 +7,8 @@ import IconShow from './components/IconShow';
 import TokenInput from './components/TokenInput';
 import IconGithub from './components/IconGithub';
 import IconEtherscan from './components/IconEtherscan';
+import HelpModal from './components/HelpModal';
+import IconHelp from './components/IconHelp';
 
 const web3 = new Web3(Web3.givenProvider);
 const bn = (n) => Web3.utils.toBN(n);
@@ -57,6 +59,7 @@ fetch('/abi/UniswapV2Pair.json').then((response) => response.json()).then((data)
 
 function App() {
 	// Functional state
+	const [helpOpen, setHelpOpen] = useState(false);
 	const [isAdvanced, setIsAdvanced] = useState(false);
 	const [isPriceInverted, setIsPriceInverted] = useState(false); // Use either TokenB/TokenA (normal) or TokenA/TokenB (inverted)
 	// Form inputs
@@ -519,8 +522,10 @@ function App() {
 							<Button type="submit" variant="contained" color="primary">
 								{account ? "Swap" : "Connect Wallet"}
 							</Button>
-							<IconShow isShow={isAdvanced} sx={{ position: 'absolute', right: '0px' }}
+							<IconShow isShow={isAdvanced}
 								action={() => { setIsAdvanced(!isAdvanced) }} />
+							<HelpModal open={helpOpen} handleClose={() => setHelpOpen(false)} />
+
 						</div>
 					</form>
 				</div>
