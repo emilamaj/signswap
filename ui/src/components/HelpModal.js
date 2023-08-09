@@ -18,7 +18,7 @@ function HelpModal({ open, handleClose }) {
                 <DialogContentText
                     sx={ts}
                 >
-                    Signswap allows you to swap your tokens without having to pay any gas fees, by matching the cryptographically signed orders of users with opposite needs.
+                    Signswap allows you to swap your tokens without having to pay any gas fees, by matching the cryptographically signed orders of users with opposite positions.
                 </DialogContentText>
                 <DialogContentText
                     sx={ts}

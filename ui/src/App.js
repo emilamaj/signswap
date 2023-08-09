@@ -445,7 +445,7 @@ function App() {
 
 					<form onSubmit={handleSubmit}>
 						<TokenInput
-							label="Token A"
+							label="Input Token"
 							tokenList={tokenList}
 							token={tokenA}
 							updateToken={(t) => setTokenA(t)}
@@ -458,7 +458,7 @@ function App() {
 						}} />
 
 						<TokenInput
-							label="Token B"
+							label="Receive Token"
 							tokenList={tokenList}
 							token={tokenB}
 							updateToken={(t) => setTokenB(t)}
@@ -467,7 +467,7 @@ function App() {
 						<Stack direction="row" gap={2}>
 							{isAdvanced ? <>
 								<TextField
-									label="Min Amount A"
+									label="Min Input Amount"
 									value={minAmountA}
 									onChange={(e) => setMinAmountA(e.target.value)}
 									onBlur={(e) => e.target.value === "" && setMinAmountA(0)}
@@ -479,7 +479,7 @@ function App() {
 									helperText={minAmountA < 0 ? "Must be positive" : minAmountA > maxAmountA ? "Must be < Max" : ""}
 								/>
 								<TextField
-									label="Max Amount A"
+									label="Max Input Amount"
 									value={maxAmountA}
 									onChange={(e) => setMaxAmountA(e.target.value)}
 									fullWidth
@@ -490,7 +490,7 @@ function App() {
 								/>
 							</> : <>
 								<TextField
-									label="Amount A"
+									label="Input Amount"
 									value={maxAmountA}
 									fullWidth
 									InputProps={{
@@ -504,7 +504,7 @@ function App() {
 									helperText={maxAmountA < 0 ? "Must be positive" : ""}
 								/>
 								<TextField
-									label="Receive B"
+									label="Receive Amount"
 									value={receiveB}
 									disabled
 									fullWidth
@@ -517,7 +517,7 @@ function App() {
 						</Stack>
 						{isAdvanced &&
 							<TextField
-								label="Receive B"
+								label="Receive Amount (Max)"
 								value={receiveB}
 								disabled
 								fullWidth
@@ -560,7 +560,7 @@ function App() {
 						</Stack>
 						{
 							isAdvanced && <TextField
-								label="Expire in"
+								label="Expires in"
 								value={expiration}
 								margin="normal"
 								onChange={(e) => setExpiration(e.target.value)}
