@@ -99,7 +99,6 @@ function App() {
 		computeButtonText();
 	}, [account, allowance, maxAmountA]);
 
-
 	// Calculate receiveB
 	useEffect(() => {
 		if (isPriceInverted) {
@@ -151,11 +150,11 @@ function App() {
 	useEffect(() => {
 		const checkWallet = async () => {
 			if (window.ethereum) {
-				const accs = await window.ethereum.request({method: 'eth_accounts'});       
+				const accs = await window.ethereum.request({ method: 'eth_accounts' });
 				if (accs.length) {
-				   console.log("Wallet already connected. No need to connect again.");
+					console.log("Wallet already connected. No need to connect again.");
 				} else {
-				   console.log("Wallet is not connected");
+					console.log("Wallet is not connected");
 				}
 
 				if (accs.length > 0) {
@@ -431,18 +430,18 @@ function App() {
 			</div>
 			<div className="container-middle-panels">
 				<div className="container-submit">
-					<Stack direction="row"
+					{/* <Stack direction="row"
 						alignItems="flex-start"
 						justifyContent="space-between">
 						<Stack direction="column">
-							{/* <Typography
+							<Typography
 								variant="h6"
 								sx={{
 									color: 'text.secondary',
 								}}
-							>Gasless swap</Typography> */}
+							>Gasless swaps</Typography>
 						</Stack>
-					</Stack>
+					</Stack> */}
 
 					<form onSubmit={handleSubmit}>
 						<TokenInput
