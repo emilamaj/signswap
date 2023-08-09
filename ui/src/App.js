@@ -217,9 +217,10 @@ function App() {
 			if (!account) {
 				return;
 			}
+			console.log("ERC20 ABI: ", erc20ABI)
 			const tokenContractA = new web3.eth.Contract(erc20ABI, tokenA.address);
 			const allowance = await tokenContractA.methods.allowance(account, exchangeContractAddress).call();
-			setAllowance(allowance);
+			setAllowance(Math.floor(allowance));
 		}
 		fetchAllowance();
 	}, [tokenA.address, account]);
@@ -244,9 +245,23 @@ function App() {
 		const decA = await getDecimals(tokenA.address);
 		console.log("Decimals of A: ", decA)
 
+		// Check approval (shouldn' be necessary)
+		if (!allowance || bn(allowance).lt(bn(Math.floor(maxAmountA * 10 ** 18)).mul(bn(10).pow(bn(decA))).div(bn(10 ** 18)))) {
+			setErrorMsg("Insufficient allowance");
+			console.error("Redundant check failed. Allowance: ", allowance, " Max amount A: ", maxAmountA);
+			return;
+		}
+
+		console.log("Submitting order...")
+		setErrorMsg("");
+
 		// Load nonce
 		const nonce = await exchangeContract.methods.nonces(loadedAccount).call();
 		console.log("Current user nonce:", nonce)
+
+		// Load expiration
+		const blockNumber = await web3.eth.getBlockNumber();
+		const targetBlock = blockNumber + expiration;
 
 		let order;
 		if (isAdvanced) {
@@ -254,12 +269,12 @@ function App() {
 				user: loadedAccount,
 				tokenA: tokenA.address,
 				tokenB: tokenB.address,
-				minAmountA: bn(Math.floor(minAmountA * 10 ** 6)).mul(bn(10).pow(bn(decA))).div(bn(10 ** 6)).toString(),
-				maxAmountA: bn(Math.floor(maxAmountA * 10 ** 6)).mul(bn(10).pow(bn(decA))).div(bn(10 ** 6)).toString(),
-				priceX96: bn(Math.floor(price * 10 ** 6)).mul(bn(2).pow(bn(96))).div(bn(10 ** 6)).toString(),
+				minAmountA: bn(Math.floor(minAmountA * 10 ** 18)).mul(bn(10).pow(bn(decA))).div(bn(10 ** 18)).toString(),
+				maxAmountA: bn(Math.floor(maxAmountA * 10 ** 18)).mul(bn(10).pow(bn(decA))).div(bn(10 ** 18)).toString(),
+				priceX96: bn(Math.floor(price * 2 ** 96)).toString(),
 				maxSlippage: Math.floor(maxSlippage * 100),
 				nonce: nonce,
-				expiration: expiration,
+				expiration: targetBlock,
 				code: process.env.IMPLEMENTATION_CODE,
 			};
 
@@ -268,12 +283,12 @@ function App() {
 				user: loadedAccount,
 				tokenA: tokenA.address,
 				tokenB: tokenB.address,
-				minAmountA: bn(Math.floor(minAmountA * 10 ** 6)).mul(bn(10).pow(bn(decA))).div(bn(10 ** 6)).toString(),
-				maxAmountA: bn(Math.floor(maxAmountA * 10 ** 6)).mul(bn(10).pow(bn(decA))).div(bn(10 ** 6)).toString(),
-				priceX96: bn(Math.floor(price * 10 ** 6)).mul(bn(2).pow(bn(96))).div(bn(10 ** 6)).toString(),
+				minAmountA: bn(Math.floor(minAmountA * 10 ** 18)).mul(bn(10).pow(bn(decA))).div(bn(10 ** 18)).toString(),
+				maxAmountA: bn(Math.floor(maxAmountA * 10 ** 18)).mul(bn(10).pow(bn(decA))).div(bn(10 ** 18)).toString(),
+				priceX96: bn(Math.floor(price * 2 ** 96)).toString(),
 				maxSlippage: Math.floor(maxSlippage * 100),
 				nonce: nonce,
-				expiration: expiration,
+				expiration: targetBlock,
 				code: process.env.IMPLEMENTATION_CODE,
 			};
 		}
@@ -456,7 +471,13 @@ function App() {
 									label="Min Amount A"
 									value={minAmountA}
 									onChange={(e) => setMinAmountA(e.target.value)}
+									onBlur={(e) => e.target.value === "" && setMinAmountA(0)}
 									fullWidth
+									InputProps={{
+										endAdornment: <InputAdornment position="end">{tokenA.symbol}</InputAdornment>,
+									}}
+									error={minAmountA < 0 || minAmountA > maxAmountA}
+									helperText={minAmountA < 0 ? "Must be positive" : minAmountA > maxAmountA ? "Must be < Max" : ""}
 								/>
 								<TextField
 									label="Max Amount A"
@@ -469,8 +490,16 @@ function App() {
 								<TextField
 									label="Amount A"
 									value={maxAmountA}
-									onChange={(e) => setMaxAmountA(e.target.value)}
 									fullWidth
+									InputProps={{
+										endAdornment: <InputAdornment position="end">{tokenA.symbol}</InputAdornment>,
+									}}
+									autoComplete="off"
+									onChange={(e) => setMaxAmountA(e.target.value)}
+									onBlur={(e) => e.target.value === "" && setMaxAmountA(0)}
+									type="number"
+									error={maxAmountA < 0}
+									helperText={maxAmountA < 0 ? "Must be positive" : ""}
 								/>
 								<TextField
 									label="Receive B"
@@ -496,8 +525,11 @@ function App() {
 								label="Desired Price"
 								value={price}
 								onChange={(e) => setPrice(e.target.value)}
+								onBlur={(e) => e.target.value === "" && setPrice(0)}
 								fullWidth
 								margin="normal"
+								error={price <= 0}
+								helperText={price <= 0 ? "Must be > 0" : ""}
 							/>
 							{isAdvanced && <TextField
 								label="Slippage"
@@ -524,15 +556,22 @@ function App() {
 								value={expiration}
 								margin="normal"
 								onChange={(e) => setExpiration(e.target.value)}
-								onBlur={(e) => setExpiration(parseInt(e.target.value))}
+								onBlur={(e) => {
+									if (e.target.value === "") {
+										setExpiration(300);
+									} else if (parseInt(e.target.value) < 0) {
+										setExpiration(0);
+									} else if (parseInt(e.target.value) > 26280000) {
+										setExpiration(26280000);
+									} else {
+										setExpiration(parseInt(e.target.value))
+									}
+								}}
 								InputProps={{
 									endAdornment: <InputAdornment position="end">blocks</InputAdornment>,
 								}}
 								type="number"
 								inputProps={{
-									min: 0,
-									max: 10000000,
-									step: 1,
 									style: { textAlign: 'right' }
 								}}
 
