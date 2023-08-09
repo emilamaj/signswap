@@ -483,6 +483,9 @@ function App() {
 									value={maxAmountA}
 									onChange={(e) => setMaxAmountA(e.target.value)}
 									fullWidth
+									InputProps={{
+										endAdornment: <InputAdornment position="end">{tokenA.symbol}</InputAdornment>,
+									}}
 
 								/>
 							</> : <>
@@ -505,6 +508,9 @@ function App() {
 									value={receiveB}
 									disabled
 									fullWidth
+									InputProps={{
+										endAdornment: <InputAdornment position="end">{tokenB.symbol}</InputAdornment>,
+									}}
 								/>
 							</>
 							}
@@ -516,6 +522,9 @@ function App() {
 								disabled
 								fullWidth
 								margin='normal'
+								InputProps={{
+									endAdornment: <InputAdornment position="end">{tokenB.symbol}</InputAdornment>,
+								}}
 							/>
 						}
 
