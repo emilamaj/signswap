@@ -517,17 +517,17 @@ function App() {
 							/>
 						}
 
-						{errorMsg && <Typography variant="body2" sx={{ color: 'red' }}>{errorMsg}</Typography>
-						}
 						{isAdvanced && <>
 							<Typography variant="body2" sx={{ color: 'text.secondary', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>
 								Wallet: {account ? account : "Not connected"}
 							</Typography>
 							<Typography variant="body2" sx={{ color: 'text.secondary', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>
-								Approval: {allowance} <Link href="#" onClick={handleApprove} sx={{ color: 'white', textDecoration: 'none' }}
+								Allowance: {allowance} <Link href="#" onClick={handleApprove} sx={{ color: 'white', textDecoration: 'none' }}
 								>&nbsp;&nbsp;Approve More</Link>
 							</Typography>
 						</>
+						}
+						{errorMsg && <Typography variant="body2" sx={{ color: '#d32f2f' }}>{errorMsg}</Typography>
 						}
 						<div className="container-buttons">
 							<IconHelp
