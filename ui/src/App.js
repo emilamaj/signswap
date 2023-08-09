@@ -79,6 +79,26 @@ function App() {
 	const [decimals, setDecimals] = useState({});
 	const [tokenList, setTokenList] = useState([]);
 
+	// Compute submit button state text
+	useEffect(() => {
+		const computeButtonText = async () => {
+			if (!account) {
+				setButtonState("Connect Wallet");
+				return;
+			}
+
+			const decA = await getDecimals(tokenA.address);
+			if (!allowance || bn(allowance).lt(bn(Math.floor(maxAmountA * 10 ** 18)).mul(bn(10).pow(bn(decA))).div(bn(10 ** 18)))) {
+				setButtonState("Approve");
+				return;
+			}
+
+			setButtonState("Swap");
+		}
+		computeButtonText();
+	}, [account, allowance, maxAmountA]);
+
+
 	// Calculate receiveB
 	useEffect(() => {
 		if (isPriceInverted) {
@@ -186,26 +206,17 @@ function App() {
 	const handleSubmit = async (e) => {
 		e.preventDefault(); // Prevent the page from reloading
 
-		// Connect Wallet
-		if (!account) {
+		if (buttonState === "Connect Wallet") {
 			await loadAccount();
 			return;
-		}
-
-		// Check approval
-		if (!allowance || allowance < maxAmountA) {
-			setErrorMsg("Insufficient allowance");
+		} else if (buttonState === "Approve") {
+			await handleApprove(e);
 			return;
-		}
-
-		console.log("Submitting order...")
+		} else { } // buttonState === "Swap"
 
 		// Load wallet
 		let loadedAccount = await loadAccount();
-		if (!loadedAccount) {
-			console.log("Cannot submit order, no wallet found");
-			return;
-		}
+		console.log("Using account: ", loadedAccount)
 
 		// Decimals of A
 		const decA = await getDecimals(tokenA.address);
@@ -519,8 +530,13 @@ function App() {
 						</>
 						}
 						<div className="container-buttons">
+							<IconHelp
+								variant="contained"
+								color="secondary"
+								action={() => setHelpOpen(true)}
+							/>
 							<Button type="submit" variant="contained" color="primary">
-								{account ? "Swap" : "Connect Wallet"}
+								{buttonState}
 							</Button>
 							<IconShow isShow={isAdvanced}
 								action={() => { setIsAdvanced(!isAdvanced) }} />
