@@ -62,6 +62,7 @@ function App() {
 	const [helpOpen, setHelpOpen] = useState(false);
 	const [isAdvanced, setIsAdvanced] = useState(false);
 	const [isPriceInverted, setIsPriceInverted] = useState(false); // Use either TokenB/TokenA (normal) or TokenA/TokenB (inverted)
+	const [buttonState, setButtonState] = useState("Connect Wallet"); // Either "Swap", "Approve", or "Connect Wallet"
 	// Form inputs
 	const [account, setAccount] = useState('');
 	const [tokenA, setTokenA] = useState(WETH);
@@ -144,6 +145,27 @@ function App() {
 				});
 		}
 		fetchEthPrice();
+	}, []);
+
+	// Check on page load if wallet has already been connected
+	useEffect(() => {
+		const checkWallet = async () => {
+			if (window.ethereum) {
+				const accs = await window.ethereum.request({method: 'eth_accounts'});       
+				if (accs.length) {
+				   console.log("Wallet already connected. No need to connect again.");
+				} else {
+				   console.log("Wallet is not connected");
+				}
+
+				if (accs.length > 0) {
+					setAccount(accs[0]);
+				}
+			} else {
+				console.log("No wallet found")
+			}
+		}
+		checkWallet();
 	}, []);
 
 	// Connect wallet if not already connected
