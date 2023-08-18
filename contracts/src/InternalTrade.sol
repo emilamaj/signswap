@@ -3,6 +3,7 @@
 pragma solidity ^0.8.0;
 
 import "../lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol";
+import "../src/OrderBookExchange.sol";
 
 interface IUniswapV2Pair {
     function swap(
@@ -10,29 +11,6 @@ interface IUniswapV2Pair {
         uint amount1Out,
         address to,
         bytes calldata data
-    ) external;
-}
-
-struct Order {
-    address user;
-    address tokenA;
-    address tokenB;
-    uint256 minAmountA;
-    uint256 maxAmountA;
-    uint256 priceX96; // price = priceX96 >> 96
-    uint256 maxSlippage; // in bips (1 bip = 0.01% = 0.0001 = 1/10000)
-    uint256 nonce;
-    uint256 expiration; // Must have block.number <= expiration to be valid.
-    uint256 code; // Contract version identification code.
-    bytes signature;
-}
-
-interface IOrderBookExchange {
-    function executeTrade(
-        Order memory orderA,
-        Order memory orderB,
-        uint256 amountA,
-        uint256 amountB
     ) external;
 }
 
@@ -64,17 +42,18 @@ contract InternalTrade {
         uint256 amount0Out,
         uint256 amount1Out,
         address exchangeAddress,
-        Order memory orderA,
-        Order memory orderB,
+        OrderBookExchange.Order memory orderA,
+        OrderBookExchange.Order memory orderB,
         uint256 amountA,
         uint256 amountB,
         uint256 amountC
     ) external onlyOwner {
         /* 
         Note: It is assumed that orderA is the hand-crafted internal order, and orderB is the order from the user.
-        amountA is the amount we will transfer to userB
-        amountB is the amount userB will transfer to us
-        amountC is the amount we pay back to Uniswap (we pocket the difference between amountA and amountC)
+        amountA is the amount we (the pool) will transfer to userB
+        amountB is the amount userB will transfer to userA
+        amountC is the amount of tokenB we pay back to Uniswap (to repay the loan in tokenA)
+        amountB - amountC is the amount of tokenB we keep for ourselves.
         */
 
         // Pack the parameters into a single bytes variable to be forwarded to the callback function. Must be done manually because Solidity does not support structs as arguments.
@@ -87,11 +66,11 @@ contract InternalTrade {
             amountC
         );
 
-        // Intiate the flash swap
+        // Intiate the flash swap. Send the funds to UserA so that he can execute the trade.
         IUniswapV2Pair(_pairAddress).swap(
             amount0Out,
             amount1Out,
-            address(this),
+            orderA.user,
             data
         );
     }
@@ -103,31 +82,33 @@ contract InternalTrade {
         uint,
         bytes calldata data
     ) external {
-        // Checks
-        require(tx.origin == owner, "InternalTrade: Only owner can call this function.");
-
         // Unpack data
         (
             address exchangeAddress,
-            Order memory orderA,
-            Order memory orderB,
+            OrderBookExchange.Order memory orderA,
+            OrderBookExchange.Order memory orderB,
             uint256 amountA,
             uint256 amountB,
             uint256 amountC
-        ) = abi.decode(data, (address, Order, Order, uint256, uint256, uint256));
+        ) = abi.decode(data, (address, OrderBookExchange.Order, OrderBookExchange.Order, uint256, uint256, uint256));
 
         // Grant approval to the exchange contract to spend the tokens, if not already done.
         IERC20(orderA.tokenA).approve(exchangeAddress, amountA);
 
         // Execute trade
-        IOrderBookExchange(exchangeAddress).executeTrade(
+        OrderBookExchange(exchangeAddress).executeTrade(
             orderA,
             orderB,
             amountA,
             amountB
         );
+        // The exchange contract will have transferred amountB of tokenB to userA.
+        // ...
+        
+        // Repay loan to the calling pool.
+        IERC20(orderA.tokenA).transferFrom(orderA.user, msg.sender, amountC);
 
-        // Repay loan
-        IERC20(orderA.tokenA).transfer(msg.sender, amountC);
+        // Send difference to owner
+        IERC20(orderA.tokenA).transferFrom(orderA.user, owner, amountB - amountC);
     }
 }
