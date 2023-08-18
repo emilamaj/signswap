@@ -11,6 +11,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 const IMPLEMENTATION_CODE = 0x01; // Constant value for the implementation code
 const HISTORY_FILE = 'orders_history.txt'; // File to store all valid orders submitted to the API
+const UNISWAP_FACTORY_ADDRESS = '0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f';
 
 // Middleware
 app.use(cors());
@@ -328,4 +329,39 @@ async function removeCancelledOrder(order) {
 
     // Notify the matching engine of the removed order
     matchingEngine.postMessage({ type: 'REMOVE_ORDER', order });
+}
+
+// Internal profitabiliy finder. Check if internal matchmaker can pay for the other side of the order.
+async function getInternalProfit(order){
+    // The order must trade enough Token A at a sufficiently low price to pay for our flash swap, and the gas of the signed exchange.
+    // Assume we trade the max amount of Token A at the lowest price (more slippage for the order)
+    // We use a trade contract that performs the flash swap, sends the signed order to be matched, then refunds the flash swap.
+
+    // Check the reserves on Uniswap V2 to see if we can profit from the order
+    const factoryContract = new web3.eth.Contract(JSON.parse(fs.readFileSync('./abi/UniswapV2Factory.json')), UNISWAP_FACTORY_ADDRESS);
+    const pairAddress = await factoryContract.methods.getPair(order.tokenA, order.tokenB).call();
+    const pairContract = new web3.eth.Contract(JSON.parse(fs.readFileSync('./abi/UniswapV2Pair.json')), pairAddress);
+    const reserves = await pairContract.methods.getReserves().call();
+
+    // Token0 is the token with the lower address (alphabetically). Remove prefix 0x from addresses before comparing.
+    const token0 = order.tokenA.toLowerCase() < order.tokenB.toLowerCase() ? order.tokenA : order.tokenB;
+    const token1 = token0 === order.tokenA ? order.tokenB : order.tokenA;
+    
+    // Find out how much Token B the Uniswap pair will give us for the max amount of Token A
+    const reservesA = token0 === order.tokenA ? reserves.reserve0 : reserves.reserve1;
+    const reservesB = token0 === order.tokenA ? reserves.reserve1 : reserves.reserve0;
+
+    // Calculate the amount of Token B we will receive using the AMM formula
+    amountA = order.maxAmountA * (1 - 0.003); // 0.003 is the Uniswap fee
+    amountB =  reservesB * (reservesA/(reservesA + amountA) - 1);
+
+    // Check the gas cost of the trade (flash swap + signed order execution + refund) by performing a call() on the trade contract.
+    // call() function "tradeFlashV2" of the InternalTrade contract.
+    
+    
+}
+
+// Order execution delay estimate. Estimate the number of blocks it will take to execute an order.
+async function estimateDelay(order){
+    // Look at the price history to estimate the delay. If there is already a matching pending order, the delay is 0.
 }
