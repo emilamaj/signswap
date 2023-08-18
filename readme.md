@@ -28,14 +28,15 @@ TODO:
     - [x] Icons
     - [x] Token metadata integration
     - [ ] Price base inversion
-    - [ ] Token balance display
-    - [ ] Token USD value
+    - [x] Token balance display
+    - [x] Token USD value
     - [ ] Current block number
     - [ ] Plain target duration text
     - [ ] Display slippage price equivalent
-    - [ ] Switch bips to pct
-- [ ] Contract signature formatting to EIP-712
+    - [x] Switch bips to pct
+- [ ] Contract signature formatting to EIP-712 for better wallet integration
 - [ ] Add gasless approval for compatible tokens (EIP-2612 permit)
+- [ ] Allow smart contract wallet signatures (EIP-1271)
 - [ ] More thorough fuzz tests
 - [ ] Add a fee mechanism to the protocol
 - [ ] Multiple order aggregation
