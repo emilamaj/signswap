@@ -27,7 +27,7 @@ contract OrderBookExchangeTest is Test {
         tokenB = new mockToken("TokenB", "TKB");
     }
 
-    // This function takes the parameters of an order and generates the signature.
+    // This function takes the parameters of an order and generates the signature. The user value provided is replaced by the address derived from the PK.
     function _generateSignedOrder(
         OrderBookExchange.Order memory order,
         uint256 privateKey
@@ -82,7 +82,7 @@ contract OrderBookExchangeTest is Test {
     ) public view returns (OrderBookExchange.Order memory) {
         return
             OrderBookExchange.Order(
-                address(0),
+                address(0), // This field is replaced by the signing function
                 direct ? address(tokenA) : address(tokenB),
                 direct ? address(tokenB) : address(tokenA),
                 1 ether, // minAmountA
