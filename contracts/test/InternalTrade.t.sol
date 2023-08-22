@@ -116,8 +116,12 @@ contract mockPool {
         );
 
         if (zeroForOne) {
-            uint dx = _reserve0 - (_reserve0 * _reserve1) / (_reserve1 + amountOut);
-            amountIn = (dx * 1000) / 997;
+            amountIn = 1 + (_reserve0*amountOut*1000)/((_reserve1 - amountOut) * 997);
+        } else {
+            amountIn = 1 + (_reserve1*amountOut*1000)/((_reserve0 - amountOut) * 997);
+        }
+    }
+
         } else {
             uint dy = _reserve1 - ((_reserve1 * _reserve0) / (_reserve0 + amountOut));
             amountIn = (dy * 1000) / 997;
