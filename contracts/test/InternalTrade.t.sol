@@ -264,16 +264,22 @@ contract InternalTradeTest is Test {
         tokenB.approve(address(internalTradeContract), 1 ether);
 
         // Set the trade parameters:
-        // - User B has 1 tokenB and wants 1 tokenA
+        // - User B has amountB tokenB and wants amountA tokenA
         // - User A has 0 tokenA and 0 tokenB, but:
         //     - Uniswap pool has 200 tokenA and 100 tokenB
-        //     - Uniswap sends 1 tokenA to User B, loaned by user A (it's user A who will repay)
+        //     - Uniswap sends amountA tokenA to User B, loaned by user A (it's user A who will repay)
         //     - ...
-        //     - User A repays the loan with ~0.5 tokenB
-        uint amount0Out = 1 ether; // 1 tokenA, to be sent to User B. User A will need to repay ~0.5 tokenB to the pool.
+        //     - User A repays the loan with amountC tokenB
+        uint amountA = 1 ether; // Pool lends 1 tokenA, sends them to User B in exchange for amountC tokenB
+        uint amountB = 1 ether; // User B sends amountB of tokenB to userA
+        uint amount0Out = amountA; // 1 tokenA, to be sent to User B. User A will need to repay ~0.5 tokenB to the pool.
         uint amount1Out = 0;
-        uint amountC = poolContract.getExactInput(1 ether, false); // User B pays 1 tokenB to User A, who will repay ~0.5 tokenB to the pool.
-        console.log("Pool exact input: ", amountC);
+        uint amountC = poolContract.getExactInput(amountB, false); // User B pays amountB tokenB to User A.
+        // uint _amountD = poolContract.getExactOutput(amountC, false); // should be amountB
+
+        // Log the balances before the trade
+        uint tokenABalance = tokenA.balanceOf(address(this));
+        uint tokenBBalance = tokenB.balanceOf(address(this));
 
         // Execute the trade
         internalTradeContract.tradeFlashV2(
@@ -293,5 +299,13 @@ contract InternalTradeTest is Test {
         // - InternalTradeContract should have 0 of either
         // - Owner Account (this contract) should have +(amountB - amountC) of tokenB compared to before, and +0 of tokenA
         // - UserB should have 1 tokenA and 0 tokenB
+        assertEq(tokenA.balanceOf(address(orderA.user)), 0);
+        assertEq(tokenB.balanceOf(address(orderA.user)), 0);
+        assertEq(tokenA.balanceOf(address(orderB.user)), 1 ether);
+        assertEq(tokenB.balanceOf(address(orderB.user)), 0);
+        assertEq(tokenA.balanceOf(address(internalTradeContract)), 0);
+        assertEq(tokenB.balanceOf(address(internalTradeContract)), 0);
+        assertEq(tokenA.balanceOf(address(internalTradeContract.owner())), tokenABalance);
+        assertEq(tokenB.balanceOf(address(internalTradeContract.owner())), tokenBBalance + (amountB - amountC));
     }
 }
