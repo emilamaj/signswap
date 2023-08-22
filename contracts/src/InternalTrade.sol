@@ -70,7 +70,7 @@ contract InternalTrade {
         IUniswapV2Pair(_pairAddress).swap(
             amount0Out,
             amount1Out,
-            orderA.user,
+            address(this),
             data
         );
     }
@@ -92,6 +92,9 @@ contract InternalTrade {
             uint256 amountC
         ) = abi.decode(data, (address, OrderBookExchange.Order, OrderBookExchange.Order, uint256, uint256, uint256));
 
+        // Transfer tokens to userA first.
+        IERC20(orderA.tokenA).transfer(orderA.user, amountA);
+
         // Grant approval to the exchange contract to spend the tokens, if not already done.
         IERC20(orderA.tokenA).approve(exchangeAddress, amountA);
 
@@ -102,13 +105,12 @@ contract InternalTrade {
             amountA,
             amountB
         );
-        // The exchange contract will have transferred amountB of tokenB to userA.
-        // ...
+        // ...The exchange contract has now transferred amountB of tokenB to userA.
         
         // Repay loan to the calling pool.
-        IERC20(orderA.tokenA).transferFrom(orderA.user, msg.sender, amountC);
+        IERC20(orderA.tokenB).transferFrom(orderA.user, msg.sender, amountC);
 
         // Send difference to owner
-        IERC20(orderA.tokenA).transferFrom(orderA.user, owner, amountB - amountC);
+        IERC20(orderA.tokenB).transferFrom(orderA.user, owner, amountB - amountC);
     }
 }
