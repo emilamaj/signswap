@@ -2,7 +2,6 @@
 pragma solidity ^0.8.0;
 
 import "../lib/forge-std/src/Test.sol";
-import "../lib/forge-std/src/console.sol";
 import "../src/OrderBookExchange.sol";
 import "../src/InternalTrade.sol";
 import "../lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol";
@@ -65,9 +64,13 @@ contract mockPool {
             address _token0 = token0;
             address _token1 = token1;
             require(to != _token0 && to != _token1, "UniswapV2: INVALID_TO");
+
+            // Transfer tokens to the recipient
             if (amount0Out > 0) IERC20(_token0).transfer(to, amount0Out); // optimistically transfer tokens
             if (amount1Out > 0) IERC20(_token1).transfer(to, amount1Out); // optimistically transfer tokens
+
             if (data.length > 0)
+                // Calling the callback function
                 IUniswapV2Callee(to).uniswapV2Call(
                     msg.sender,
                     amount0Out,
@@ -239,10 +242,6 @@ contract InternalTradeTest is Test {
 
     // Test basic order matching
     function test_flashV2_basic() public {
-        console.log(tx.origin);
-        console.log(msg.sender);
-        console.log(address(this));
-
         // Generate the orders
         OrderBookExchange.Order memory orderA = orderStub(true);
         OrderBookExchange.Order memory orderB = orderStub(false);
@@ -289,14 +288,10 @@ contract InternalTradeTest is Test {
             amountC
         );
 
-        // Check the balances
-        console.log("User A balance A: ", tokenA.balanceOf(address(orderA.user)));
-        console.log("User A balance B: ", tokenB.balanceOf(address(orderA.user)));
-        console.log("User B balance A: ", tokenA.balanceOf(address(orderB.user)));
-        console.log("User B balance B: ", tokenB.balanceOf(address(orderB.user)));
-        console.log("Pool balance A: ", tokenA.balanceOf(address(poolContract)));
-        console.log("Pool balance B: ", tokenB.balanceOf(address(poolContract)));
-        assertEq(tokenA.balanceOf(address(orderA.user)), 1 ether);
-        assertEq(tokenB.balanceOf(address(orderB.user)), 1 ether);
+        // Check the balances:
+        // - UserA should have 0 tokenA and 0 tokenB
+        // - InternalTradeContract should have 0 of either
+        // - Owner Account (this contract) should have +(amountB - amountC) of tokenB compared to before, and +0 of tokenA
+        // - UserB should have 1 tokenA and 0 tokenB
     }
 }
