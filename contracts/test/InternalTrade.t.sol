@@ -122,9 +122,24 @@ contract mockPool {
         }
     }
 
+    // Calculate the output from a given input of tokens
+    function getExactOutput(
+        uint amountIn,
+        bool zeroForOne
+    ) external view returns (uint amountOut) {
+        (uint _reserve0, uint _reserve1) = (reserve0, reserve1);
+        require(amountIn > 0, "UniswapV2Library: INSUFFICIENT_INPUT_AMOUNT");
+        require(
+            _reserve0 > 0 && _reserve1 > 0,
+            "UniswapV2Library: INSUFFICIENT_LIQUIDITY"
+        );
+
+        if (zeroForOne) {
+            uint dx = amountIn * 997;
+            amountOut = (dx * _reserve1) / (_reserve0 * 1000 + dx);
         } else {
-            uint dy = _reserve1 - ((_reserve1 * _reserve0) / (_reserve0 + amountOut));
-            amountIn = (dy * 1000) / 997;
+            uint dy = amountIn * 997;
+            amountOut = (dy * _reserve0) / (_reserve1 * 1000 + dy);
         }
     }
 }
