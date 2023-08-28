@@ -158,7 +158,7 @@ contract InternalTradeTest is Test {
     function setUp() public {
         // Deploy the contracts
         exchangeContract = new OrderBookExchange();
-        internalTradeContract = new InternalTrade();
+        internalTradeContract = new InternalTrade(address(this));
 
         // Deploy Tokens
         tokenA = new mockToken("TokenA", "TKA");

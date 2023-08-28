@@ -17,8 +17,8 @@ interface IUniswapV2Pair {
 contract InternalTrade {
     address public immutable owner;
 
-    constructor() {
-        owner = msg.sender;
+    constructor(address _owner) {
+        owner = _owner;
     }
 
 
