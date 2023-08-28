@@ -1,7 +1,11 @@
-// This script is used to perform tests on a local node. It deploys 2 ERC20 tokens, funds 2 EOAs with these tokens, and funds the transaction broadcast address with ETH to pay for gas.
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.0;
-
+/////////////////////////
+// This script is used to perform live tests on a local node. It performs the following:
+// - Deploys 2 ERC20 tokens
+// - Funds 2 EOAs with some amount of these tokens
+// - Funds the transaction broadcast address with ETH to pay for gas.
+/////////////////////////
 import "../lib/forge-std/src/Script.sol";
 import "../lib/forge-std/src/console.sol";
 import "../lib/openzeppelin-contracts/contracts/utils/Strings.sol";
@@ -25,10 +29,10 @@ contract DeployTokens is Script {
     ERC20 tokenB;
 
     function run() public {
-        
+
         uint256 deployerPrivateKey = vm.envUint("EOA_PRIVATE_KEY");
         console.log("Deployer private key: ", deployerPrivateKey);
-        address deployerAddress = vm.addr(deployerPrivateKey);
+        address deployerAddress = vm.envAddress("EOA_ADDRESS");
         console.log("Deployer public address: ", deployerAddress);
 
         // Craft and send the transactions
@@ -51,7 +55,7 @@ contract DeployTokens is Script {
         // Fund users with ETH to pay for approval gas
         payable(USER_A).transfer(1 ether);
         payable(USER_B).transfer(1 ether);
-        
+
         vm.stopBroadcast();
 
         // Token addresses
@@ -67,7 +71,7 @@ contract DeployTokens is Script {
         string memory path3 = "./tokenB.txt"; // The path is relative to the root of the project folder.
         string memory data3 = Strings.toHexString(uint256(uint160(address(tokenB))), 20);
         vm.writeFile(path3, data3);
-        
+
         // Print the addresses
         console.log("Token A address: ", address(tokenA));
         console.log("Token B address: ", address(tokenB));
