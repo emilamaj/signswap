@@ -28,9 +28,9 @@ contract DeployScript is Script {
         // - Exchange contract address
         /* Create a exchange_contract.txt file with only the following content:
         0x0ABC...
-        
-        The file will be located in /contracts/contract.txt */
-        string memory path3 = "./contract.txt"; // The path is relative to the root of the project folder.
+        The file will be located in /contracts/envdata/exchange_contract.txt */
+        console.log("Writing exchange contract address to: ./envdata/exchange_contract.txt");
+        string memory path3 = "./envdata/exchange_contract.txt"; // The path is relative to the root of the project folder.
         string memory data3 = Strings.toHexString(uint256(uint160(address(exchangeContract))), 20);
         vm.writeFile(path3, data3);
 
