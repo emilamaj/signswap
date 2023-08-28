@@ -6,7 +6,7 @@ import "../lib/forge-std/src/console.sol";
 import "../src/OrderBookExchange.sol";
 import "../lib/openzeppelin-contracts/contracts/utils/Strings.sol";
 
-contract DeployScript is Script {
+contract DeployExchange is Script {
     function run() public {
         console.log("Deploying exchange contract...");
         uint256 deployerPrivateKey = vm.envUint("EOA_PRIVATE_KEY");

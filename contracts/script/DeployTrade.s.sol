@@ -8,7 +8,7 @@ import "../lib/forge-std/src/console.sol";
 import "../src/InternalTrade.sol";
 import "../lib/openzeppelin-contracts/contracts/utils/Strings.sol";
 
-contract DeployScript is Script {
+contract DeployTrade is Script {
     function run() public {
         console.log("Deploying trade contract...");
         uint256 deployerPrivateKey = vm.envUint("EOA_PRIVATE_KEY");

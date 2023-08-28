@@ -94,7 +94,8 @@ anvil
 Then, in another terminal, open the `contracts` folder and run the following command to deploy the smart contract:
 
 ```bash
-forge script script/Deploy.s.sol:DeployScript --rpc-url local --broadcast -vv 
+forge script script/DeployExchange.s.sol:DeployExchange --rpc-url local --broadcast 
+forge script script/DeployTrade.s.sol:DeployTrade --rpc-url local --broadcast -vv 
 ```
 Note that this script works for mainnet deployment as well, you simply need to change
 
