@@ -29,9 +29,12 @@ if (isDev) {
     ];
     var cmd = cmd_arr.join(' && ');
     console.log(cmd);
-    exec(cmd, function(error, stdout, stderr) {
+    var child = exec(cmd, function(error, stdout, stderr) {
         console.log(stdout);
     });
+    child.stdout.pipe(process.stdout);
+    child.stderr.pipe(process.stderr);
+
 } else {
     // Check if the contracts are deployed to the mainnet. If not, deploy them.
 
@@ -60,9 +63,11 @@ if (isDev){
     ];
     var cmd = cmd_arr.join(' && ');
     console.log(cmd);
-    exec(cmd, function(error, stdout, stderr) {
+    var child = exec(cmd, function(error, stdout, stderr) {
         console.log(stdout);
     });
+    child.stdout.pipe(process.stdout);
+    child.stderr.pipe(process.stderr);
 } else {
     // Run the ui in production mode
     //...
@@ -83,9 +88,11 @@ if (isDev){
     ];
     var cmd = cmd_arr.join(' && ');
     console.log(cmd);
-    exec(cmd, function(error, stdout, stderr) {
+    var child = exec(cmd, function(error, stdout, stderr) {
         console.log(stdout);
     });
+    child.stdout.pipe(process.stdout);
+    child.stderr.pipe(process.stderr);
 } else {
     // Run the backend api in production mode
     //...
